@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.tab-menus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: auto;
+  gap: rem(16);
+  @include mq(md) {
+    justify-content: start;
+    gap: rem(32);
+  }
+}

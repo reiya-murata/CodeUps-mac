@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.faq-content{
+  display: flex;
+  flex-direction: column;
+  gap: rem(31);
+  @include mq(md) {
+    gap: rem(31);
+  }
+}

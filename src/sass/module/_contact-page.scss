@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.contact-page {
+  position: relative;
+}
+
+.contact-page__hero {
+  position: relative;
+}
+
+.contact-page__inner {
+  position: relative;
+}
+
+.contact-page__top {
+  margin-top: rem(8);
+}
+
+.contact-page__contents {
+  margin-top: rem(40);
+
+  @include mq("md") {
+    margin-top: rem(90);
+
+  }
+}
+
+.contact-page__contents {
+  display: flex;
+  flex-direction: column;
+  max-width: rem(345) ;
+  // padding-right: $padding-sp;
+  // padding-left: $padding-sp;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq("md") {
+    max-width: rem(750);
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+  }
+}

@@ -1,0 +1,31 @@
+@use "global" as *;
+
+.tab-menu{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(20);
+  justify-content: center;
+  @include mq(md) {
+    gap:rem(32);
+  }
+}
+
+.tab-menu__icon {
+  font-size: rem(14);
+  width: rem(162);
+  text-align: center;
+  background: $white;
+  z-index: 10;
+  @include mq(md) {
+    width: rem(162);
+  }
+}
+
+.tab-menu__icon.active {
+  background-color: $blue;
+  color: $white;
+}
+
+.tab-menu.active {
+  display: block;
+}
