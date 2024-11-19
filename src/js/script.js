@@ -149,31 +149,31 @@ box.each(function () {
 });
 
 // campaign-pageタブ
-document.addEventListener('DOMContentLoaded', function () {
-  // タブボタンをすべて取得
-  const tabButtons = document.querySelectorAll('.js-tab-menu1');
-  // タブボタンにクリックイベントを追加
-  tabButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      // 全てのタブコンテンツを非表示にする（activeクラスを削除）
-      const allTabBodies = document.querySelectorAll('.js-campaign-tabbody');
-      allTabBodies.forEach(tabBody => {
-        tabBody.classList.remove('active'); // 全てのタブコンテンツから active クラスを削除
-      });
+// document.addEventListener('DOMContentLoaded', function () {
+//   // タブボタンをすべて取得
+//   const tabButtons = document.querySelectorAll('.js-tab-menu1');
+//   // タブボタンにクリックイベントを追加
+//   tabButtons.forEach(button => {
+//     button.addEventListener('click', function () {
+//       // 全てのタブコンテンツを非表示にする（activeクラスを削除）
+//       const allTabBodies = document.querySelectorAll('.js-campaign-tabbody');
+//       allTabBodies.forEach(tabBody => {
+//         tabBody.classList.remove('active'); // 全てのタブコンテンツから active クラスを削除
+//       });
 
-      // 対応するタブコンテンツを表示する（activeクラスを追加）
-      const targetId = this.getAttribute('data-target'); // クリックされたボタンの data-target 属性を取得
-      const targetTabBody = document.getElementById(targetId); // 該当するタブコンテンツを取得
-      if (targetTabBody) {
-        targetTabBody.classList.add('active'); // 該当するタブコンテンツに active クラスを追加
-      }
+//       // 対応するタブコンテンツを表示する（activeクラスを追加）
+//       const targetId = this.getAttribute('data-target'); // クリックされたボタンの data-target 属性を取得
+//       const targetTabBody = document.getElementById(targetId); // 該当するタブコンテンツを取得
+//       if (targetTabBody) {
+//         targetTabBody.classList.add('active'); // 該当するタブコンテンツに active クラスを追加
+//       }
 
-      // クリックされたボタンをアクティブ状態にする
-      tabButtons.forEach(btn => btn.classList.remove('active')); // 全ボタンのアクティブ状態を解除
-      this.classList.add('active'); // クリックされたボタンをアクティブに
-    });
-  });
-});
+//       // クリックされたボタンをアクティブ状態にする
+//       tabButtons.forEach(btn => btn.classList.remove('active')); // 全ボタンのアクティブ状態を解除
+//       this.classList.add('active'); // クリックされたボタンをアクティブに
+//     });
+//   });
+// });
 
 // galleryモーダル
 document.addEventListener('DOMContentLoaded', function() {
