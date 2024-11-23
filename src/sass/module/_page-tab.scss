@@ -7,7 +7,6 @@
   padding: rem(6) 0;
   font-family: $base-font-family;
   border: rem(1) solid $blue;
-  width: rem(162);
   @include mq(md) {
     grid-row: 1;
     font-size: rem(14);

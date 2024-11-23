@@ -11,9 +11,21 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+.blog-cards--2clum{
+  display: grid;
+  position: relative;
+  justify-content: center;
+  @include mq(md) {
+    gap: rem(38);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 .blog-cards :hover {
   opacity: 0.7;
+}
+.blog-cards--2clum img:hover{
+  transform: scale(1.5);
 }
 .blog-cards__item{
   display: grid;

@@ -1,12 +1,11 @@
 @use "global" as *;
 
-.tab-menu{
+.tab-menu {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: rem(20);
   justify-content: center;
+  max-width: rem(162);
+  height: rem(32);
   @include mq(md) {
-    gap:rem(32);
   }
 }
 
@@ -16,11 +15,11 @@
   text-align: center;
   background: $white;
   z-index: 10;
-  @include mq(md) {
-  }
+
+  @include mq(md) {}
 }
 
-.tab-menu__icon:hover{
+.tab-menu__icon:hover {
   background-color: $blue;
   color: $white;
   transition: 0.3ms all;

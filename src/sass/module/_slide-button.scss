@@ -51,36 +51,29 @@
   gap: rem(11);
 }
 
-.slide-button__numbers a {
+
+.slide-button__numbers li button{
   display: flex;
+  color: $blue;
   text-align: center;
   align-items: center;
   justify-content: center;
   font-family: $third-font-family;
   font-weight: $bold;
   border: 1px solid $blue;
-  color: $blue;
   font-size: rem(16);
   height: rem(38);
   min-width: rem(38);
-  text-align: center;
-    // padding-top: rem(8);
-    // padding-bottom: rem(4);
-    // padding-left: rem(14);
-    // padding-right: rem(14);
   @include mq(md) {
     font-size: rem(16);
-    // padding-top: rem(8);
-    // padding-bottom: rem(8);
-    // padding-left: rem(14);
-    // padding-right: rem(14);
   }
 }
 
-.slide-button__numbers a:hover{
+
+.slide-button__numbers li button:hover{
   background-color: $blue;
   color: $white;
-  transition: 0.3ms all;
+  transition: 0.7ms all;
 } 
 .slide-button__numbers .active {
   color: $white;

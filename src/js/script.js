@@ -219,8 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-// information-pageタブ
+// about-galleryモーダル
 document.addEventListener('DOMContentLoaded', function () {
   // モーダルの要素を取得
   const modal = document.getElementById('imageModal');
@@ -249,6 +248,34 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+});
+
+// information-pageタブ
+document.addEventListener('DOMContentLoaded', function () {
+  // タブボタンをすべて取得
+  const tabButtons2 = document.querySelectorAll('.js-tab-menu2');
+
+  // タブボタンにクリックイベントを追加
+  tabButtons2.forEach(button => {
+    button.addEventListener('click', function () {
+      // 全てのタブコンテンツを非表示にする（activeクラスを削除）
+      const informationTabBodies = document.querySelectorAll('.js-information-tabbody');
+      informationTabBodies.forEach(tabBody => {
+        tabBody.classList.remove('active'); // 全てのタブコンテンツから active クラスを削除
+      });
+
+      // 対応するタブコンテンツを表示する（activeクラスを追加）
+      const targetId = this.getAttribute('data-target'); // クリックされたボタンの data-target 属性を取得
+      const targetTabBody = document.getElementById(targetId); // 該当するタブコンテンツを取得
+      if (targetTabBody) {
+        targetTabBody.classList.add('active'); // 該当するタブコンテンツに active クラスを追加
+      }
+
+      // クリックされたボタンをアクティブ状態にする
+      tabButtons2.forEach(btn => btn.classList.remove('active')); // 全ボタンのアクティブ状態を解除
+      this.classList.add('active'); // クリックされたボタンをアクティブに
+    });
+  });
 });
 
 
