@@ -48,10 +48,15 @@
   padding-right: rem(8);
   padding-bottom: rem(8);
 }
+.campaign-tab__right{
+  width: rem(297);
+  @include mq(md) {
+    width: rem(492);
+  }
+}
 
 .campaign-tab__right img {
   width: rem(297);
-
   @include mq(md) {
     width: rem(492);
   }

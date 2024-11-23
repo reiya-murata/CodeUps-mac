@@ -3,16 +3,19 @@
 .gallery {
   position: relative;
 }
+#gallery.no-scroll {
+  overflow: hidden; /* 背景スクロールを無効化 */
+}
+
 
 .gallery__imgs {
   display: grid;
-  flex-direction: column;
   margin-top: rem(40);
   gap: rem(8);
-
   @include mq(md) {
     display: grid;
-    
+    grid-auto-flow:row dense;
+    grid-template-columns: repeat(13,1fr);
     margin-top: rem(80);
     gap: rem(8) rem(8);
   }
@@ -20,52 +23,49 @@
 
 
 
-.gallery__img:nth-child(1){
+.gallery__img:nth-child(6n + 1) {
   width: 100%;
   @include mq(md) {
-    grid-row: 1/ span 2;
-    grid-column: 1/2;
+    grid-row: span 2;
+    grid-column: 1/ span 6;
+    width: rem(492);
   }
 }
 
-.gallery__img:nth-child(2){
-  width: 100%;
+.gallery__img:nth-child(6n + 2) {
   @include mq(md) {
-    grid-row: 1/4;
-    grid-column: 2/2;
-    
+    grid-column: 7/ span 7;
+    width: rem(580);
   }
 }
 
-.gallery__img:nth-child(3) {
-  width: 100%;
+.gallery__img:nth-child(6n + 3) {
   @include mq(md) {
-    grid-row: 2/4;
-    grid-column: 2/2;
+    grid-column: 7/ span 7;
+    width: rem(580);
   }
 }
 
-.gallery__img:nth-child(4) {
-  width: 100%;
+.gallery__img:nth-child(6n + 4) {
   @include mq(md) {
-    grid-row: 3/4;
-    grid-column: 1/2;
+
+    grid-column: 1/ span 7;
   }
 }
 
-.gallery__img:nth-child(5) {
-  width: 100%;
+.gallery__img:nth-child(6n + 5) {
   @include mq(md) {
-    grid-row: 4/4;
-    grid-column: 1/2;
+    grid-column: 1/ span 7;
+ 
   }
 }
 
-.gallery__img:nth-child(6) {
+.gallery__img:nth-child(6n) {
   width: 100%;
+
   @include mq(md) {
-    grid-row: 3/ span 2;
-    grid-column: 2/2;
+    grid-row: span 2;
+    grid-column: 8/span 6;
   }
 }
 
@@ -81,7 +81,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #202020cb;
     /* 黒の半透明背景 */
   }
 }
@@ -90,6 +90,7 @@
   display: none;
 
   @include mq(md) {
+    
     margin: auto;
     display: block;
     position: fixed;
