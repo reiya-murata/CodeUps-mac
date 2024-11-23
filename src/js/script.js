@@ -148,32 +148,6 @@ box.each(function () {
   });
 });
 
-// campaign-pageタブ
-document.addEventListener('DOMContentLoaded', function () {
-  // タブボタンをすべて取得
-  const tabButtons = document.querySelectorAll('.js-tab-menu1');
-  // タブボタンにクリックイベントを追加
-  tabButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      // 全てのタブコンテンツを非表示にする（activeクラスを削除）
-      const allTabBodies = document.querySelectorAll('.js-campaign-tabbody');
-      allTabBodies.forEach(tabBody => {
-        tabBody.classList.remove('active'); // 全てのタブコンテンツから active クラスを削除
-      });
-
-      // 対応するタブコンテンツを表示する（activeクラスを追加）
-      const targetId = this.getAttribute('data-target'); // クリックされたボタンの data-target 属性を取得
-      const targetTabBody = document.getElementById(targetId); // 該当するタブコンテンツを取得
-      if (targetTabBody) {
-        targetTabBody.classList.add('active'); // 該当するタブコンテンツに active クラスを追加
-      }
-
-      // クリックされたボタンをアクティブ状態にする
-      tabButtons.forEach(btn => btn.classList.remove('active')); // 全ボタンのアクティブ状態を解除
-      this.classList.add('active'); // クリックされたボタンをアクティブに
-    });
-  });
-});
 
 // galleryモーダル
 document.addEventListener('DOMContentLoaded', function () {
@@ -216,39 +190,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+  modal.addEventListener('click', function (event) {
+    // クリックされた要素がモーダル自身であれば閉じる
+    if (event.target === modal) {
+      modal.style.display = "none";
+      gallery.classList.remove('no-scroll'); // 背景スクロールを有効化
+    }
+  });
 });
 
-
-// about-galleryモーダル
-document.addEventListener('DOMContentLoaded', function () {
-  // モーダルの要素を取得
-  const modal = document.getElementById('imageModal');
-  const modalImage = document.getElementById('modalImage');
-  const gallery = this.documentElementById("gallery")
-  // モーダル要素が存在する場合のみ処理を行う
-  if (modal && modalImage) {
-    // すべての画像を取得
-    const galleryImages = document.querySelectorAll('.js-gallery-img1, .js-gallery-img2, .js-gallery-img3, .js-gallery-img4, .js-gallery-img5, .js-gallery-img6');
-
-    // 各画像にクリックイベントを追加
-    galleryImages.forEach(img => {
-      img.addEventListener('click', function () {
-        modal.style.display = "block"; // モーダルを表示
-        modalImage.src = this.src; // クリックされた画像をモーダルに表示
-        document.body.classList.add('no-scroll'); // 背景スクロールを無効化
-      });
-    });
-
-    // モーダル外をクリックすると閉じる
-    modal.addEventListener('click', function (event) {
-      // クリックされた要素がモーダル自身であれば閉じる
-      if (event.target === modal) {
-        modal.style.display = "none";
-        gallery.classList.remove('no-scroll'); // 背景スクロールを有効化
-      }
-    });
-  }
-});
 
 // information-pageタブ
 document.addEventListener('DOMContentLoaded', function () {

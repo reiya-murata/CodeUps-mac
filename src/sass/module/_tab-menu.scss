@@ -4,7 +4,16 @@
   display: grid;
   justify-content: center;
   max-width: rem(162);
-  height: rem(32);
+  height: rem(32);display: inline-block;
+  color: $blue;
+  font-size: rem(14);
+  padding: rem(6) 0;
+  font-family: $base-font-family;
+  border: rem(1) solid $blue;
+  @include mq(md) {
+    grid-row: 1;
+    font-size: rem(14);
+  }
   @include mq(md) {
   }
 }
@@ -32,4 +41,6 @@
 
 .tab-menu.active {
   display: block;
+  color: $white;
+  background: $blue;
 }
