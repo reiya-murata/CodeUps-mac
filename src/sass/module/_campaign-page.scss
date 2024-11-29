@@ -66,17 +66,12 @@
 }
 
 
-.campaign__slides--campaign-page {
-  display: none;
-  justify-content: center;
-}
-
-.campaign__slides--campaign-page.active {
+.campaign__slides--campaign-page{
   display: grid;
+  justify-content: center;
   gap: rem(40);
   grid-row: auto;
   margin-top: rem(40);
-
   @include mq(md) {
     gap: rem(80) rem(40);
     grid-template-columns: repeat(2, 1fr);

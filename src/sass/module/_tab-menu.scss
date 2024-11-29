@@ -1,12 +1,15 @@
 @use "global" as *;
 
+
 .tab-menu {
   display: grid;
-  justify-content: center;
-  max-width: rem(162);
+  font-size: rem(14);
+  min-width: rem(162);
+  text-align: center;
+  background: $white;
+  z-index: 10;
   height: rem(32);display: inline-block;
   color: $blue;
-  font-size: rem(14);
   padding: rem(6) 0;
   font-family: $base-font-family;
   border: rem(1) solid $blue;
@@ -14,33 +17,16 @@
     grid-row: 1;
     font-size: rem(14);
   }
-  @include mq(md) {
-  }
 }
 
-.tab-menu__icon {
-  font-size: rem(14);
-  min-width: rem(162);
-  text-align: center;
-  background: $white;
-  z-index: 10;
-
-  @include mq(md) {}
-}
-
-.tab-menu__icon:hover {
+.tab-menu:hover {
   background-color: $blue;
   color: $white;
   transition: 0.3ms all;
 }
 
-.tab-menu__icon.active {
-  background-color: $blue;
-  color: $white;
-}
-
 .tab-menu.active {
   display: block;
+  background-color: $blue;
   color: $white;
-  background: $blue;
 }

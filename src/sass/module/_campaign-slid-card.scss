@@ -2,13 +2,13 @@
 
 .campaign-slide-card {
   box-shadow: rem(2) rem(2) rem(10) rem(0) rgba(0, 0, 0, 0.25);
-  @include mq(md) {
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include mq(md) {}
 }
 
-.campaign-slide-card a {
-  flex-direction: column;
-}
 
 .campaign-slide-card__header img {
   aspect-ratio: 333 /223;
@@ -19,35 +19,37 @@
 }
 
 .campaign-slide-card__body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: rem(16) rem(24) rem(13);
   width: 100%;
+
   @include mq(md) {
-    grid-row: span 8;
     width: 100%;
     padding: rem(24) rem(24) rem(44);
   }
 }
-.campaign-slide-card__body--night{
+
+.campaign-slide-card__body--night {
   @include mq(md) {
     margin-top: rem(0);
   }
 }
 
 .campaign-slide-card__icon {
+  height: auto;
   color: $blue;
   border: rem(1) solid $blue;
   font-family: $base-font-family;
   text-align: start;
   width: fit-content;
   padding: rem(4) rem(12);
-  grid-template-rows: subgrid;
-  grid-auto-rows: min-content;
 
   @include mq(md) {
     text-align: start;
     width: fit-content;
     padding: rem(9) rem(16);
-    // padding: rem(6) rem(16);
   }
 }
 
@@ -68,14 +70,14 @@
 
 
 .campaign-slide-card__title-campaign {
+  height: inherit;
+  flex-grow: 1;
   text-align: start;
   border-bottom: rem(1) solid $blue;
   font-family: $base-font-family;
   font-size: rem(12);
   margin-top: rem(4);
   padding-bottom: rem(6);
-  grid-template-rows: subgrid;
-  grid-auto-rows: min-content;
 
   @include mq(md) {
     font-size: rem(16);
@@ -85,16 +87,15 @@
 }
 
 .campaign-slide-card__text-campaign {
+  height: auto;
   text-align: center;
   font-family: $base-font-family;
   font-weight: $normal;
   font-size: rem(14);
   margin-top: rem(8);
-  grid-template-rows: subgrid;
-  grid-auto-rows: min-content;
+  flex-grow: 1;
 
   @include mq(md) {
-
     margin-top: rem(20);
     font-size: rem(16);
   }
@@ -102,14 +103,14 @@
 
 .campaign-slide-card__prices {
   display: flex;
+  height: auto;
+  flex-grow: 1;
   justify-content: center;
   text-align: center;
   gap: rem(16);
   margin-top: rem(8);
   align-items: baseline;
   font-family: $third-font-family;
-  grid-template-rows: subgrid;
-  grid-auto-rows: min-content;
 
   @include mq(md) {
     gap: rem(40);
@@ -148,10 +149,13 @@
 }
 
 .campaign-slide-card__text-about {
+  height: auto;
   margin-top: rem(24);
   display: none;
   font-family: $base-font-family;
   line-height: 1;
+  flex-grow: 1;
+  height: 100%;
 
   @include mq(md) {
     display: block;
@@ -161,11 +165,14 @@
 }
 
 .campaign-slide-card__date {
+  height: auto;
   display: none;
   text-align: center;
   font-family: $third-font-family;
   color: $blue;
   font-size: rem(16);
+  flex-grow: 1;
+
   @include mq(md) {
     display: block;
     margin-top: rem(32);
@@ -173,10 +180,13 @@
 }
 
 .campaign-slide-card__contact {
+  height: auto;
   font-size: rem(14);
   color: $blue;
   text-align: center;
   display: none;
+  flex-grow: 1;
+
   @include mq(md) {
     display: block;
 
@@ -185,8 +195,12 @@
 
 .campaign-slide-card__button {
   display: none;
+  flex-grow: 1;
+  height: auto;
+
   @include mq(md) {
     text-align: center;
+    align-items: end;
     position: relative;
     margin-top: rem(16);
     display: flex;

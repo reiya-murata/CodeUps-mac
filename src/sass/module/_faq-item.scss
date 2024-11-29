@@ -18,7 +18,7 @@
   }
 }
 
-.faq-item__question ::before {
+.faq-item__question.active ::before {
   content: "";
   position: absolute;
   background-image: url("../images/common/faq-parts.svg");
@@ -36,7 +36,25 @@
   }
 }
 
+.faq-item__question ::before {
+  content: "";
+  position: absolute;
+  background-image: url("../images/common/FAQ-parts-2.svg");
+  top: 30%;
+  right: rem(10);
+  background-size: contain;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  width: rem(40);
+  height: rem(32);
+  @include mq(md) {
+    position: absolute;
+    right: rem(30);
+  }
+}
+
 .faq-item__answer {
+  display: none;
   border: 1px solid $blue;
   padding-top: rem(24);
   padding-right: rem(16);
@@ -50,4 +68,8 @@
     padding-bottom: rem(40);
     padding-left: rem(40);
   }
+}
+
+.faq-item__answer.active{
+display: block;
 }

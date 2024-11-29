@@ -26,8 +26,9 @@
 }
 .blog-cards--2clum img:hover{
   transform: scale(1.5);
+  opacity: 1 !important;
 }
 .blog-cards__item{
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
 }

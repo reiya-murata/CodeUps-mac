@@ -247,6 +247,25 @@ if (sidevarArchive2) {
   });
 }
 
+  // FAQ 全ての質問部分(js-modal)にイベントを追加
+  document.querySelectorAll('.js-modal').forEach((question) => {
+    question.addEventListener('click', () => {
+      // 親要素(faq-item)を取得
+      const faqItem = question.closest('.faq-item');
+      if (!faqItem) return;
+
+      // 質問部分と回答部分を取得
+      const answer = faqItem.querySelector('.js-faq-content');
+
+      // activeクラスをトグル
+      question.classList.toggle('active');
+      if (answer) {
+        answer.classList.toggle('active');
+      }
+    });
+  });
+
+
 
 
 // コンタクトフォーム

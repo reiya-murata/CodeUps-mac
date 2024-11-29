@@ -12,6 +12,7 @@
   font-family: $second-font-family;
   width: rem(202);
   height: rem(54);
+  align-items: center;
   @include mq(md) {
     line-height: 1.5;
     width: rem(202);
@@ -65,6 +66,9 @@
   margin: rem(0) rem(0) rem(2) rem(0);
 }
 .button__stickarrow--white{
+  display: inline-block;
+  width: rem(40);
+  height: rem(40);
   border-bottom: 1px solid $blue ;
   border-right: 1px solid $blue ;
 }
