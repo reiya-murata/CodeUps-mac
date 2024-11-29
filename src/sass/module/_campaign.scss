@@ -57,9 +57,10 @@
 }
 
 .campaign__slide {
-  display: grid;
+  display: flex;
   max-width: rem(280);
   margin: 0;
+  height: auto;
   @include mq(md) {
     max-width:rem(333) ;  
     align-items: stretch;
