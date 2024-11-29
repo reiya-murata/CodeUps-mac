@@ -170,6 +170,9 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollPosition = window.scrollY;
 
         // bodyを固定
+        if (window.innerWidth <= 768) {
+          return;
+        }
         document.body.style.position = 'fixed';
         document.body.style.top = `-${scrollPosition}px`;
 
