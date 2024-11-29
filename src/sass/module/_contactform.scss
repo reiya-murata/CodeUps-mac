@@ -103,6 +103,7 @@
   display: flex;
   text-align: start;
   border: 1px solid $blue;
+
   @include mq("md") {}
 }
 
@@ -170,10 +171,13 @@
   object-fit: cover;
   background-repeat: no-repeat;
   right: rem(6);
-  top: rem(50);
+  top: rem(65);
   width: rem(16);
   height: rem(16);
   z-index: 0;
+  @include mq("md") {
+    top: rem(50);
+  }
 }
 
 
@@ -186,7 +190,7 @@
 
 .contactform__checkbox {
   display: grid;
-  text-align:start;
+  text-align: start;
   justify-content: center;
   align-items: center;
   margin-left: rem(0);
