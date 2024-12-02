@@ -40,7 +40,7 @@
   content: "";
   position: absolute;
   background-image: url("../images/common/FAQ-parts-2.svg");
-  top: 30%;
+  top: 25%;
   right: rem(10);
   background-size: contain;
   object-fit: cover;
@@ -48,6 +48,7 @@
   width: rem(40);
   height: rem(32);
   @include mq(md) {
+    top: 30%;
     position: absolute;
     right: rem(30);
   }
