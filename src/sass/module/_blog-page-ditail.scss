@@ -4,12 +4,10 @@
   position: relative;
 }
 
-.blog-detail__inner {
+.blog-detail-top {
   position: relative;
 }
-.blog-detail__category{
-  margin-top: rem(8);
-}
+
 
 .blog-detail__hero {
   position: relative;
@@ -20,13 +18,7 @@
   margin-top: rem(8);
 }
 
-.blog-detail__contents {
-  margin-top: rem(52);
 
-  @include mq(md) {
-    margin-top: rem(150);
-  }
-}
 
 .blog-detail__content {
   display: flex;

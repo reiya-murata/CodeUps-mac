@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.l-page-404-top {
+  padding-top: rem(90);
+  @include mq(md) {
+    padding-top: rem(108);
+  }
+}

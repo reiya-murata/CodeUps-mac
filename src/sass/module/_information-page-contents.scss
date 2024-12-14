@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.information-page-contents__tab-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.information-page-contents__tab-icon {
+  position: relative;
+  text-align: center;
+  width: rem(102);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-left: rem(16);
+  padding-right: rem(16);
+  background-color: #DDF0F1;
+  color: $blue;
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-weight: $regular;
+
+  @include mq(md) {
+    text-align: end;
+    width: rem(300);
+    padding-top: rem(29);
+    padding-bottom: rem(26);
+    padding-right: rem(30);
+    font-size: rem(24);
+  }
+}
+
+.information-page-contents__tab-icon.active {
+  color: $white;
+  background-color: $blue;
+  stroke: $white;
+}
+
+.information-page-contents__tabs {
+  display: none;
+}
+
+.information-page-contents__tabs.active {
+  display: block;
+}

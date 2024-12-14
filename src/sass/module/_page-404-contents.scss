@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.page-404-contents__title {
+  text-align: center;
+  font-family: $third-font-family;
+  color: $white;
+  font-weight: $regular;
+  font-size: rem(80);
+  z-index: 2;
+  letter-spacing: rem(40);
+  text-indent: rem(40);
+
+  @include mq(md) {
+
+    font-size: rem(160);
+    letter-spacing: rem(80);
+    text-indent: rem(80);
+  }
+}
+
+.page-404-contents__text {
+  color: $white;
+  text-align: center;
+  font-family: $third-font-family;
+  font-size: rem(16);
+  margin-top: rem(-20);
+
+  @include mq(md) {}
+}
+
+.page-404-contents__button {
+  text-align: center;
+  margin-top: rem(40);
+
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}

@@ -4,37 +4,14 @@
   position: relative;
 }
 
-.blog-page__hero {
+.blog-page-hero {
   position: relative;
 }
 
 .blog-page__inner {
   position: relative;
 }
-.blog-page__top{
-  margin-top: rem(8);
-}
 
 
 
-.blog-page__contents{
-    margin-top: rem(52);
-  @include mq(md) {
-    margin-top: rem(150);
-    display: grid;
-    grid-row: 1;
-    grid-template-columns: 65.5% 27%;
-    gap: rem(82);
-    margin-bottom: rem(-15);
-  }
-}
-
-.blog-page__sidebar{
-  @include mq(md) {
-  }
-}
-
-.blog-page__cards {
-  position: relative;
-}
 

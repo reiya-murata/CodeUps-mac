@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.l-page-404-contents {
+  position: relative;
+  margin-top: rem(40);
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}

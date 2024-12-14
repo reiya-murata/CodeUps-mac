@@ -15,15 +15,8 @@
   }
 }
 
-.site-map__top {
-  margin-top: rem(8);
-}
-
-.site-map__contents {
-  margin-top: rem(10);
-  @include mq(md) {
-    margin-top: rem(150);
-  }
+.site-map__category.page-category::before {
+  display: none;
 }
 
 .site-map__nav {

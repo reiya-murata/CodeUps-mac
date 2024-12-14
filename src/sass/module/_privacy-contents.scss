@@ -1,0 +1,25 @@
+@use "global" as *;
+.privacy-contents ul {
+  padding-left: rem(8);
+  padding-right: rem(8);
+}
+
+.privacy-contents__title {
+  font-style: $base-font-family;
+  font-size: rem(24);
+  font-weight: $bold;
+
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.privacy-contents__text {
+  margin-top: rem(40);
+  line-height: rem(32);
+  font-size: rem(16);
+}
+
+.privacy-contents__text li {
+  display: flex;
+}

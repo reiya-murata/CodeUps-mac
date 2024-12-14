@@ -13,6 +13,7 @@
   width: rem(202);
   height: rem(54);
   align-items: center;
+
   @include mq(md) {
     line-height: 1.5;
     width: rem(202);
@@ -20,7 +21,8 @@
     z-index: 1;
   }
 }
-.button--white{
+
+.button--white {
   background-color: $white;
   color: $blue;
 }
@@ -36,7 +38,8 @@
   z-index: 0;
   display: inline;
 }
-.button--white::before{
+
+.button--white::before {
   content: "";
   position: absolute;
   top: rem(4);
@@ -65,12 +68,16 @@
   padding-bottom: rem(2);
   margin: rem(0) rem(0) rem(2) rem(0);
 }
-.button__stickarrow--white{
+
+.button__stickarrow--white {
   display: inline-block;
   width: rem(40);
-  height: rem(40);
+  height: rem(8);
   border-bottom: 1px solid $blue ;
   border-right: 1px solid $blue ;
+  transform: skew(45deg);
+  padding-bottom: rem(2);
+  margin: rem(0) rem(0) rem(2) rem(0);
 }
 
 .button::after {
@@ -87,36 +94,31 @@
   transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
   z-index: 1;
 }
+
 .button:hover::after {
   transform: scale(1, 1);
   z-index: -1;
 }
-.button:hover  {
+
+.button:hover {
   display: inline-block;
   z-index: 1;
   color: $blue;
 }
 
-.button--white:hover  {
+.button--white:hover {
   display: inline-block;
   z-index: 1;
   background-color: $blue;
   color: $black;
 }
+
 .button:hover span {
   z-index: 2;
   border-color: $blue;
 }
-.button--white:hover span{
+
+.button--white:hover span {
   color: $black;
   z-index: 2;
 }
-
-
-
-
-
-
-
-
-

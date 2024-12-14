@@ -4,52 +4,35 @@
   position: relative;
 }
 
-.terms__hero{
+.terms__hero {
   position: relative;
   width: 100%;
   height: auto;
+
   @include mq(md) {
     position: relative;
     width: 100%;
     height: auto;
   }
 }
-.terms__top{
-  margin-top: rem(8);
-}
-.terms__inner {
-  position: relative;
-}
 
-.terms__contents {
-  margin-top: rem(52);
-  max-width: rem(375);
-  @include mq(md) {
-    margin-top: rem(150);
-    max-width: rem(850);
-  }
-}
-.terms__contents ul {
-  padding-left: rem(4);
-  padding-right: rem(4);
-}
 
-.terms__title{
+.terms__title {
   font-style: $base-font-family;
   font-size: rem(24);
   font-weight: $bold;
+
   @include mq(md) {
     font-size: rem(32);
   }
 }
-.terms__text{
+
+.terms__text {
   margin-top: rem(40);
-  line-height:rem(32);
+  line-height: rem(32);
   font-size: rem(16);
 }
-.terms__text li{
+
+.terms__text li {
   display: flex;
 }
-
-
-

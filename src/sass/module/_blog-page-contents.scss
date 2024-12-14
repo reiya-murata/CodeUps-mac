@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.blog-page-contents__inner {
+  @include mq(md) {
+    display: grid;
+    grid-row: 1;
+    grid-template-columns: 65.5% 27%;
+    gap: rem(82);
+  }
+}
+
+.blog-page-contents__sidebar {
+  @include mq(md) {}
+}
+
+.blog-page-contents__cards {
+  position: relative;
+}

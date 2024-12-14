@@ -2,6 +2,7 @@
 
 @if $startFrom == sp {
   .inner {
+    position: relative;
     width: 100%;
     padding-right: $padding-sp;
     padding-left: $padding-sp;
@@ -15,6 +16,7 @@
   }
 } @else {
   .inner {
+    position: relative;
     max-width: $inner + strip-unit($padding-pc) * 2;
     padding-right: $padding-pc;
     padding-left: $padding-pc;
@@ -27,4 +29,16 @@
     }
   }
 }
-
+.inner--sub{
+  position: relative;
+  padding-right: $padding-pc;
+  padding-left: $padding-pc;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq("md") {
+    max-width: rem(800);
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
+}
