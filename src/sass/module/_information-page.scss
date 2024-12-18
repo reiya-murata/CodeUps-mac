@@ -18,6 +18,17 @@
     height: auto;
   }
 }
+.information-page__img img{
+  display: block;
+  width: 100vw;
+  object-fit: cover;
+  background-position: center;
+
+  @include mq(md) {
+    width: 100vw;
+    height: rem(548);
+  }
+}
 
 .information-page__inner {
   position: relative;

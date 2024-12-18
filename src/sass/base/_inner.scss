@@ -37,8 +37,8 @@
   margin-right: auto;
   margin-left: auto;
   @include mq("md") {
-    max-width: rem(800);
-    padding-right: $padding-sp;
-    padding-left: $padding-sp;
-  }
+    max-width: rem(750);
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+    }
 }

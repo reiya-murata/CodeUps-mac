@@ -1,0 +1,17 @@
+@use "global" as *;
+
+.faq-contents {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include mq("md") {}
+}
+
+.faq-contents__inner {
+  display: grid;
+  gap: rem(36);
+  @include mq("md") {
+    gap: rem(40);
+  }
+}

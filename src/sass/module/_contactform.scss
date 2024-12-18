@@ -82,10 +82,9 @@
 
 .contactform__text {
   width: rem(345);
-
+  height: rem(40);
   @include mq("md") {
     width: rem(480);
-    height: rem(40);
   }
 }
 

@@ -8,14 +8,20 @@
   position: relative;
 }
 
+.contact-page__img img{
+  display: block;
+  max-width: 100vw;
+  object-fit: cover;
+  background-position: center;
+
+  @include mq(md) {
+    max-width: 100vw;
+    height: rem(548);
+  }
+}
+
 .contact-page__inner {
   position: relative;
 }
 
 
-.contact-page__contents {
-  display: flex;
-  flex-direction: column;
-  @include mq("md") {
-  }
-}

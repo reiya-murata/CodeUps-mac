@@ -1,13 +1,21 @@
 @use "global" as *;
 
+.contact-page-contents {
+  display: flex;
+  flex-direction: column;
+
+  @include mq("md") {}
+}
+
 .contact-page-contents__inner {
   display: flex;
   flex-direction: column;
   max-width: rem(345) ;;
   width: 100%;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 0;
   @include mq("md") {
+    margin-left: auto;
     max-width: rem(750);
     padding-right: $padding-pc;
     padding-left: $padding-pc;

@@ -4,14 +4,22 @@
   position: relative;
 }
 
-.blog-page-hero {
+.blog-page__hero {
   position: relative;
+}
+
+.blog-page__img img {
+  display: block;
+  width: 100vw;
+  object-fit: cover;
+  background-position: center;
+
+  @include mq(md) {
+    width: 100vw;
+    height: rem(548);
+  }
 }
 
 .blog-page__inner {
   position: relative;
 }
-
-
-
-

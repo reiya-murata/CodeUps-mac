@@ -7,15 +7,16 @@
 .faq__hero {
   position: relative;
 }
+.faq__main-img img{
+  display: block;
+  max-width: 100vw;
+  object-fit: cover;
+  background-position: center;
 
-.faq__contents {
-  margin-top: rem(52);
-  position: relative;
-  @include mq("md") {
-    width: rem(700) + strip-unit($padding-pc) * 2;
-    margin-top: rem(150);
+  @include mq(md) {
+    max-width: 100vw;
+    height: rem(548);
   }
+
 }
-
-
 

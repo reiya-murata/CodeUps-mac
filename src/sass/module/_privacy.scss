@@ -14,3 +14,15 @@
     height: auto;
   }
 }
+
+.privacy__img img{
+  display: block;
+  max-width: 100vw;
+  object-fit: cover;
+  background-position: center;
+
+  @include mq(md) {
+    max-width: 100vw;
+    height: rem(548);
+  }
+}

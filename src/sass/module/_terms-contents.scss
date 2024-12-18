@@ -13,3 +13,24 @@
   padding-left: rem(4);
   padding-right: rem(4);
 }
+
+
+.terms-contents__title {
+  font-style: $base-font-family;
+  font-size: rem(24);
+  font-weight: $bold;
+
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.terms-contents__text {
+  margin-top: rem(40);
+  line-height: rem(32);
+  font-size: rem(16);
+}
+
+.terms-contents__text li {
+  display: flex;
+}
