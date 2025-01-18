@@ -1,5 +1,7 @@
 @use "global" as *;
 
-.l-voice-page-top {
+.l-breadcrumbs {
   margin-top: rem(8);
+
+  @include mq(md) {}
 }

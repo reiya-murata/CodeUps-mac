@@ -24,6 +24,7 @@
 .slide-button__prev:hover {
   background-color: $blue;
   color: $white;
+  transition: 0.3s all;
 }
 
 .slide-button__next {
@@ -43,6 +44,7 @@
 .slide-button__next:hover {
   background-color: $blue;
   color: $white;
+  transition: 0.3s all;
 }
 
 .slide-button__numbers {
@@ -73,7 +75,7 @@
 .slide-button__numbers li button:hover{
   background-color: $blue;
   color: $white;
-  transition: 0.7ms all;
+  transition: 0.3s all;
 } 
 .slide-button__numbers .active {
   color: $white;

@@ -1,18 +1,9 @@
 @use "global" as *;
 
-.l-about-page-contents {
+.l-about-page {
   margin-top: rem(52);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  left: 0;
+
   @include mq(md) {
     margin-top: rem(150);
-    flex-direction: initial;
-    position: relative;
-    align-items: center;
-    left: rem(0);
   }
 }

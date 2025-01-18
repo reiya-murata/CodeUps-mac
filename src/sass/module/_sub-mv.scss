@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.sub-mv__hero {
+  position: relative;
+}
+
+
+.sub-mv__img {
+  object-fit: cover;
+}
+
+.sub-mv::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #408F95;
+}
+
+.sub-mv img {
+  display: block;
+  width: 100vw;
+  object-fit: cover;
+  background-position: center;
+
+  @include mq(md) {
+    width: 100vw;
+    height: rem(548);
+  }
+}
+
+.sub-mv__category.page-category::before {
+  display: none;
+}

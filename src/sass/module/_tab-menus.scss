@@ -2,12 +2,12 @@
 
 .tab-menus {
   display: grid;
-  grid-auto-flow: dense;
-  grid-template-columns: 1fr 1fr;
   gap: rem(16);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   @include mq(md) {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: start;
-    grid-template-columns: none;
     gap: rem(32);
   }
 }

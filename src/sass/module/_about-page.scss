@@ -1,35 +1,4 @@
 @use "global" as *;
-
-.about-page__hero {
-  position: relative;
-}
-
-
-.about-page-img {
-  object-fit: cover;
-}
-
-.about-page-img::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #408F95;
-}
-
-.about-page-img img {
-  display: block;
-  width: 100vw;
-  object-fit: cover;
-  background-position: center;
-
-  @include mq(md) {
-    width: 100vw;
-    height: rem(548);
-  }
-}
-
 .about-page__inner {
   position: relative;
 }
@@ -81,11 +50,6 @@
   }
 }
 
-
-
-.about-page__category {
-  position: relative;
-}
 
 .about-page__content {
   display: block;

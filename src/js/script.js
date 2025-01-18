@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // モーダル要素が存在する場合のみ処理を行う
   if (modal && modalImage) {
     // すべての画像を取得
-    const galleryImages = document.querySelectorAll('.js-gallery-img1, .js-gallery-img2, .js-gallery-img3, .js-gallery-img4, .js-gallery-img5, .js-gallery-img6');
+    const galleryImages = document.querySelectorAll('.js-gallery-img');
 
     // 各画像にクリックイベントを追加
     galleryImages.forEach(img => {
