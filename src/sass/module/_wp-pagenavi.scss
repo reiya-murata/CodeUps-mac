@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.wp-pagenavi {
+  display: flex;
+  justify-content: center;
+  grid-template-columns: 2;
+}
+
+.wp-pagenavi .current {
+  color: $white;
+  background-color: $blue;
+}
+
+.wp-pagenavi {
+  display: flex;
+  align-items: center;
+  gap: rem(11);
+}
+
+
+.wp-pagenavi .page {
+  display: flex;
+  color: $blue;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: $third-font-family;
+  font-weight: $bold;
+  border: 1px solid $blue;
+  font-size: rem(16);
+  height: rem(38);
+  min-width: rem(38);
+
+  @include mq(md) {
+    font-size: rem(16);
+  }
+}
+
+
+.wp-pagenavi .page:hover {
+  background-color: $blue;
+  color: $white;
+  transition: 0.3s all;
+}
+
+.wp-pagenavi .active {
+  color: $white;
+  background-color: $blue;
+}

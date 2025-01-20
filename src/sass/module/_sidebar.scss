@@ -10,7 +10,7 @@
   }
 }
 
-.sidebar-title {
+.sidebar__title {
   position: relative;
   font-size: rem(24);
   font-family: $base-font-family;
@@ -19,7 +19,7 @@
   border-left: 8px solid $blue;
 }
 
-.sidebar-title::before {
+.sidebar__title::before {
   content: "";
   display: block;
   position: absolute;
@@ -33,22 +33,4 @@
   left: rem(16);
   transform: translate(0, -50%);
   z-index: 20;
-}
-
-.sidebar__popularity-cards {
-  display: flex;
-  flex-direction: column;
-  gap: rem(36);
-  margin-top: rem(32);
-}
-
-.sidebar__review-cards {
-  margin-top: rem(24);
-}
-
-.sidebar__campaign-cards {
-  display: flex;
-  flex-direction: column;
-  margin-top: rem(24);
-  gap: rem(20);
 }

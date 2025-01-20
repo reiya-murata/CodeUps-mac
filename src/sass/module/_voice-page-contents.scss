@@ -1,8 +1,13 @@
 @use "global" as *;
-.voice-page-contents__slide-button {
+
+.voice-page-contents__wp-pagenavi {
   margin-top: rem(72);
 
   @include mq(md) {
     margin-top: rem(72);
   }
+}
+
+.voice-page-contents__cards {
+  margin-top: rem(40);
 }

@@ -19,7 +19,21 @@
   }
 }
 
-.campaign-slide a:hover {
+.campaign-slide :hover {
   opacity: 0.5;
-  transition: 0.7ms all;
+  transition: 0.3s all;
+}
+
+
+.campaign-slide-campaign-page {
+  display: grid;
+  justify-content: center;
+  gap: rem(40);
+  grid-row: auto;
+  margin-top: rem(40);
+
+  @include mq(md) {
+    gap: rem(80) rem(40);
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

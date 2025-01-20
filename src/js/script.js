@@ -256,17 +256,25 @@ if (sidevarArchive2) {
       // 親要素(faq-content)を取得
       const faqItem = question.closest('.faq-content');
       if (!faqItem) return;
-
+  
+      // faq-content-line2を取得
+      const faqLine2 = faqItem.querySelector('.faq-content__line2');
+  
       // 質問部分と回答部分を取得
       const answer = faqItem.querySelector('.js-faq-content');
-
+  
       // activeクラスをトグル
-      question.classList.toggle('active');
+      question.classList.toggle('active'); // クリックされた質問部分
       if (answer) {
-        answer.classList.toggle('active');
+        answer.classList.toggle('active'); // 回答部分
+      }
+      if (faqLine2) {
+        faqLine2.classList.toggle('active'); // faq-content-line2
       }
     });
   });
+  
+  
 
 
 

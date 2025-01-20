@@ -1,0 +1,6 @@
+@use "global" as *;
+
+.sidebar__title h2 {
+  font-size: rem(24);
+  font-family: $base-font-family;
+}

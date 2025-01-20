@@ -1,0 +1,20 @@
+@use "global" as *;
+
+.nextpostslink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $blue;
+  border: 1px solid $blue;
+  margin-left: rem(40);
+  height: rem(38);
+  width: rem(38);
+
+  @include mq(md) {}
+}
+
+.nextpostslink:hover {
+  background-color: $blue;
+  color: $white;
+  transition: 0.3s all;
+}

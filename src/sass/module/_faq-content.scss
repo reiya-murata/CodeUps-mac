@@ -10,6 +10,8 @@
 }
 
 .faq-content__question {
+  display: flex;
+  justify-content: space-between;
   position: relative;
   background-color: $blue;
   color: $white;
@@ -26,51 +28,52 @@
     padding-left: rem(40);
   }
 }
-
-.faq-content__question.active ::before {
-  content: "";
+.faq-content__line1{
+  top: rem(15);
+  right: rem(-15);
   position: absolute;
-  background-image: url("../images/common/FAQ-parts.svg");
-  top: 50%;
-  right: rem(10);
-  background-size: contain;
-  object-fit: cover;
-  background-repeat: no-repeat;
-  width: rem(40);
-  height: rem(2);
-
-  @include mq(md) {
-    position: absolute;
-    right: rem(30);
-  }
+  display: inline;
+  width: rem(32);
+  border-bottom:1px solid $white ;
+}
+.faq-content__line2{
+  top: rem(15);
+  right: rem(-15);
+  position: absolute;
+  width: rem(32);
+  border-bottom:1px solid $white ;
+  transition: 0.3s all;
+}
+.faq-content__line2.active{
+  display: block;
+  transform:rotate(90deg);
+  transition: 0.3s all;
 }
 
-.faq-content__question ::before {
-  content: "";
-  position: absolute;
-  background-image: url("../images/common/FAQ-parts-2.svg");
-  top: 25%;
-  right: rem(10);
-  background-size: contain;
-  object-fit: cover;
-  background-repeat: no-repeat;
-  width: rem(40);
-  height: rem(32);
-
-  @include mq(md) {
-    top: 30%;
-    position: absolute;
-    right: rem(30);
-  }
-}
 
 .faq-content__answer {
-  display: none;
+  height: 0;
+  opacity: 0;
+  padding-right: rem(16);
+  padding-left: rem(16);
+  overflow: hidden;
+  transition: 0.3s all;
+  @include mq(md) {
+    padding-right: rem(40);
+    padding-left: rem(40);
+  }
+}
+
+.faq-content__answer.active {
+  height: auto;
+  opacity: 1;
+  display: block;
   border: 1px solid $blue;
   padding-top: rem(24);
   padding-right: rem(16);
   padding-bottom: rem(24);
   padding-left: rem(16);
+  transition: 0.3s ease;
 
   @include mq(md) {
     padding-top: rem(40);
@@ -78,8 +81,4 @@
     padding-bottom: rem(40);
     padding-left: rem(40);
   }
-}
-
-.faq-content__answer.active {
-  display: block;
 }

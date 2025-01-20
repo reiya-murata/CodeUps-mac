@@ -1,7 +1,5 @@
 @use "global" as *;
 
-@use "global" as *;
-
 .sidebar-popularity-card {
   box-shadow: rem(2) rem(2) rem(10) rem(0) rgba(0, 0, 0, 0.25);
   font-family: $base-font-family;
@@ -26,6 +24,7 @@
   aspect-ratio: 301 / 201;
   object-fit: cover;
   text-align: center;
+
   @include mq(md) {}
 }
 
