@@ -68,8 +68,6 @@
   display: block;
   position: relative;
   background-image: url("../images/common/check.svg");
-  width: rem(194);
-  height: rem(181);
   background-size: contain;
   object-fit: cover;
   background-repeat: no-repeat;
@@ -84,7 +82,7 @@
   width: rem(345);
   height: rem(40);
   @include mq("md") {
-    width: rem(480);
+    width: 69%;
   }
 }
 
@@ -124,6 +122,14 @@
   padding-left: rem(16);
 }
 
+.contactform__item textarea {
+  display: flex;
+  text-align: start;
+  padding-top: rem(8);
+  padding-bottom: rem(8);
+  padding-left: rem(16);
+  height: rem(200);
+}
 .contactform__item.active textarea {
   display: flex;
   background-color: #c946006c;
@@ -132,6 +138,7 @@
   padding-top: rem(8);
   padding-bottom: rem(8);
   padding-left: rem(16);
+  height: rem(200);
 }
 
 .contactform__campaign {
@@ -153,7 +160,7 @@
   font-size: rem(12);
 
   @include mq("md") {
-    width: rem(480);
+    width: 69%;
   }
 }
 
@@ -220,14 +227,31 @@
   font-size: rem(12);
 }
 
-.contact__checkbox {
+
+.contactform__agreement{
   position: relative;
   display: flex;
   justify-content: center;
   margin-top: rem(80);
 }
+.contactform__agreement input[type="checkbox"]{
+  width: rem(22);
+  height: rem(22);
+}
+.contactform__agreement input[type="checkbox"]:checked {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url("../images/common/check.svg");
+  background-size: contain;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  width: rem(22);
+  height: rem(22);
+  z-index: 10;
+}
 
-.contact__checkbox p {
+.contactform__content p {
   margin-left: rem(14);
   font-size: rem(14);
 }

@@ -21,12 +21,13 @@
   }
 }
 
-.blog-cards :hover {
+.blog-cards a:hover {
   opacity: 0.7;
 }
 .blog-cards--2clum img:hover{
   transform: scale(1.5);
-  opacity: 1 !important;
+  opacity: 1;
+  transition: 0.3s all;
 }
 .blog-cards__item{
   display: flex;

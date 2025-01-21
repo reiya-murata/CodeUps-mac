@@ -7,7 +7,7 @@
   height: 100%;
   @include mq(md) {}
 }
-.campaign-slide-card :hover{
+.campaign-slide-card a:hover{
   transition: 0.3s all;
   opacity: 0.5;
 }

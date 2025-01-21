@@ -23,6 +23,9 @@
   aspect-ratio: 301 / 201;
   object-fit: cover;
   text-align: center;
+  overflow: hidden;
+  min-width: rem(301);
+  min-height: rem(201);
   @include mq(md) {
   }
 }
