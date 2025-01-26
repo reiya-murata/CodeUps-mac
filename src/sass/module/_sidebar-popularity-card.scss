@@ -25,7 +25,9 @@
   object-fit: cover;
   text-align: center;
 
-  @include mq(md) {}
+  @include mq(md) {
+    
+  }
 }
 
 .sidebar-popularity-card__header img {
