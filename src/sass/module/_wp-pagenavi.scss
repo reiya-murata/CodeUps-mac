@@ -14,7 +14,7 @@
 .wp-pagenavi {
   display: flex;
   align-items: center;
-  gap: rem(11);
+  gap: rem(12);
 }
 
 
@@ -30,7 +30,7 @@
   font-size: rem(16);
   height: rem(38);
   min-width: rem(38);
-
+  transition: 0.3s all;
   @include mq(md) {
     font-size: rem(16);
   }
@@ -40,7 +40,7 @@
 .wp-pagenavi .page:hover {
   background-color: $blue;
   color: $white;
-  transition: 0.3s all;
+  
 }
 
 .wp-pagenavi .active {

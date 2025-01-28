@@ -5,7 +5,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  @include mq(md) {}
+  width: rem(280);
+  @include mq(md) {
+    width: rem(520);
+  }
 }
 .campaign-slide-card a:hover{
   transition: 0.3s all;
@@ -25,7 +28,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: rem(16) rem(24) rem(13);
+  padding: rem(16) rem(18) ;
   width: 100%;
 
   @include mq(md) {
@@ -47,12 +50,16 @@
   font-family: $base-font-family;
   text-align: start;
   width: fit-content;
-  padding: rem(4) rem(12);
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: rem(12);
+  padding-right: rem(12);
+
 
   @include mq(md) {
     text-align: start;
     width: fit-content;
-    padding: rem(9) rem(16);
+    padding: rem(6) rem(6);
   }
 }
 
@@ -80,12 +87,10 @@
   font-family: $base-font-family;
   font-size: rem(12);
   margin-top: rem(4);
-  padding-bottom: rem(6);
-
+  padding-bottom: rem(4);
   @include mq(md) {
     font-size: rem(16);
     margin-top: rem(4);
-    padding-bottom: rem(4);
   }
 }
 
@@ -159,11 +164,13 @@
   line-height: 1;
   flex-grow: 1;
   height: 100%;
+  line-height: rem(24);
 
   @include mq(md) {
+    margin-top: rem(18);
     display: block;
     font-size: rem(16);
-    line-height: 1.4em;
+   
   }
 }
 
@@ -174,6 +181,7 @@
   font-family: $third-font-family;
   color: $blue;
   font-size: rem(16);
+  font-weight: $bold;
   flex-grow: 1;
 
   @include mq(md) {
@@ -181,6 +189,8 @@
     margin-top: rem(32);
   }
 }
+
+
 
 .campaign-slide-card__contact {
   height: auto;

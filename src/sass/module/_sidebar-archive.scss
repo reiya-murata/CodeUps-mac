@@ -5,7 +5,7 @@
   color: $blue;
   font-size: rem(24);
   font-family: $base-font-family;
-  margin-top: rem(24);
+
 }
 
 .sidebar-archive a {
@@ -82,4 +82,6 @@
 
 .sidebar-archive.open li {
   display: block;
+  padding-top: rem(4);
+  padding-bottom: rem(4);
 }

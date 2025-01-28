@@ -17,8 +17,8 @@
   color: $white;
   font-size: rem(16);
   font-style: $base-font-family;
-  padding-top: rem(16);
-  padding-bottom: rem(16);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
   padding-left: rem(16);
 
   @include mq(md) {
@@ -37,6 +37,8 @@
   border-bottom:1px solid $white ;
 }
 .faq-content__line2{
+  display: block;
+  transform:rotate(90deg);
   top: rem(15);
   right: rem(-15);
   position: absolute;
@@ -45,8 +47,7 @@
   transition: 0.3s all;
 }
 .faq-content__line2.active{
-  display: block;
-  transform:rotate(90deg);
+  transform: rotate(0);
   transition: 0.3s all;
 }
 

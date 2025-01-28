@@ -154,9 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // モーダルの要素を取得
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
-  
-  // 初期スクロール位置を記録する変数
-  let scrollPosition = 0;
 
   // モーダル要素が存在する場合のみ処理を行う
   if (modal && modalImage) {
@@ -166,17 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // 各画像にクリックイベントを追加
     galleryImages.forEach(img => {
       img.addEventListener('click', function () {
-        // 現在のスクロール位置を記録
-        scrollPosition = window.scrollY;
-
-        // bodyを固定
-        if (window.innerWidth <= 768) {
-          return;
-        }
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollPosition}px`;
-
-        modal.style.display = "block"; // モーダルを表示
+        // モーダルを表示
+        modal.style.display = "block";
         modalImage.src = this.src; // クリックされた画像をモーダルに表示
       });
     });
@@ -184,23 +172,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // モーダル外をクリックすると閉じる
     modal.addEventListener('click', function (event) {
       if (event.target === modal) {
-        modal.style.display = "none";
-
-        // bodyの固定を解除し、元のスクロール位置に戻す
-        document.body.style.position = '';
-        document.body.style.top = '';
-        window.scrollTo(0, scrollPosition);
+        modal.style.display = "none"; // モーダルを非表示
       }
     });
   }
-  modal.addEventListener('click', function (event) {
-    // クリックされた要素がモーダル自身であれば閉じる
-    if (event.target === modal) {
-      modal.style.display = "none";
-      gallery.classList.remove('no-scroll'); // 背景スクロールを有効化
-    }
-  });
 });
+
+
 
 
 // information-pageタブ

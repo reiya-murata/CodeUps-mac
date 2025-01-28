@@ -8,12 +8,12 @@
   text-align: center;
   background: $white;
   z-index: 10;
-  height: rem(32);
   display: inline-block;
   color: $blue;
   padding: rem(6) 0;
   font-family: $base-font-family;
   border: rem(1) solid $blue;
+  transition: 0.3s all;
 
   @include mq(md) {
     font-size: rem(14);
@@ -23,7 +23,7 @@
 .tab-menu:hover {
   background-color: $blue;
   color: $white;
-  transition: 0.3s all;
+
 }
 
 .tab-menu.active {

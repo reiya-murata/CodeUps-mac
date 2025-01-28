@@ -6,30 +6,38 @@
   display: grid;
   position: relative;
   justify-content: center;
+  gap: rem(45);
+
   @include mq(md) {
     gap: rem(38);
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.blog-cards--2clum{
+
+.blog-cards--2clum {
   display: grid;
   position: relative;
   justify-content: center;
   gap: rem(40);
+
   @include mq(md) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.blog-cards a:hover {
-  opacity: 0.7;
-}
-.blog-cards--2clum img:hover{
-  transform: scale(1.5);
-  opacity: 1;
+.blog-cards img {
   transition: 0.3s all;
 }
-.blog-cards__item{
+
+.blog-cards :hover {
+  opacity: 0.7;
+}
+
+.blog-cards--2clum :hover img {
+  transform: scale(1.05);
+}
+
+.blog-cards__item {
   display: flex;
   flex-direction: column;
 }

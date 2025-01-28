@@ -1,21 +1,22 @@
 @use "global" as *;
+
 .previouspostslink {
   display: flex;
   justify-content: center;
   align-items: center;
   height: rem(38);
   width: rem(38);
-  margin-right: rem(40);
+  margin-right: rem(28);
   color: $blue;
   border: 1px solid $blue;
+  transition: 0.3s all;
+
   @include mq(md) {
-    margin-right: rem(40);
-    margin-left: 0;
   }
 }
 
 .previouspostslink:hover {
   background-color: $blue;
   color: $white;
-  transition: 0.3s all;
+
 }

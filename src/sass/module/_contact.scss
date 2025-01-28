@@ -17,7 +17,7 @@
   object-fit: cover;
   top: rem(-20);
   right: calc(50vw - min(48vw, 10.8rem));
-  z-index: 20;
+  z-index: 5;
   @include mq(md) {
     content: "";
     display: block;
@@ -30,7 +30,6 @@
     background-repeat: no-repeat;
     top: rem(-36);
     right: calc(50vw - min(48vw, 41.8rem));
-    z-index: 20;
   }
 }
 

@@ -1,6 +1,32 @@
 @use "global" as *;
 
-.sidebar__title h2 {
+.sidebar-title h2 {
   font-size: rem(24);
   font-family: $base-font-family;
+}
+.sidebar-title {
+  position: relative;
+  font-size: rem(24);
+  font-family: $base-font-family;
+  font-weight: $regular;
+  padding-left: rem(74);
+  padding-top: rem(9);
+  padding-bottom: rem(6);
+  border-left: 8px solid $blue;
+}
+
+.sidebar-title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("../images/common/whale-right-blue.svg");
+  width: rem(50);
+  height: rem(50);
+  background-size: contain;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: rem(16);
+  transform: translate(0, -50%);
+  z-index: 20;
 }

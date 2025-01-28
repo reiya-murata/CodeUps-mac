@@ -43,7 +43,7 @@
   @include mq(md) {
     text-align: start;
     width: fit-content;
-    padding: rem(9) rem(16);
+    padding: rem(6) rem(16);
   }
 }
 
@@ -66,14 +66,12 @@
   font-size: rem(12);
   margin: 0;
   margin-top: rem(4);
-  padding-bottom: rem(6);
-  letter-spacing: -0.18em;
+  padding-bottom: rem(4);
 
   @include mq(md) {
     font-size: rem(12);
-    letter-spacing: -0.18em;
     margin-top: rem(4);
-    padding-bottom: rem(8);
+    padding-bottom: rem(4);
   }
 }
 
@@ -85,6 +83,7 @@
   margin-top: rem(8);
   @include mq(md) {
     margin-top: auto;
+    margin-top: rem(16);
     margin-right: rem(14);
     font-size: rem(16);
   }

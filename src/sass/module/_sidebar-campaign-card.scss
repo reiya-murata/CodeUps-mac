@@ -44,10 +44,8 @@
   margin: 0;
   margin-top: rem(4);
   padding-bottom: rem(6);
-  letter-spacing: -0.18em;
   @include mq(md) {
     font-size: rem(16);
-    letter-spacing: -0.18em;
     margin-top: rem(0);
     padding-bottom: rem(8);
   }
