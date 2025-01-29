@@ -73,17 +73,17 @@
   cursor: pointer;
 }
 
-.sidebar-archive li {
+.sidebar-archive ul {
   height: 0;
   cursor: pointer;
   padding-left: rem(32);
   position: relative;
 transition: 0.5s all;
 overflow: hidden;
-opacity: 0.5;
+opacity: 0;
 }
 
-.sidebar-archive.open li {
+.sidebar-archive.open ul {
   height: auto;
   transition: 0.5s all;
   opacity: 1;
