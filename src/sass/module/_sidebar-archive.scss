@@ -74,12 +74,17 @@
 }
 
 .sidebar-archive li {
-  display: none;
+  height: 0;
   cursor: pointer;
   padding-left: rem(32);
   position: relative;
+transition: 0.5s all;
+overflow: hidden;
+opacity: 0.5;
 }
 
 .sidebar-archive.open li {
-  display: block;
+  height: auto;
+  transition: 0.5s all;
+  opacity: 1;
 }
