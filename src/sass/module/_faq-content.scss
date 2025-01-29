@@ -1,9 +1,9 @@
 @use "global" as *;
 
-.faq-content{
+.faq-content {
   display: flex;
   flex-direction: column;
-  
+
   @include mq(md) {
     gap: rem(16);
   }
@@ -13,40 +13,57 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  align-items: center;
   background-color: $blue;
   color: $white;
   font-size: rem(16);
   font-style: $base-font-family;
-  padding-top: rem(10);
-  padding-bottom: rem(10);
+  padding-top: rem(7);
+  padding-bottom: rem(7);
   padding-left: rem(16);
 
   @include mq(md) {
     font-size: rem(20);
-    padding-top: rem(26);
-    padding-bottom: rem(25);
+    padding-top: rem(20);
+    padding-bottom: rem(20);
     padding-left: rem(40);
   }
 }
-.faq-content__line1{
-  top: rem(15);
-  right: rem(-15);
-  position: absolute;
-  display: inline;
-  width: rem(32);
-  border-bottom:1px solid $white ;
+
+.faq-content__line1 {
+  border-bottom: 1px solid $white ;
+  top: rem(18);
+  right: rem(8);
+
+  @include mq(md) {
+
+    right: rem(40);
+    position: absolute;
+    display: inline;
+    width: rem(32);
+  }
 }
-.faq-content__line2{
+
+.faq-content__line2 {
   display: block;
-  transform:rotate(90deg);
-  top: rem(15);
-  right: rem(-15);
+  transform: rotate(90deg);
   position: absolute;
   width: rem(32);
-  border-bottom:1px solid $white ;
+  border-bottom: 1px solid $white ;
   transition: 0.3s all;
+  top: rem(18);
+  @include mq(md) {
+
+    right: rem(40);
+    position: absolute;
+    display: inline;
+    width: rem(32);
+
+    top: rem(18);
+  }
 }
-.faq-content__line2.active{
+
+.faq-content__line2.active {
   transform: rotate(0);
   transition: 0.3s all;
 }
@@ -59,6 +76,8 @@
   padding-left: rem(16);
   overflow: hidden;
   transition: 0.3s all;
+  line-height: 1.45em;
+
   @include mq(md) {
     padding-right: rem(40);
     padding-left: rem(40);

@@ -71,7 +71,7 @@
 }
 .price-page-content__category{
   @include mq(md) {
-    width: 29%;
+    width:39%;
   }
 }
 .price-page-table{
@@ -87,14 +87,14 @@ table{
   width: 70%;
   padding-left: rem(24);
   padding-right: rem(24);
-  padding-top: rem(7);
-  padding-bottom: rem(7);
+  padding-top: rem(6);
+  padding-bottom: rem(6);
   justify-content: center;
   align-items: center;
   text-align: center;
   border: 1px solid $blue;
   @include mq(md) {
-    width: 69%;
+    width: 68%;
     text-align: start;
     padding-top: rem(18);
     padding-bottom: rem(18);

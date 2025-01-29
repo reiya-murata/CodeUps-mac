@@ -47,9 +47,7 @@
 .contactform__item--checkbox {
   z-index: 10;
 
-  @include mq("md") {
-
-  }
+  @include mq("md") {}
 }
 
 .contactform__item--checkbox input {
@@ -205,8 +203,7 @@
   gap: rem(8);
   grid-template-columns: rem(14) 1fr;
 
-  @include mq("md") {
-  }
+  @include mq("md") {}
 }
 
 
@@ -233,7 +230,12 @@
   position: relative;
   display: flex;
   justify-content: center;
-  margin-top: rem(80);
+  margin-top: rem(60);
+
+  @include mq(md) {
+
+    margin-top: rem(80);
+  }
 }
 
 .contactform__agreement input[type="checkbox"] {

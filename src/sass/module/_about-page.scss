@@ -15,7 +15,7 @@
     z-index: 5;
     width: 37%;
     max-width: rem(399);
-    left: 0;
+    left: rem(30);
     top: 0;
     height: auto;
     max-width: rem(399);
@@ -67,8 +67,7 @@
     display: flex;
     justify-content: space-between;
     top: rem(200);
-    left: rem(200);
-    right: rem(40);
+    left: rem(230);
     padding: 0;
     max-width: 100%;
     margin-top: 0;
@@ -146,6 +145,7 @@
 
   @include mq(md) {
     color: $white;
+    margin-left: rem(40);
   }
 }
 

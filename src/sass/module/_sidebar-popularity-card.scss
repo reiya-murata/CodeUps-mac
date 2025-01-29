@@ -25,9 +25,7 @@
   object-fit: cover;
   text-align: center;
 
-  @include mq(md) {
-    
-  }
+  @include mq(md) {}
 }
 
 .sidebar-popularity-card__header img {
@@ -57,6 +55,7 @@
 .sidebar-popularity-card__title {
   font-family: $base-font-family;
   font-size: rem(16);
+  margin-top: rem(8);
 
   @include mq(md) {
     font-size: rem(16);

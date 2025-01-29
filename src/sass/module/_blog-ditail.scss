@@ -41,7 +41,7 @@
   }
 }
 
-.blog-detail__title {
+.blog-detail__title h2{
   position: relative;
   font-size: rem(24);
   border-bottom: 1px solid $blue;
@@ -67,8 +67,11 @@
 }
 
 .blog-detail__text {
-  margin-top: rem(40);
+  margin-top: rem(20);
   font-size: rem(16);
+  @include mq(md) {
+  margin-top: rem(40);
+  }
 }
 
 .blog-detail__list {
@@ -93,9 +96,8 @@
   transform: translate(0, -50%);
 }
 
-.blog-detail__button {
+.blog-detail__button.wp-pagenavi{
   margin-top: rem(40);
-
   @include mq(md) {
     margin-top: rem(80);
   }

@@ -1,7 +1,7 @@
 @use "global" as *;
 
-.voice-page-contents__wp-pagenavi {
-  margin-top: rem(72);
+.voice-page-contents__wp-pagenavi.wp-pagenavi {
+  margin-top: rem(92);
 
   @include mq(md) {
     margin-top: rem(72);

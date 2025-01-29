@@ -10,8 +10,8 @@
 
 .faq-contents__inner {
   display: grid;
-  gap: rem(36);
+  gap: rem(38);
   @include mq("md") {
-    gap: rem(40);
+    gap: rem(38);
   }
 }

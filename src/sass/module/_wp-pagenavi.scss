@@ -1,17 +1,22 @@
 @use "global" as *;
 
-.wp-pagenavi {
+.wp-pagenavi  {
   display: flex;
   justify-content: center;
   grid-template-columns: 2;
+  margin-top: rem(80);
+  @include mq(md) {
+    margin-top: 0;
+  }
 }
+
 
 .wp-pagenavi .current {
   color: $white;
   background-color: $blue;
 }
 
-.wp-pagenavi {
+.wp-pagenavi ul{
   display: flex;
   align-items: center;
   gap: rem(12);
@@ -43,7 +48,7 @@
   
 }
 
-.wp-pagenavi .active {
+.wp-pagenavi li .active {
   color: $white;
   background-color: $blue;
 }
