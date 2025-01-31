@@ -12,10 +12,12 @@
   padding-left: rem(20);
   position: relative;
 }
+
 .sidebar-archive button {
   padding-left: rem(32);
   position: relative;
   color: $blue;
+  transition: 0.3s all;
 }
 
 
@@ -33,6 +35,8 @@
   object-fit: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  transition: 0.3s all;
+
   @include mq(md) {}
 }
 
@@ -40,8 +44,8 @@
   content: "";
   display: block;
   position: absolute;
-  background-image: url("../images/common/polygon2.svg");
-  top: 50%;
+  background-image: url("../images/common/polygon1.svg");
+  top: calc(50% - rem(8));
   left: 0;
   transform: translate(0, -50%);
   width: rem(24);
@@ -50,8 +54,12 @@
   object-fit: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  transform: rotate(90deg);
+
+
   @include mq(md) {}
 }
+
 .sidebar-archive button:before {
   content: "";
   display: block;
@@ -66,25 +74,26 @@
   object-fit: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  transition: 0.3s all;
+
   @include mq(md) {}
 }
 
-.sidebar-archive ul {
+.sidebar-archive ol {
   cursor: pointer;
 }
 
-.sidebar-archive ul {
-  height: 0;
+.sidebar-archive ol {
   cursor: pointer;
   padding-left: rem(32);
   position: relative;
-transition: 0.5s all;
-overflow: hidden;
-opacity: 0;
+  transition: max-height 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
 }
 
-.sidebar-archive.open ul {
-  height: auto;
-  transition: 0.5s all;
-  opacity: 1;
+.sidebar-archive.open ol {
+  display: block;
+  transition: max-height 0.3s ease-out;
+  max-height: 100%;
 }

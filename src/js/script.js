@@ -155,6 +155,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
 
+  // スクロール位置を記録する変数
+  let scrollPosition = 0;
+
   // モーダル要素が存在する場合のみ処理を行う
   if (modal && modalImage) {
     // すべての画像を取得
@@ -163,8 +166,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // 各画像にクリックイベントを追加
     galleryImages.forEach(img => {
       img.addEventListener('click', function () {
-        // モーダルを表示
-        modal.style.display = "block";
+        // 現在のスクロール位置を記録
+        scrollPosition = window.scrollY;
+
+        // bodyを固定してスクロール無効化
+        document.body.style.overflow = 'hidden';
+
+        modal.style.display = "block"; // モーダルを表示
         modalImage.src = this.src; // クリックされた画像をモーダルに表示
       });
     });
@@ -173,6 +181,11 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.addEventListener('click', function (event) {
       if (event.target === modal) {
         modal.style.display = "none"; // モーダルを非表示
+
+        // スクロールロックを解除
+        document.body.style.overflow = '';
+
+        // **スクロール位置を元に戻さない**
       }
     });
   }
@@ -212,27 +225,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // サイドバーアコーディオン
-const sidevarArchive1 = document.querySelector('.js-sidevar-archive1');
-const sidevarArchive2 = document.querySelector('.js-sidevar-archive2');
+const sidebarArchive1 = document.querySelector('.js-sidebar-archive1');
+const sidebarArchive2 = document.querySelector('.js-sidebar-archive2');
 
 // 要素が存在する場合のみ、クリックイベントを追加する
-if (sidevarArchive1) {
-  sidevarArchive1.addEventListener('click', function() {
-    sidevarArchive1.classList.toggle('open');  // クラスを追加/削除
+if (sidebarArchive1) {
+  sidebarArchive1.addEventListener('click', function() {
+    toggleAccordion(sidebarArchive1);
   });
 }
 
-if (sidevarArchive2) {
-  sidevarArchive2.addEventListener('click', function() {
-    sidevarArchive2.classList.toggle('open');  // クラスを追加/削除
+if (sidebarArchive2) {
+  sidebarArchive2.addEventListener('click', function() {
+    toggleAccordion(sidebarArchive2);
   });
 }
+
+function toggleAccordion(archive) {
+  const list = archive.querySelector('ol');
+  const button = archive.querySelector('button');
+
+  if (!list || !button) return; // リストまたはボタンが存在しない場合は終了
+
+  // トランジションを有効にするために、heightを指定する
+  list.style.transition = 'max-height 0.3s ease-out';
+
+  // トグルでopenクラスを追加/削除
+  if (archive.classList.contains('open')) {
+    // アコーディオンを閉じる
+    list.style.maxHeight = '0px'; // 高さを0にして閉じる
+    archive.classList.remove('open');
+  } else {
+    // アコーディオンを開く
+    list.style.maxHeight = `${list.scrollHeight}px`; // リストの高さを動的に設定
+    archive.classList.add('open');
+  }
+}
+
+
+
+
 
   // FAQ 全ての質問部分(js-modal)にイベントを追加
   document.querySelectorAll('.js-modal').forEach((question) => {
     question.addEventListener('click', () => {
       // 親要素(faq-content)を取得
-      const faqItem = question.closest('.faq-content');
+      const faqItem = question.closest('.faq-content-lines');
       if (!faqItem) return;
   
       // faq-content-line2を取得

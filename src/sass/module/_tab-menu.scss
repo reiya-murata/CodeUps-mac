@@ -10,10 +10,11 @@
   z-index: 10;
   display: inline-block;
   color: $blue;
-  padding: rem(6) 0;
+  padding: rem(9) 0;
   font-family: $base-font-family;
   border: rem(1) solid $blue;
   transition: 0.3s all;
+  line-height: 1;
 
   @include mq(md) {
     font-size: rem(14);

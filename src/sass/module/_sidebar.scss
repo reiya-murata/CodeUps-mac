@@ -5,6 +5,7 @@
   width: 100%;
   padding-left: rem(25);
   padding-right: rem(25);
+
   @include mq(md) {
     padding-right: 0;
     padding-left: 0;
@@ -18,14 +19,32 @@
 
 .sidebar__popularity {
   position: relative;
-margin-top: rem(80);
+  margin-top: rem(80);
+
   @include mq(md) {
     margin-top: 0;
   }
 }
+
+.sidebar__popularity-cards {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(24);
+  gap: rem(32);
+
+  @include mq(md) {
+    padding-right: 0;
+    padding-left: 0;
+    grid-row: 1;
+    grid-column: 2;
+    margin-top: rem(16);
+  }
+}
+
 .sidebar__popularity-detail {
   position: relative;
-margin-top: rem(80);
+  margin-top: rem(80);
+
   @include mq(md) {
     margin-top: rem(-80);
   }
@@ -39,10 +58,21 @@ margin-top: rem(80);
   @include mq(md) {}
 }
 
+.sidebar__review-cards {
+  margin-top: rem(24);
+}
+
 .sidebar__campaign {
   position: relative;
   margin-top: rem(88);
 }
+.sidebar__campaign-cards {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(20);
+  gap: rem(30);
+}
+
 
 .sidebar__archive {
   position: relative;
