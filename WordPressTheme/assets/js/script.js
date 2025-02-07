@@ -273,43 +273,6 @@ document.querySelectorAll('.js-modal').forEach(function (question) {
     }
   });
 });
-document.querySelectorAll('.js-modal').forEach(function (question) {
-  question.addEventListener('click', function () {
-    // `.faq-content-lines` を探す（見つからなければ console に警告を表示）
-    var faqItem = question.closest('.faq-content-lines') || question.parentElement;
-    if (!faqItem) {
-      console.warn("Parent element (.faq-content-lines) not found for", question);
-      return;
-    }
-
-    var faqLine2 = faqItem.querySelector('.faq-content__line2');
-    var answer = faqItem.querySelector('.js-faq-content');
-
-    question.classList.toggle('active');
-    if (answer) answer.classList.toggle('active');
-    if (faqLine2) faqLine2.classList.toggle('active');
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.js-modal').forEach(function (question) {
-    question.addEventListener('click', function () {
-      var faqItem = question.closest('.faq-content-lines');
-      if (!faqItem) {
-        console.warn("Parent element (.faq-content-lines) not found for", question);
-        return;
-      }
-
-      var faqLine2 = faqItem.querySelector('.faq-content__line2');
-      var answer = faqItem.querySelector('.js-faq-content');
-
-      question.classList.toggle('active');
-      if (answer) answer.classList.toggle('active');
-      if (faqLine2) faqLine2.classList.toggle('active');
-    });
-  });
-});
-
 
 // コンタクトフォーム
 document.addEventListener('DOMContentLoaded', function () {
