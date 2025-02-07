@@ -36,7 +36,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- JavaScript -->
   <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script defer src="./assets/js/script.js"></script>
+  <script defer src="<?php echo get_theme_file_uri(); ?>/js/script.js"></script>
 </head>
 
 <body>
@@ -103,9 +103,11 @@
       <h1 class="header__inner-logo">
         <a href="./index.html" class="logo">
           <picture class="logo__img-codeups">
-            <source media="(max-width: 767px)" srcset="./assets/images/common/CodeUps1.svg" />
-            <source media="(min-width: 767px)" srcset="./assets/images/common/CodeUps.svg" />
-            <img src="./assets/images/common/CodeUps1.svg" alt="codeUps-icon" />
+            <source media="(max-width: 767px)"
+              srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps1.svg" />
+            <source media="(min-width: 767px)"
+              srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps.svg" />
+            <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps1.svg" alt="codeUps-icon" />
           </picture>
         </a>
       </h1>
@@ -168,7 +170,7 @@
       </div>
     </div>
     <div class="header__home js-header-home">
-      <a href="#"><img src="./assets/images/common/home@2x.png" alt="" /></a>
+      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/images/common/home@2x.png" alt="" /></a>
     </div>
   </header>
 
@@ -179,9 +181,11 @@
       </div>
       <div class="sub-mv__img js-hero-contents">
         <picture>
-          <source media="(max-width: 767px)" srcset="./assets/images/common/blog-page-sp.jpg">
-          <source media="(min-width: 767px)" srcset="./assets/images/common/blog-page-pc.jpg">
-          <img src="./assets/images/common/blog-page-pc.jpg" alt=" 魚の群れの画像">
+          <source media="(max-width: 767px)"
+            srcset="<?php echo get_theme_file_uri(); ?>//images/common/blog-page-sp.jpg">
+          <source media="(min-width: 767px)"
+            srcset="<?php echo get_theme_file_uri(); ?>//images/common/blog-page-pc.jpg">
+          <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog-page-pc.jpg" alt=" 魚の群れの画像">
         </picture>
       </div>
 
@@ -203,7 +207,7 @@
           <div class="blog-cards__item">
             <a href="./blog-detail.html" class="blog-card">
               <div class="blog-card__header">
-                <img src=".//assets/images/common/blog.1.jpg" alt="サンゴの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.1.jpg" alt="サンゴの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -220,7 +224,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.2.jpg" alt="ウミガメの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.2.jpg" alt="ウミガメの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -237,7 +241,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.3.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.3.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -254,7 +258,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.4.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.4.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -271,7 +275,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.5.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.5.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -288,7 +292,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.6.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.6.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -305,7 +309,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.3.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.3.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -322,7 +326,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.4.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.4.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -339,7 +343,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.5.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.5.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -356,7 +360,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.6.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.6.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date blog-card__date--blog-page">2023.11/17</p>
@@ -394,7 +398,7 @@
             <div class="sidebar-popularity-cards__item">
               <a href="#" class="sidebar-popularity-card">
                 <div class="sidebar-popularity-card__header">
-                  <img src="./assets/images/common/blog.4.jpg" alt="クマノミの画像" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.4.jpg" alt="クマノミの画像" />
                 </div>
                 <div class="sidebar-popularity-card__body">
                   <p class="sidebar-popularity-card__date">2023.11/17</p>
@@ -407,7 +411,7 @@
             <div class="sidebar-popularity-cards__item">
               <a href="#" class="sidebar-popularity-card">
                 <div class="sidebar-popularity-card__header">
-                  <img src="./assets/images/common/blog.2.jpg" alt="クマノミの画像" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.2.jpg" alt="クマノミの画像" />
                 </div>
                 <div class="sidebar-popularity-card__body">
                   <p class="sidebar-popularity-card__date">2023.11/17</p>
@@ -420,7 +424,7 @@
             <div class="sidebar-popularity-cards__item">
               <a href="#" class="sidebar-popularity-card">
                 <div class="sidebar-popularity-card__header">
-                  <img src="./assets/images/common/blog.3.jpg" alt="クマノミの画像" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.3.jpg" alt="クマノミの画像" />
                 </div>
                 <div class="sidebar-popularity-card__body">
                   <p class="sidebar-popularity-card__date">2023.11/17</p>
@@ -440,7 +444,7 @@
             <div href="" class="sidebar-review-cards__item">
               <div class="sidebar-review-card">
                 <div class="sidebar-review-card__header">
-                  <img src="./assets/images/common/review.jpg" alt="クマノミの画像" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/review.jpg" alt="クマノミの画像" />
                 </div>
                 <div class="sidebar-review-card__body">
                   <p class="sidebar-review-card__age">30代(カップル)</p>
@@ -462,7 +466,7 @@
             <div class="sidebar-campaign-cards__item">
               <a href="#" class="sidebar-campaign-card">
                 <div class="sidebar-campaign-card__header">
-                  <img src="./assets/images/common/campaign.1.jpg" alt="サンゴの画像" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.1.jpg" alt="サンゴの画像" />
                 </div>
 
                 <div class="sidebar-campaign-card__body">
@@ -487,7 +491,7 @@
             <div class="sidebar-campaign-cards__item">
               <a href="#" class="sidebar-campaign-card">
                 <div class="sidebar-campaign-card__header">
-                  <img src="./assets/images/common/campaign.2.jpg" alt="サンゴの画像" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.2.jpg" alt="サンゴの画像" />
                 </div>
 
                 <div class="sidebar-campaign-card__body">
@@ -551,9 +555,11 @@
           <div class="contact__left">
             <div class="contact__logo-codeups">
               <picture class="logo__contact-codeups">
-                <source media="(max-width: 767px)" srcset="./assets/images/common/CodeUps__bottom-sp.svg" />
-                <source media="(min-width: 767px)" srcset="./assets/images/common/cordUps_blue.svg" />
-                <img src="./assets/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
+                <source media="(max-width: 767px)"
+                  srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps__bottom-sp.svg" />
+                <source media="(min-width: 767px)"
+                  srcset="<?php echo get_theme_file_uri(); ?>//images/common/cordUps_blue.svg" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
               </picture>
             </div>
             <div class="contact__left-address">
@@ -567,7 +573,7 @@
               </div>
 
               <div class="contact__map">
-                <img src="./assets/images/common/contact.1.jpg" alt="地図の画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact.1.jpg" alt="地図の画像" />
               </div>
             </div>
           </div>
@@ -594,14 +600,16 @@
     <div class="footer__inner inner">
       <div class="footer__icons nav-icons">
         <div class="nav-icons__icon">
-          <img src="./assets/images/common/CodeUps.svg" alt="codeUps-icon" />
+          <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps.svg" alt="codeUps-icon" />
         </div>
         <div class="nav-icons__icon sns">
           <div class="sns__facebook">
-            <a href="#"><img src="./assets/images/common/FacebookLogofacebook.svg" alt="facebookのアイコン" /></a>
+            <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/images/common/FacebookLogofacebook.svg"
+                alt="facebookのアイコン" /></a>
           </div>
           <div class="sns__instagram">
-            <a href="#"><img src="./assets/images/common/InstagramLogoinstagram.svg" alt="インスタグラムのアイコン" /></a>
+            <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/images/common/InstagramLogoinstagram.svg"
+                alt="インスタグラムのアイコン" /></a>
           </div>
         </div>
       </div>

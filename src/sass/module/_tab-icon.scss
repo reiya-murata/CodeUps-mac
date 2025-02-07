@@ -3,6 +3,7 @@
 .tab-icon--1::before {
   content: "";
   display: none;
+
   @include mq(md) {
     display: block;
     position: absolute;
@@ -18,9 +19,11 @@
     z-index: 1;
   }
 }
+
 .tab-icon--1.active::before {
   content: "";
   display: none;
+
   @include mq(md) {
     display: block;
     position: absolute;
@@ -39,6 +42,7 @@
 
 .tab-icon--2 {
   padding-right: rem(15);
+
   @include mq(md) {
     padding-right: rem(15);
   }
@@ -48,6 +52,7 @@
   content: "";
   display: none;
   position: absolute;
+
   @include mq(md) {
     display: block;
     background-image: url("../images/common/whale-left-blue.svg");
@@ -67,6 +72,7 @@
   content: "";
   display: none;
   position: absolute;
+
   @include mq(md) {
     display: block;
     background-image: url("../images/common/whale-left-white.svg");
@@ -85,6 +91,7 @@
 .tab-icon--3::before {
   content: "";
   display: none;
+
   @include mq(md) {
     display: block;
     position: absolute;
@@ -100,9 +107,11 @@
     z-index: 1;
   }
 }
+
 .tab-icon--3.active::before {
   content: "";
   display: none;
+
   @include mq(md) {
     display: block;
     position: absolute;

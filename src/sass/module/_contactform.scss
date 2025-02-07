@@ -8,6 +8,9 @@
   border: none;
   padding: 0;
 }
+.contactform__field input{
+  display: inline;
+}
 
 .contactform__note {
   text-align: center;
@@ -62,9 +65,9 @@
   padding-bottom: rem(5);
 }
 
-.eckbox input[type="checkbox"]:checked {
+.checkbox input[type="checkbox"]:checked {
   content: "";
-  display: block;
+  display: inline;
   position: relative;
   background-image: url("../images/common/check.svg");
   background-size: contain;
@@ -80,9 +83,10 @@
 .contactform__text {
   width: rem(345);
   height: rem(40);
+  padding-left: rem(16);
 
   @include mq("md") {
-    width: 69%;
+    width: 100%;
   }
 }
 
@@ -95,13 +99,18 @@
     flex-direction: inherit;
   }
 }
-
-.contactform input {
+.wpcf7-spinner{
+  display: none;
+}
+.contactform__field input {
   display: flex;
   text-align: start;
   border: 1px solid $blue;
 
   @include mq("md") {}
+}
+.wpcf7-form-control-wrap{
+  width: 69%;
 }
 
 
@@ -120,6 +129,7 @@
   padding-top: rem(8);
   padding-bottom: rem(8);
   padding-left: rem(16);
+  
 }
 
 .contactform__item textarea {
@@ -149,7 +159,7 @@
 
 
 
-.contactform select {
+.contactform__item select {
   position: relative;
   display: flex;
   text-align: start;
@@ -161,7 +171,7 @@
   font-size: rem(12);
 
   @include mq("md") {
-    width: 69%;
+    width: 100%;
   }
 }
 
@@ -187,7 +197,9 @@
     top: rem(50);
   }
 }
-
+.wpcf7-list-item{
+  margin: 0;
+} 
 
 .contactform__checkboxs {
   display: flex;
@@ -201,11 +213,12 @@
   align-items: center;
   margin-left: rem(0);
   gap: rem(8);
-  grid-template-columns: rem(14) 1fr;
 
   @include mq("md") {}
 }
-
+.wpcf7-form-control-wrap{
+  width: 69%;
+} 
 
 .contactform__item textarea {
   border: 1px solid $blue;
@@ -264,11 +277,11 @@
 input[type="checkbox"] {
   width: rem(14);
   height: rem(14);
+  display: inline;
 }
 
 input[type="checkbox"]:checked {
   content: "";
-  display: block;
   position: relative;
   background-image: url("../images/common/check.svg");
   background-size: contain;
@@ -280,6 +293,8 @@ input[type="checkbox"]:checked {
 }
 
 .contactform__button {
+  display: flex;
+  justify-content: center;
   text-align: center;
   margin-top: rem(40);
   margin-bottom: rem(20);
