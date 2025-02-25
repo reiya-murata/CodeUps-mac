@@ -10,9 +10,10 @@
     <div class="sub-mv__img js-hero-contents">
       <picture>
         <source media="(max-width: 767px)"
-          srcset="<?php echo get_theme_file_uri(); ?>//images/common/contact-page-sp1.jpg">
-        <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>//images/common/contact-pc.jpg">
-        <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact-pc.jpg" alt=" 砂浜の画像">
+          srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact-page-sp1.jpg">
+        <source media="(min-width: 767px)"
+          srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact-pc.jpg">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact-pc.jpg" alt=" 砂浜の画像">
       </picture>
     </div>
   </section>

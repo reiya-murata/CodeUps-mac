@@ -25,7 +25,7 @@
           <img src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'medium')); ?>"
             alt="<?php echo esc_attr(get_the_title()); ?>" />
           <?php else : ?>
-          <img src="<?php echo get_theme_file_uri('/images/common/noimage.jpg'); ?>" alt="No Image">
+          <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="No Image">
           <?php endif; ?>
 
         </div>
@@ -71,7 +71,7 @@
           <?php if (has_post_thumbnail()) :
                 the_post_thumbnail('medium', array('alt' => get_the_title(), 'loading' => 'lazy', 'decoding' => 'async'));
               else : ?>
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/review.jpg" alt="お客様の画像" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/review.jpg" alt="お客様の画像" />
           <?php endif; ?>
         </div>
         <div class="sidebar-review-card__body">
@@ -119,7 +119,7 @@
                         the_post_thumbnail('medium', array('alt' => get_the_title(), 'loading' => 'lazy', 'decoding' => 'async'));
                       else : ?>
 
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.1.jpg" alt="サンゴの画像" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign.1.jpg" alt="サンゴの画像" />
           <?php endif; ?>
         </div>
 

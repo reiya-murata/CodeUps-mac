@@ -22,9 +22,10 @@ $terms = esc_url(home_url('/terms/'));
     <div class="sub-mv__img js-hero-contents">
       <picture>
         <source media="(max-width: 767px)"
-          srcset="<?php echo get_theme_file_uri(); ?>//images/common/aboutus-img-sp.jpg">
-        <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>//images/common/aboutus-img.jpg">
-        <img src="<?php echo get_theme_file_uri(); ?>/images/common/aboutus-img.jpg" alt="シーサーの画像">
+          srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/aboutus-img-sp.jpg">
+        <source media="(min-width: 767px)"
+          srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/aboutus-img.jpg">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/aboutus-img.jpg" alt="シーサーの画像">
       </picture>
     </div>
   </section>
@@ -33,14 +34,16 @@ $terms = esc_url(home_url('/terms/'));
   <section class="about-page l-about-page">
     <div class="about-page__inner inner">
       <div class="about-page__img-1">
-        <img src="<?php echo get_theme_file_uri(); ?>/images/common/about.1.jpg" alt="屋根の画像" />
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.1.jpg" alt="屋根の画像" />
       </div>
       <div class="about-page__img-2">
         <picture>
-          <source media="(max-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>/images/common/about.pc2.jpg">
-          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>/images/common/about.pc2.jpg">
+          <source media="(max-width: 767px)"
+            srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg">
+          <source media="(min-width: 767px)"
+            srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg">
 
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
         </picture>
       </div>
       <div class="about-page__content">
@@ -128,10 +131,10 @@ $terms = esc_url(home_url('/terms/'));
           <div class="contact__logo-codeups">
             <picture class="logo__contact-codeups">
               <source media="(max-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps__bottom-sp.svg" />
+                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
               <source media="(min-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>//images/common/cordUps_blue.svg" />
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
+                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
             </picture>
           </div>
           <div class="contact__left-address">
@@ -145,7 +148,7 @@ $terms = esc_url(home_url('/terms/'));
             </div>
 
             <div class="contact__map">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact.1.jpg" alt="地図の画像" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
             </div>
           </div>
         </div>

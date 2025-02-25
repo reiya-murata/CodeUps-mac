@@ -16,18 +16,19 @@ $sitemap = esc_url(home_url('/sitemap/'));
     <div class="footer__icons nav-icons">
       <div class="nav-icons__icon">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps.svg" alt="codeUps-icon" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps.svg" alt="codeUps-icon" />
         </a>
       </div>
       <div class="nav-icons__icon sns">
         <div class="sns__facebook">
           <a href="https://www.facebook.com/" target="_blank">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/FacebookLogofacebook.svg" alt="facebookのアイコン" />
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/FacebookLogofacebook.svg"
+              alt="facebookのアイコン" />
           </a>
         </div>
         <div class="sns__instagram">
           <a href="https://www.instagram.com/" target="_blank">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/InstagramLogoinstagram.svg"
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/InstagramLogoinstagram.svg"
               alt="インスタグラムのアイコン" />
           </a>
         </div>

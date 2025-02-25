@@ -19,9 +19,11 @@ $terms = esc_url(home_url('/terms/'));
     </div>
     <div class="sub-mv__img js-hero-contents">
       <picture>
-        <source media="(max-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>//images/common/blog-page-sp.jpg">
-        <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>//images/common/blog-page-pc.jpg">
-        <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog-page-pc.jpg" alt=" 魚の群れの画像">
+        <source media="(max-width: 767px)"
+          srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-page-sp.jpg">
+        <source media="(min-width: 767px)"
+          srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-page-pc.jpg">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-page-pc.jpg" alt=" 魚の群れの画像">
       </picture>
     </div>
 
@@ -42,7 +44,7 @@ $terms = esc_url(home_url('/terms/'));
             ?>
               <img src="<?php the_post_thumbnail_url('full'); ?> " alt=" <?php the_title(); ?>の画像" />
               <?php else: ?>
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
               <?php endif; ?>
             </div>
             <div class=" blog-card__body">
@@ -78,10 +80,10 @@ $terms = esc_url(home_url('/terms/'));
           <div class="contact__logo-codeups">
             <picture class="logo__contact-codeups">
               <source media="(max-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps__bottom-sp.svg" />
+                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
               <source media="(min-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>//images/common/cordUps_blue.svg" />
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
+                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
             </picture>
           </div>
           <div class="contact__left-address">
@@ -95,7 +97,7 @@ $terms = esc_url(home_url('/terms/'));
             </div>
 
             <div class="contact__map">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact.1.jpg" alt="地図の画像" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
             </div>
           </div>
         </div>

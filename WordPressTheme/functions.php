@@ -6,9 +6,9 @@ function my_theme_enqueue_scripts() {
     // Swiper CSS
     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
 
-    // メインCSS
-    wp_enqueue_style('main-style', get_theme_file_uri('/css/style.css'), array(),
-    filemtime(get_theme_file_path('/css/style.css')));
+       // テーマのCSSの追加
+    wp_enqueue_style( 'theme-styles', get_theme_file_uri('../dist/assets/css/style.css'), false );
+
 
     // Google Fonts
     wp_enqueue_style('google-fonts-gotu', 'https://fonts.googleapis.com/css2?family=Gotu&display=swap', array(), null);
@@ -22,8 +22,8 @@ function my_theme_enqueue_scripts() {
     wp_enqueue_script('jquery-cdn', 'https://code.jquery.com/jquery-3.6.0.js', array(), null, true);
 
     // メインJS
-    wp_enqueue_script('main-script', get_theme_file_uri('/js/script.js'), array('jquery-cdn'),
-    filemtime(get_theme_file_path('/js/script.js')), true);
+    wp_enqueue_script('main-script', get_theme_file_uri('assets/js/script.js'), array('jquery-cdn'),
+    filemtime(get_theme_file_path('assets/js/script.js')), true);
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_scripts');
 

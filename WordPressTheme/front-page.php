@@ -107,7 +107,7 @@ if ($the_query->have_posts()):
                     <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
                       alt="<?php echo esc_attr(get_the_title()); ?>のアイキャッチ画像">
                     <?php else : ?>
-                    <img src="<?php echo get_theme_file_uri('/images/common/noimage.jpg'); ?>" alt="noimage">
+                    <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="noimage">
                     <?php endif; ?>
                   </div>
 
@@ -152,10 +152,10 @@ if ($the_query->have_posts()):
       </div>
 
       <div class="campaign__swiper-next">
-        <img src="<?php echo get_theme_file_uri(); ?>/images/common/right-arrow.png" alt="右へ" />
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/right-arrow.png" alt="右へ" />
       </div>
       <div class="campaign__swiper-prev">
-        <img src="<?php echo get_theme_file_uri(); ?>/images/common/left-arrow.png" alt="左へ" />
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/left-arrow.png" alt="左へ" />
       </div>
 
       <div class="campaign__button">
@@ -174,16 +174,16 @@ if ($the_query->have_posts()):
       </div>
       <div class="about__body">
         <div class="about__img-1">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/about.1.jpg" alt="屋根の画像" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.1.jpg" alt="屋根の画像" />
         </div>
         <div class="about__img-2">
           <picture>
             <source media="(max-width: 767px)"
-              srcset="<?php echo get_theme_file_uri(); ?>//images/common/about.2.jpg" />
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.2.jpg" />
             <source media="(min-width: 767px)"
-              srcset="<?php echo get_theme_file_uri(); ?>//images/common/about.pc2.jpg" />
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg" />
 
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
           </picture>
         </div>
 
@@ -221,7 +221,7 @@ if ($the_query->have_posts()):
       </div>
       <div class="information__content">
         <div class="information__content-img colorbox">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/information.jpg" alt="黄色の魚の画像" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information.jpg" alt="黄色の魚の画像" />
         </div>
         <div class="information__content-right">
           <div class="information__content-titles">
@@ -243,7 +243,7 @@ if ($the_query->have_posts()):
 
   <section class="blog l-blog">
     <div class="blog__bg-img">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.pc.img.jpg" alt="水中の画像" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog.pc.img.jpg" alt="水中の画像" />
     </div>
     <div class="blog__inner inner">
       <div class="blog__title section-title section-title--blog">
@@ -268,7 +268,7 @@ if ($the_query->have_posts()):
               <?php if (has_post_thumbnail()) : ?>
               <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
               <?php else : ?>
-              <img src="<?php echo get_theme_file_uri('/images/common/noimage.jpg'); ?>" alt="noimage">
+              <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="noimage">
               <?php endif; ?>
             </div>
 
@@ -356,7 +356,7 @@ $voicetext = get_field('voice_3');
                   <?php if (has_post_thumbnail()) : ?>
                   <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
                   <?php else : ?>
-                  <img src="<?php echo get_theme_file_uri('/images/common/noimage.jpg'); ?>" alt="noimage">
+                  <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="noimage">
                   <?php endif; ?>
                 </div>
 
@@ -632,10 +632,10 @@ $voicetext = get_field('voice_3');
         <div class="price__contents-right colorbox">
           <picture>
             <source media="(max-width: 767px)"
-              srcset="<?php echo get_theme_file_uri(); ?>/images/common/price__sp.jpg" />
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/price__sp.jpg" />
             <source media="(min-width: 767px)"
-              srcset="<?php echo get_theme_file_uri(); ?>/images/common/price__img.1.jpg" />
-            <img class="price__img" src="<?php echo get_theme_file_uri(); ?>/images/common/price__img.1.jpg"
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/price__img.1.jpg" />
+            <img class="price__img" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price__img.1.jpg"
               alt="サンゴと赤い魚の画像" />
           </picture>
         </div>
@@ -655,10 +655,10 @@ $voicetext = get_field('voice_3');
           <div class="contact__logo-codeups">
             <picture class="logo__contact-codeups">
               <source media="(max-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps__bottom-sp.svg" />
+                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
               <source media="(min-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>//images/common/cordUps_blue.svg" />
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
+                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="codeUpsのロゴ" />
             </picture>
           </div>
           <div class="contact__left-address">
@@ -672,7 +672,7 @@ $voicetext = get_field('voice_3');
             </div>
 
             <div class="contact__map">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact.1.jpg" alt="地図の画像" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
             </div>
           </div>
         </div>

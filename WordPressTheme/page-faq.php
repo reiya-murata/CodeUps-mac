@@ -22,9 +22,11 @@ $terms = esc_url(home_url('/terms/'));
     </div>
     <div class="sub-mv__main-img js-hero-contents">
       <picture>
-        <source media="(max-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>//images/common/FAQ-sp2.jpg">
-        <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>//images/common/FAQ-pc1.jpg">
-        <img src="<?php echo get_theme_file_uri(); ?>/images/common/FAQ-pc1.jpg" alt=" 砂浜の画像">
+        <source media="(max-width: 767px)"
+          srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/FAQ-sp2.jpg">
+        <source media="(min-width: 767px)"
+          srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/FAQ-pc1.jpg">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/FAQ-pc1.jpg" alt=" 砂浜の画像">
       </picture>
     </div>
   </section>
@@ -83,10 +85,10 @@ $terms = esc_url(home_url('/terms/'));
           <div class="contact__logo-codeups">
             <picture class="logo__contact-codeups">
               <source media="(max-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps__bottom-sp.svg" />
+                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
               <source media="(min-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>//images/common/cordUps_blue.svg" />
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
+                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
             </picture>
           </div>
           <div class="contact__left-address">
@@ -100,7 +102,7 @@ $terms = esc_url(home_url('/terms/'));
             </div>
 
             <div class="contact__map">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact.1.jpg" alt="地図の画像" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
             </div>
           </div>
         </div>

@@ -99,10 +99,10 @@ $terms = esc_url(home_url('/terms/'));
         <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
           <picture class="logo__img-codeups">
             <source media="(max-width: 767px)"
-              srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps1.svg" />
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps1.svg" />
             <source media="(min-width: 767px)"
-              srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps.svg" />
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps1.svg" alt="codeUps-icon" />
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps.svg" />
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps1.svg" alt="codeUps-icon" />
           </picture>
         </a>
       </h1>
@@ -165,6 +165,6 @@ $terms = esc_url(home_url('/terms/'));
       </div>
     </div>
     <div class="header__home js-header-home">
-      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/images/common/home@2x.png" alt="" /></a>
+      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/home@2x.png" alt="" /></a>
     </div>
   </header>
