@@ -96,9 +96,10 @@
 
 
 .campaign__button {
+  display: flex;
   text-align: center;
   margin-top: rem(30);
-
+  justify-content: center;
   @include mq(md) {
     margin-top: rem(80);
   }

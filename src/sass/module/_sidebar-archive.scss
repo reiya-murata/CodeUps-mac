@@ -20,7 +20,24 @@
   transition: 0.3s all;
 }
 
+.sidebar-archive button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("../images/common/polygon1.svg");
+  top: 50%;
+  left: rem(0);
+  transform: translate(0, -50%);
+  width: rem(24);
+  height: rem(24);
+  background-size: contain;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transition: 0.3s all;
 
+  @include mq(md) {}
+}
 .sidebar-archive a::before {
   content: "";
   display: block;
@@ -60,12 +77,12 @@
   @include mq(md) {}
 }
 
-.sidebar-archive button:before {
+.sidebar-archive p:before {
   content: "";
   display: block;
   position: absolute;
   background-image: url("../images/common/polygon1.svg");
-  top: 50%;
+  top: calc(50% - rem(18));
   left: 0;
   transform: translate(0, -50%);
   width: rem(24);

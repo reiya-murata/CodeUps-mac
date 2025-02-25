@@ -7,6 +7,7 @@
   position: relative;
   justify-content: center;
   gap: rem(45);
+  transition: 0.3s all;
 
   @include mq(md) {
     gap: rem(38);
@@ -26,14 +27,14 @@
   }
 }
 
-.blog-cards img {
-  transition: 0.3s all;
-}
+
 
 .blog-cards :hover {
   opacity: 0.7;
 }
-
+.blog-cards--2clum img {
+  transition: 0.3s all;
+}
 .blog-cards--2clum :hover img {
   transform: scale(1.05);
 }

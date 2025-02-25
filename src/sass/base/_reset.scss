@@ -43,6 +43,9 @@ ul,
 ol {
   list-style: none;
 }
+.wp-block-list{
+  list-style: auto;
+}
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {

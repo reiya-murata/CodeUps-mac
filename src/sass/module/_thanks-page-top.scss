@@ -1,4 +1,7 @@
 @use "global" as *;
+.thanks-page__inner{
+  position: relative;
+}
 
 .thanks-page-top__contents {
   margin-top: rem(52);

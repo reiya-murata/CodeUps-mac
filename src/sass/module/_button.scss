@@ -2,7 +2,29 @@
 
 .button {
   position: relative;
+  line-height: 1.5;
+  font-size: rem(14);
+  color: $white;
+  background-color: $blue;
+  padding: rem(16) rem(40);
+  text-align: center;
+  font-family: $second-font-family;
+  width: rem(202);
+  height: rem(54);
+  align-items: center;
   display: inline-block;
+  
+  @include mq(md) {
+    line-height: 1.5;
+    width: rem(202);
+    height: rem(52);
+    z-index: 1;
+  }
+}
+
+.button--contact {
+  position: relative;
+  display: flex;
   line-height: 1.5;
   font-size: rem(14);
   color: $white;
@@ -20,6 +42,10 @@
     height: rem(52);
     z-index: 1;
   }
+}
+
+.button--contact input {
+  border: none !important;
 }
 
 .button--white {
@@ -91,7 +117,7 @@
   height: 100%;
   transform: scale(0, 1);
   transform-origin: left top;
-  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
   z-index: 1;
 }
 
@@ -101,12 +127,35 @@
 }
 
 .button:hover {
-  display: inline-block;
-  z-index: 1;
+  color: $blue;
+  background-color: $white;
+  transition: 0.3s all;
+}
+
+.button:hover input {
+  display: flex;
+  color: $blue;
+  background-color: $white;
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+.contactform__field input {
+  color: $black;
+  display: inline;
+  z-index: 0;
+}
+.wpcf7-form-control.wpcf7-submit.has-spinner{
+  color: $white;
+  background-color: transparent;
+}
+.wpcf7-form-control.wpcf7-submit.has-spinner:hover{
   color: $blue;
 }
 
-.button--white:hover {
+.white:hover {
   display: inline-block;
   z-index: 1;
   background-color: $blue;

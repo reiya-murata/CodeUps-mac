@@ -31,16 +31,16 @@
 }
 
 .faq-content__line1 {
+  display: inline-block;
   border-bottom: 1px solid $white ;
   top: rem(18);
   right: rem(8);
-
+  width: rem(32);
   @include mq(md) {
-
     right: rem(40);
     position: absolute;
-    display: inline;
-    width: rem(32);
+
+    
   }
 }
 

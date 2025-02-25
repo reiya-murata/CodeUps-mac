@@ -101,12 +101,28 @@
   margin-top: rem(42);
   position: relative;
 }
+.nav__item--black{
+  font-weight: $bold;
+  margin-top: rem(42);
+  position: relative; 
+}
 
 .nav__item--bold::before {
   content: "";
   display: block;
   position: absolute;
   background-image: url("../images/common/_hitode.svg");
+  width: rem(20);
+  height: rem(20);
+  background-repeat: no-repeat;
+  left: rem(-23);
+  top: rem(0);
+}
+.nav__item--black::before{
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("../images/common/_hitode-black.svg");
   width: rem(20);
   height: rem(20);
   background-repeat: no-repeat;
@@ -146,7 +162,7 @@
     display: flex;
     gap: rem(150);
     flex-direction: initial;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: 0;
   }
 }

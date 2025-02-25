@@ -81,6 +81,10 @@ ol {
 	list-style: none;
 }
 
+.wp-block-list {
+	list-style: auto;
+}
+
 /* A elements that don't have a class get default styles */
 
 a:not([class]) {
@@ -186,7 +190,7 @@ a {
 }
 
 .l-breadcrumbs {
-	margin-top: 0.5rem;
+	margin-top: 1rem;
 }
 
 .l-campaign-page-contents {
@@ -237,6 +241,10 @@ a {
 
 .l-page-404-top {
 	padding-top: 5.625rem;
+}
+
+.l-page-404-top.page-category {
+	color: #fff;
 }
 
 .l-price-page-contents {
@@ -517,6 +525,7 @@ a {
 	gap: 2.8125rem;
 	justify-content: center;
 	position: relative;
+	transition: 0.3s all;
 }
 
 .blog-cards--2clum {
@@ -527,12 +536,12 @@ a {
 	position: relative;
 }
 
-.blog-cards img {
-	transition: 0.3s all;
-}
-
 .blog-cards :hover {
 	opacity: 0.7;
+}
+
+.blog-cards--2clum img {
+	transition: 0.3s all;
 }
 
 .blog-cards--2clum :hover img {
@@ -701,6 +710,25 @@ a {
 	width: 12.625rem;
 }
 
+.button--contact {
+	align-items: center;
+	background-color: #408f95;
+	color: #fff;
+	display: flex;
+	font-family: "Gotu", sans-serif;
+	font-size: 0.875rem;
+	height: 3.375rem;
+	line-height: 1.5;
+	padding: 1rem 2.5rem;
+	position: relative;
+	text-align: center;
+	width: 12.625rem;
+}
+
+.button--contact input {
+	border: none !important;
+}
+
 .button--white {
 	background-color: #fff;
 	color: #408f95;
@@ -769,7 +797,7 @@ a {
 	top: 0;
 	transform: scale(0, 1);
 	transform-origin: left top;
-	transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+	transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
 	width: 100%;
 	z-index: 1;
 }
@@ -780,12 +808,37 @@ a {
 }
 
 .button:hover {
+	background-color: #fff;
 	color: #408f95;
-	display: inline-block;
-	z-index: 1;
+	transition: 0.3s all;
 }
 
-.button--white:hover {
+.button:hover input {
+	background-color: #fff;
+	color: #408f95;
+	display: flex;
+}
+
+.wpcf7-spinner {
+	display: none;
+}
+
+.contactform__field input {
+	color: #0D2936;
+	display: inline;
+	z-index: 0;
+}
+
+.wpcf7-form-control.wpcf7-submit.has-spinner {
+	background-color: transparent;
+	color: #fff;
+}
+
+.wpcf7-form-control.wpcf7-submit.has-spinner:hover {
+	color: #408f95;
+}
+
+.white:hover {
 	background-color: #408f95;
 	color: #0D2936;
 	display: inline-block;
@@ -1094,6 +1147,8 @@ a {
 }
 
 .campaign__button {
+	display: flex;
+	justify-content: center;
 	margin-top: 1.875rem;
 	text-align: center;
 }
@@ -1242,7 +1297,7 @@ a {
 
 .contact__button {
 	margin-top: 2.5rem;
-	padding: 0;
+	text-align: center;
 }
 
 .contact__consent input {
@@ -1253,6 +1308,10 @@ a {
 .contactform__field {
 	border: none;
 	padding: 0;
+}
+
+.contactform__field input {
+	display: inline;
 }
 
 .contactform__note {
@@ -1296,13 +1355,13 @@ a {
 	position: relative;
 }
 
-.eckbox input[type=checkbox]:checked {
+.checkbox input[type=checkbox]:checked {
 	-o-object-fit: cover;
 	background-image: url("../images/common/check.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	content: "";
-	display: block;
+	display: inline;
 	height: 0.875rem;
 	object-fit: cover;
 	position: relative;
@@ -1312,6 +1371,7 @@ a {
 
 .contactform__text {
 	height: 2.5rem;
+	padding-left: 1rem;
 	width: 21.5625rem;
 }
 
@@ -1321,10 +1381,18 @@ a {
 	flex-direction: column;
 }
 
-.contactform input {
+.wpcf7-spinner {
+	display: none;
+}
+
+.contactform__field input {
 	border: 1px solid #408f95;
 	display: flex;
 	text-align: left;
+}
+
+.wpcf7-form-control-wrap {
+	width: 69%;
 }
 
 .contactform input::-moz-placeholder {
@@ -1375,7 +1443,7 @@ a {
 	position: relative;
 }
 
-.contactform select {
+.contactform__item select {
 	border: 1px solid #408f95;
 	display: flex;
 	font-size: 0.75rem;
@@ -1407,11 +1475,15 @@ a {
 	z-index: 0;
 }
 
+.wpcf7-list-item {
+	margin: 0;
+}
+
 .contactform__checkboxs {
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
-	width: 69%;
+	width: 100%;
 }
 
 .contactform__checkbox {
@@ -1419,8 +1491,11 @@ a {
 	align-items: center;
 	display: grid;
 	gap: 0.5rem;
-	grid-template-columns: 0.875rem 1fr;
 	margin-left: 0rem;
+}
+
+.wpcf7-form-control-wrap {
+	width: 69%;
 }
 
 .contactform__item textarea {
@@ -1473,6 +1548,7 @@ a {
 }
 
 input[type=checkbox] {
+	display: inline-block;
 	height: 0.875rem;
 	width: 0.875rem;
 }
@@ -1483,7 +1559,7 @@ input[type=checkbox]:checked {
 	background-repeat: no-repeat;
 	background-size: contain;
 	content: "";
-	display: block;
+	display: inline-block;
 	height: 0.875rem;
 	object-fit: cover;
 	position: relative;
@@ -1492,6 +1568,8 @@ input[type=checkbox]:checked {
 }
 
 .contactform__button {
+	display: flex;
+	justify-content: center;
 	margin-bottom: 1.25rem;
 	margin-top: 2.5rem;
 	text-align: center;
@@ -1525,8 +1603,10 @@ input[type=checkbox]:checked {
 
 .faq-content__line1 {
 	border-bottom: 1px solid #fff;
+	display: inline-block;
 	right: 0.5rem;
 	top: 1.125rem;
+	width: 2rem;
 }
 
 .faq-content__line2 {
@@ -2124,8 +2204,26 @@ input[type=checkbox]:checked {
 	position: relative;
 }
 
+.nav__item--black {
+	font-weight: 700;
+	margin-top: 2.625rem;
+	position: relative;
+}
+
 .nav__item--bold::before {
 	background-image: url("../images/common/_hitode.svg");
+	background-repeat: no-repeat;
+	content: "";
+	display: block;
+	height: 1.25rem;
+	left: -1.4375rem;
+	position: absolute;
+	top: 0rem;
+	width: 1.25rem;
+}
+
+.nav__item--black::before {
+	background-image: url("../images/common/_hitode-black.svg");
 	background-repeat: no-repeat;
 	content: "";
 	display: block;
@@ -2196,6 +2294,10 @@ input[type=checkbox]:checked {
 .nextpostslink:hover {
 	background-color: #408f95;
 	color: #fff;
+}
+
+.nextpostslink a {
+	color: #408f95;
 }
 
 .page-404-contents__title {
@@ -2484,10 +2586,6 @@ table {
 	margin-top: 2.5rem;
 }
 
-.privacy-contents__text li {
-	display: flex;
-}
-
 .section-title__main {
 	color: #0D2936;
 	font-family: "Gotu", sans-serif;
@@ -2582,6 +2680,24 @@ table {
 	transition: 0.3s all;
 }
 
+.sidebar-archive button::before {
+	-o-object-fit: cover;
+	background-image: url("../images/common/polygon1.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	display: block;
+	height: 1.5rem;
+	left: 0rem;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	transition: 0.3s all;
+	width: 1.5rem;
+	z-index: 1;
+}
+
 .sidebar-archive a::before {
 	-o-object-fit: cover;
 	background-image: url("../images/common/polygon1.svg");
@@ -2618,7 +2734,7 @@ table {
 	z-index: 1;
 }
 
-.sidebar-archive button:before {
+.sidebar-archive p:before {
 	-o-object-fit: cover;
 	background-image: url("../images/common/polygon1.svg");
 	background-repeat: no-repeat;
@@ -2629,7 +2745,7 @@ table {
 	left: 0;
 	object-fit: cover;
 	position: absolute;
-	top: 50%;
+	top: calc(50% - 1.125rem);
 	transform: translate(0, -50%);
 	transition: 0.3s all;
 	width: 1.5rem;
@@ -2763,6 +2879,7 @@ table {
 
 .sidebar-popularity-card__header img {
 	-o-object-fit: cover;
+	height: auto;
 	object-fit: cover;
 }
 
@@ -2890,6 +3007,10 @@ table {
 .sidebar__archive {
 	margin-top: 5rem;
 	position: relative;
+}
+
+.site-map__nav {
+	background-color: transparent;
 }
 
 .slide-card {
@@ -3046,7 +3167,7 @@ table {
 	transform: translate(-50%, -50%);
 }
 
-.sub-mv img {
+.sub-mv {
 	-o-object-fit: cover;
 	background-position: center;
 	display: block;
@@ -3163,6 +3284,10 @@ table {
 
 .terms-contents__text li {
 	display: flex;
+}
+
+.thanks-page__inner {
+	position: relative;
 }
 
 .thanks-page-top__contents {
@@ -3318,7 +3443,7 @@ table {
 	color: #fff;
 }
 
-.wp-pagenavi ul {
+.wp-pagenavi {
 	align-items: center;
 	display: flex;
 	gap: 0.75rem;
@@ -3339,12 +3464,27 @@ table {
 	transition: 0.3s all;
 }
 
+.wp-pagenavi .current {
+	align-items: center;
+	border: 1px solid #408f95;
+	color: #fff;
+	display: flex;
+	font-family: "Lato", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	height: 2.375rem;
+	justify-content: center;
+	min-width: 2.375rem;
+	text-align: center;
+	transition: 0.3s all;
+}
+
 .wp-pagenavi .page:hover {
 	background-color: #408f95;
 	color: #fff;
 }
 
-.wp-pagenavi li .active {
+.wp-pagenavi .active {
 	background-color: #408f95;
 	color: #fff;
 }
@@ -3828,6 +3968,13 @@ html {
 	z-index: 1;
 }
 
+.button--contact {
+	height: 3.25rem;
+	line-height: 1.5;
+	width: 12.625rem;
+	z-index: 1;
+}
+
 .campaign-page__hero {
 	height: auto;
 	width: 100%;
@@ -4096,11 +4243,6 @@ html {
 	margin-top: 0.5rem;
 }
 
-.contact__button {
-	margin-top: 2.5rem;
-	text-align: center;
-}
-
 .contactform__note {
 	text-align: center;
 }
@@ -4112,19 +4254,23 @@ html {
 }
 
 .contactform__text {
-	width: 69%;
+	width: 100%;
 }
 
 .contactform__item {
 	flex-direction: inherit;
 }
 
-.contactform select {
-	width: 69%;
+.contactform__item select {
+	width: 100%;
 }
 
 .contactform-togle::before {
 	top: 3.125rem;
+}
+
+.contactform__checkboxs {
+	width: 69%;
 }
 
 .contactform__agreement {
@@ -4143,10 +4289,8 @@ html {
 }
 
 .faq-content__line1 {
-	display: inline;
 	position: absolute;
 	right: 2.5rem;
-	width: 2rem;
 }
 
 .faq-content__line2 {
@@ -4443,7 +4587,7 @@ html {
 	display: flex;
 	flex-direction: initial;
 	gap: 9.375rem;
-	justify-content: space-between;
+	justify-content: center;
 	margin-left: 0;
 }
 
@@ -4904,7 +5048,7 @@ html {
 	display: block;
 }
 
-.sub-mv img {
+.sub-mv {
 	height: 34.25rem;
 	width: 100vw;
 }
@@ -5142,6 +5286,10 @@ html {
 }
 
 .wp-pagenavi .page {
+	font-size: 1rem;
+}
+
+.wp-pagenavi .current {
 	font-size: 1rem;
 }
 

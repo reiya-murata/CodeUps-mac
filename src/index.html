@@ -36,7 +36,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- JavaScript -->
   <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script defer src="./assets/js/script.js"></script>
+  <script defer src="<?php echo get_theme_file_uri(); ?>/js/script.js"></script>
 </head>
 
 <body>
@@ -103,9 +103,10 @@
       <h1 class="header__inner-logo">
         <a href="./index.html" class="logo">
           <picture class="logo__img-codeups">
-            <source media="(max-width: 767px)" srcset="./assets/images/common/CodeUps1.svg" />
-            <source media="(min-width: 767px)" srcset="./assets/images/common/CodeUps.svg" />
-            <img src="./assets/images/common/CodeUps1.svg" alt="codeUps-icon" />
+            <source media="(max-width: 767px)"
+              srcset="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps1.svg" />
+            <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps.svg" />
+            <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps1.svg" alt="codeUps-icon" />
           </picture>
         </a>
       </h1>
@@ -168,7 +169,7 @@
       </div>
     </div>
     <div class="header__home js-header-home">
-      <a href="#"><img src="./assets/images/common/home@2x.png" alt="" /></a>
+      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/images/common/home@2x.png" alt="" /></a>
     </div>
   </header>
 
@@ -185,30 +186,38 @@
             <div class="swiper-wrapper">
               <div class="hero__slide swiper-slide">
                 <picture class="hero__mainvisual">
-                  <source media="(max-width: 767px)" srcset="./assets/images/common/main-view.1.jpg" />
-                  <source media="(min-width: 767px)" srcset="./assets/images/common/main-view.pc.1.jpg" />
-                  <img src="./assets/images/common/main-view.pc.1.jpg" alt="turtle-img" />
+                  <source media="(max-width: 767px)"
+                    srcset="<?php echo get_theme_file_uri(); ?>/images/common/main-view.1.jpg" />
+                  <source media="(min-width: 767px)"
+                    srcset="<?php echo get_theme_file_uri(); ?>/images/common/main-view.pc.1.jpg" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/main-view.pc.1.jpg" alt="turtle-img" />
                 </picture>
               </div>
               <div class="hero__slide swiper-slide">
                 <picture class="hero__mainvisual">
-                  <source media="(max-width: 767px)" srcset="./assets/images/common/main-view.2.jpg" />
-                  <source media="(min-width: 767px)" srcset="./assets/images/common/main-view.pc.2.jpg" />
-                  <img src="./assets/images/common/main-view.pc.2.jpg" alt="turtle-img" />
+                  <source media="(max-width: 767px)"
+                    srcset="<?php echo get_theme_file_uri(); ?>/images/common/main-view.2.jpg" />
+                  <source media="(min-width: 767px)"
+                    srcset="<?php echo get_theme_file_uri(); ?>/images/common/main-view.pc.2.jpg" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/main-view.pc.2.jpg" alt="turtle-img" />
                 </picture>
               </div>
               <div class="hero__slide swiper-slide">
                 <picture class="hero__mainvisual">
-                  <source media="(max-width: 767px)" srcset="./assets/images/common/main-view.3.jpg" />
-                  <source media="(min-width: 767px)" srcset="./assets/images/common/main-view.pc.3.jpg" />
-                  <img src="./assets/images/common/main-view.pc.3.jpg" alt="ocean-img" />
+                  <source media="(max-width: 767px)"
+                    srcset="<?php echo get_theme_file_uri(); ?>/images/common/main-view.3.jpg" />
+                  <source media="(min-width: 767px)"
+                    srcset="<?php echo get_theme_file_uri(); ?>/images/common/main-view.pc.3.jpg" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/main-view.pc.3.jpg" alt="ocean-img" />
                 </picture>
               </div>
               <div class="hero__slide swiper-slide">
                 <picture class="hero__mainvisual">
-                  <source media="(max-width: 767px)" srcset="./assets/images/common/main-view.4.jpg" />
-                  <source media="(min-width: 767px)" srcset="./assets/images/common/main-view.pc.4.jpg" />
-                  <img src="./assets/images/common/main-view.pc.4.jpg" alt="beach-img" />
+                  <source media="(max-width: 767px)"
+                    srcset="<?php echo get_theme_file_uri(); ?>/images/common/main-view.4.jpg" />
+                  <source media="(min-width: 767px)"
+                    srcset="<?php echo get_theme_file_uri(); ?>/images/common/main-view.pc.4.jpg" />
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/main-view.pc.4.jpg" alt="beach-img" />
                 </picture>
               </div>
             </div>
@@ -232,7 +241,7 @@
                 <div class="slide-card">
                   <a href="#">
                     <div class="slide-card__header">
-                      <img src="./assets/images/common/campaign.4.jpg" alt="ダイビングの画像" />
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.4.jpg" alt="ダイビングの画像" />
                     </div>
                     <div class="slide-card__body">
                       <div class="slide-card__icon card-icon">
@@ -264,7 +273,7 @@
                 <div class="slide-card">
                   <a href="#">
                     <div class="slide-card__header">
-                      <img src="./assets/images/common/campaign.1.jpg" alt="サンゴの画像" />
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.1.jpg" alt="サンゴの画像" />
                     </div>
                     <div class="slide-card__body">
                       <div class="slide-card__icon card-icon">
@@ -292,7 +301,7 @@
                 <div class="slide-card">
                   <a href="#">
                     <div class="slide-card__header">
-                      <img src="./assets/images/common/campaign.2.jpg" alt="クラゲの画像" />
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.2.jpg" alt="クラゲの画像" />
                     </div>
                     <div class="slide-card__body">
                       <div class="slide-card__icon card-icon">
@@ -321,7 +330,7 @@
                 <div class="slide-card">
                   <a href="#">
                     <div class="slide-card__header">
-                      <img src="./assets/images/common/campaign.3.jpg" alt="ビーチの画像" />
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.3.jpg" alt="ビーチの画像" />
                     </div>
                     <div class="slide-card__body">
                       <div class="slide-card__icon card-icon">
@@ -350,7 +359,7 @@
                 <div class="slide-card">
                   <a href="#">
                     <div class="slide-card__header">
-                      <img src="./assets/images/common/campaign.4.jpg" alt="ダイビングの画像" />
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.4.jpg" alt="ダイビングの画像" />
                     </div>
                     <div class="slide-card__body">
                       <div class="slide-card__icon card-icon">
@@ -382,7 +391,7 @@
                 <div class="slide-card">
                   <a href="#">
                     <div class="slide-card__header">
-                      <img src="./assets/images/common/campaign.1.jpg" alt="サンゴの画像" />
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.1.jpg" alt="サンゴの画像" />
                     </div>
                     <div class="slide-card__body">
                       <div class="slide-card__icon card-icon">
@@ -410,7 +419,7 @@
                 <div class="slide-card">
                   <a href="#">
                     <div class="slide-card__header">
-                      <img src="./assets/images/common/campaign.2.jpg" alt="クラゲの画像" />
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.2.jpg" alt="クラゲの画像" />
                     </div>
                     <div class="slide-card__body">
                       <div class="slide-card__icon card-icon">
@@ -439,7 +448,7 @@
                 <div class="slide-card">
                   <a href="#">
                     <div class="slide-card__header">
-                      <img src="./assets/images/common/campaign.3.jpg" alt="ビーチの画像" />
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign.3.jpg" alt="ビーチの画像" />
                     </div>
                     <div class="slide-card__body">
                       <div class="slide-card__icon card-icon">
@@ -469,10 +478,10 @@
         </div>
 
         <div class="campaign__swiper-next">
-          <img src="./assets/images/common/right-arrow.png" alt="右へ" />
+          <img src="<?php echo get_theme_file_uri(); ?>/images/common/right-arrow.png" alt="右へ" />
         </div>
         <div class="campaign__swiper-prev">
-          <img src="./assets/images/common/left-arrow.png" alt="左へ" />
+          <img src="<?php echo get_theme_file_uri(); ?>/images/common/left-arrow.png" alt="左へ" />
         </div>
 
         <div class="campaign__button">
@@ -491,14 +500,16 @@
         </div>
         <div class="about__body">
           <div class="about__img-1">
-            <img src="./assets/images/common/about.1.jpg" alt="屋根の画像" />
+            <img src="<?php echo get_theme_file_uri(); ?>/images/common/about.1.jpg" alt="屋根の画像" />
           </div>
           <div class="about__img-2">
             <picture>
-              <source media="(max-width: 767px)" srcset="./assets/images/common/about.2.jpg" />
-              <source media="(min-width: 767px)" srcset="./assets/images/common/about.pc2.jpg" />
+              <source media="(max-width: 767px)"
+                srcset="<?php echo get_theme_file_uri(); ?>/images/common/about.2.jpg" />
+              <source media="(min-width: 767px)"
+                srcset="<?php echo get_theme_file_uri(); ?>/images/common/about.pc2.jpg" />
 
-              <img src="./assets/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
+              <img src="<?php echo get_theme_file_uri(); ?>/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
             </picture>
           </div>
 
@@ -536,7 +547,7 @@
         </div>
         <div class="information__content">
           <div class="information__content-img colorbox">
-            <img src="./assets/images/common/information.jpg" alt="黄色の魚の画像" />
+            <img src="<?php echo get_theme_file_uri(); ?>/images/common/information.jpg" alt="黄色の魚の画像" />
           </div>
           <div class="information__content-right">
             <div class="information__content-titles">
@@ -558,7 +569,7 @@
 
     <section class="blog l-blog">
       <div class="blog__bg-img">
-        <img src="./assets/images/common/blog.pc.img.jpg" alt="水中の画像" />
+        <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.pc.img.jpg" alt="水中の画像" />
       </div>
       <div class="blog__inner inner">
         <div class="blog__title section-title section-title--blog">
@@ -571,7 +582,7 @@
           <div class="blog-cards__item">
             <a href="./blog-detail.html" class="blog-card">
               <div class="blog-card__header">
-                <img src=".//assets/images/common/blog.1.jpg" alt="サンゴの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.1.jpg" alt="サンゴの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date">2023.11/17</p>
@@ -588,7 +599,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.2.jpg" alt="ウミガメの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.2.jpg" alt="ウミガメの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date">2023.11/17</p>
@@ -605,7 +616,7 @@
           <div class="blog-cards__item">
             <a href="#" class="blog-card">
               <div class="blog-card__header">
-                <img src="./assets/images/common/blog.3.jpg" alt="クマノミの画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog.3.jpg" alt="クマノミの画像" />
               </div>
               <div class="blog-card__body">
                 <p class="blog-card__date">2023.11/17</p>
@@ -648,7 +659,7 @@
                     </div>
                   </div>
                   <div class="voice-card__img colorbox">
-                    <img src=".//assets/images/common/voice.1.jpg" alt="女性の画像" />
+                    <img src="<?php echo get_theme_file_uri(); ?>/images/common/voice.1.jpg" alt="女性の画像" />
                   </div>
                 </div>
                 <div class="voice-card__body">
@@ -676,7 +687,7 @@
                     </div>
                   </div>
                   <div class="voice-card__img colorbox">
-                    <img src=".//assets/images/common/voice.2.jpg" alt="男性の画像" />
+                    <img src="<?php echo get_theme_file_uri(); ?>/images/common/voice.2.jpg" alt="男性の画像" />
                   </div>
                 </div>
                 <div class="voice-card__body">
@@ -808,9 +819,12 @@
 
           <div class="price__contents-right colorbox">
             <picture>
-              <source media="(max-width: 767px)" srcset="./assets/images/common/price__sp.jpg" />
-              <source media="(min-width: 767px)" srcset="./assets/images/common/price__img.1.jpg" />
-              <img class="price__img" src="./assets/images/common/price__img.1.jpg" alt="サンゴと赤い魚の画像" />
+              <source media="(max-width: 767px)"
+                srcset="<?php echo get_theme_file_uri(); ?>/images/common/price__sp.jpg" />
+              <source media="(min-width: 767px)"
+                srcset="<?php echo get_theme_file_uri(); ?>/images/common/price__img.1.jpg" />
+              <img class="price__img" src="<?php echo get_theme_file_uri(); ?>/images/common/price__img.1.jpg"
+                alt="サンゴと赤い魚の画像" />
             </picture>
           </div>
         </div>
@@ -828,9 +842,11 @@
           <div class="contact__left">
             <div class="contact__logo-codeups">
               <picture class="logo__contact-codeups">
-                <source media="(max-width: 767px)" srcset="./assets/images/common/CodeUps__bottom-sp.svg" />
-                <source media="(min-width: 767px)" srcset="./assets/images/common/cordUps_blue.svg" />
-                <img src="./assets/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
+                <source media="(max-width: 767px)"
+                  srcset="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps__bottom-sp.svg" />
+                <source media="(min-width: 767px)"
+                  srcset="<?php echo get_theme_file_uri(); ?>/images/common/cordUps_blue.svg" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
               </picture>
             </div>
             <div class="contact__left-address">
@@ -844,7 +860,7 @@
               </div>
 
               <div class="contact__map">
-                <img src="./assets/images/common/contact.1.jpg" alt="地図の画像" />
+                <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact.1.jpg" alt="地図の画像" />
               </div>
             </div>
           </div>
@@ -873,14 +889,16 @@
     <div class="footer__inner inner">
       <div class="footer__icons nav-icons">
         <div class="nav-icons__icon">
-          <img src="./assets/images/common/CodeUps.svg" alt="codeUps-icon" />
+          <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps.svg" alt="codeUps-icon" />
         </div>
         <div class="nav-icons__icon sns">
           <div class="sns__facebook">
-            <a href="#"><img src="./assets/images/common/FacebookLogofacebook.svg" alt="facebookのアイコン" /></a>
+            <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/images/common/FacebookLogofacebook.svg"
+                alt="facebookのアイコン" /></a>
           </div>
           <div class="sns__instagram">
-            <a href="#"><img src="./assets/images/common/InstagramLogoinstagram.svg" alt="インスタグラムのアイコン" /></a>
+            <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/images/common/InstagramLogoinstagram.svg"
+                alt="インスタグラムのアイコン" /></a>
           </div>
         </div>
       </div>
