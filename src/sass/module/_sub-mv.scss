@@ -9,14 +9,6 @@
   object-fit: cover;
 }
 
-.sub-mv::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #408F95;
-}
 
 .sub-mv{
   display: block;
@@ -26,10 +18,7 @@
 
   @include mq(md) {
     width: 100vw;
-    height: rem(548);
+    height: 100%;
   }
 }
 
-.sub-mv__category.page-category::before {
-  display: none;
-}

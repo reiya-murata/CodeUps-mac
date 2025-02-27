@@ -802,6 +802,14 @@ a {
 	z-index: 2;
 }
 
+.button--contact {
+	display: flex;
+}
+
+.wpcf7-submit {
+	color: #fff;
+}
+
 .campaign-page {
 	position: relative;
 }
@@ -3086,25 +3094,12 @@ table {
 	object-fit: cover;
 }
 
-.sub-mv::before {
-	background-color: #408F95;
-	content: "";
-	left: 50%;
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}
-
 .sub-mv {
 	-o-object-fit: cover;
 	background-position: center;
 	display: block;
 	object-fit: cover;
 	width: 100vw;
-}
-
-.sub-mv__category.page-category::before {
-	display: none;
 }
 
 .swiper-container {
@@ -4969,7 +4964,7 @@ html {
 }
 
 .sub-mv {
-	height: 34.25rem;
+	height: 100%;
 	width: 100vw;
 }
 

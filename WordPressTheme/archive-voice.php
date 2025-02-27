@@ -176,7 +176,7 @@ $terms = esc_url(home_url('/terms/'));
             </div>
 
             <div class="contact__map">
-              /asset/images/common/contact.1.jpg" alt="地図の画像" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
             </div>
           </div>
         </div>
