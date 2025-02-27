@@ -5,6 +5,7 @@
   justify-content: space-between;
 }
 
+
 .information-page-contents__tab-icon {
   position: relative;
   text-align: center;
@@ -18,7 +19,7 @@
   font-family: $base-font-family;
   font-size: rem(14);
   font-weight: $regular;
-
+  transform: 0.3s all;
   @include mq(md) {
     text-align: end;
     width: rem(300);
@@ -27,6 +28,10 @@
     padding-right: rem(30);
     font-size: rem(24);
   }
+}
+
+.information-page-contents__tab-icon:hover {
+  color: $white;
 }
 
 .information-page-contents__tab-icon.active {

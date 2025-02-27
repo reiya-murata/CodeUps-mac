@@ -1913,7 +1913,12 @@ input[type=checkbox]:checked {
 	padding-top: 0.625rem;
 	position: relative;
 	text-align: center;
+	transform: 0.3s all;
 	width: 6.375rem;
+}
+
+.information-page-contents__tab-icon:hover {
+	color: #fff;
 }
 
 .information-page-contents__tab-icon.active {
@@ -2636,7 +2641,7 @@ table {
 
 .sidebar-archive a::before {
 	-o-object-fit: cover;
-	background-image: url("../images/common/polygon1.svg");
+	background-image: url("../images/common/Polygon1.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	content: "";
@@ -2654,7 +2659,7 @@ table {
 
 .sidebar-archive.open button:before {
 	-o-object-fit: cover;
-	background-image: url("../images/common/polygon1.svg");
+	background-image: url("../images/common/Polygon1.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	content: "";
@@ -2672,7 +2677,7 @@ table {
 
 .sidebar-archive button:before {
 	-o-object-fit: cover;
-	background-image: url("../images/common/polygon1.svg");
+	background-image: url("../images/common/Polygon1.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	content: "";
@@ -3112,6 +3117,7 @@ table {
 .tab-icon--1::before {
 	content: "";
 	display: none;
+	transition: 0.3s all;
 }
 
 .tab-icon--1.active::before {
@@ -3119,14 +3125,21 @@ table {
 	display: none;
 }
 
+.tab-icon--1:hover::before {
+	content: "";
+	display: none;
+}
+
 .tab-icon--2 {
 	padding-right: 0.9375rem;
+	transition: 0.3s all;
 }
 
 .tab-icon--2::before {
 	content: "";
 	display: none;
 	position: absolute;
+	transition: 0.3s all;
 }
 
 .tab-icon--2.active::before {
@@ -3135,7 +3148,19 @@ table {
 	position: absolute;
 }
 
+.tab-icon--2:hover::before {
+	content: "";
+	display: none;
+	position: absolute;
+}
+
 .tab-icon--3::before {
+	content: "";
+	display: none;
+	transition: 0.3s all;
+}
+
+.tab-icon--3:hover:before {
 	content: "";
 	display: none;
 }
@@ -5000,6 +5025,22 @@ html {
 	z-index: 1;
 }
 
+.tab-icon--1:hover::before {
+	-o-object-fit: cover;
+	background-image: url("../images/common/whale-right-white.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: block;
+	height: 4rem;
+	left: 1.875rem;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 4rem;
+	z-index: 1;
+}
+
 .tab-icon--2 {
 	padding-right: 0.9375rem;
 }
@@ -5034,9 +5075,40 @@ html {
 	z-index: 1;
 }
 
+.tab-icon--2:hover::before {
+	-o-object-fit: cover;
+	background-image: url("../images/common/whale-left-white.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: block;
+	height: 4rem;
+	left: 1.125rem;
+	object-fit: cover;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 4rem;
+	z-index: 1;
+}
+
 .tab-icon--3::before {
 	-o-object-fit: cover;
 	background-image: url("../images/common/fish-left-blue.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: block;
+	height: 4rem;
+	left: 1.875rem;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 4rem;
+	z-index: 1;
+}
+
+.tab-icon--3:hover:before {
+	-o-object-fit: cover;
+	background-image: url("../images/common/fish-left-white.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	display: block;
