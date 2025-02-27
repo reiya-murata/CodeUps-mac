@@ -1919,6 +1919,7 @@ input[type=checkbox]:checked {
 
 .information-page-contents__tab-icon:hover {
 	color: #fff;
+	transition: 0.3s all;
 }
 
 .information-page-contents__tab-icon.active {

@@ -32,6 +32,7 @@
 
 .information-page-contents__tab-icon:hover {
   color: $white;
+  transition: 0.3s all;
 }
 
 .information-page-contents__tab-icon.active {
