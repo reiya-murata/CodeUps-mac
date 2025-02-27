@@ -231,7 +231,7 @@ if (sidebarArchive2) {
   });
 }
 function toggleAccordion(archive) {
-  var list = archive.querySelector('ol');
+  var list = archive.querySelector('.sidebar-archive__months');
   var button = archive.querySelector('button');
   if (!list || !button) return; // リストまたはボタンが存在しない場合は終了
 

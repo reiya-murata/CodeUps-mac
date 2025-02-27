@@ -179,7 +179,7 @@ $years = $wpdb->get_results("
 $current_year = null;
 
 if ($years) {
-  echo '<ul class="sidebar__archive-list">';
+  echo '<ul class="sidebar-archive__list">';
 
   foreach ($years as $year) {
     // 年が変わったら新しいリストを作成
@@ -190,13 +190,13 @@ if ($years) {
       $current_year = $year->year;
 
       // 年の表示と月リストの開始
-      echo '<li class="sidebar__archive-item">';
-      echo '<button class="sidebar__archive-year">' . esc_html($year->year) . '</button>';
-      echo '<ol class="sidebar__archive-months">';
+      echo '<li class="sidebar-archive__item">';
+      echo '<button class="sidebar-archive__year">' . esc_html($year->year) . '</button>';
+      echo '<ol class="sidebar-archive__months">';
     }
     $month_link = get_month_link($year->year, $year->month);
     // 月のリンク
-    echo '<li class="sidebar__archive-month">';
+    echo '<li class="sidebar-archive__month">';
     echo '<a href="' . esc_url($month_link) . '">'
       . esc_html($year->month) . '月</a>';
     echo '</li>';
