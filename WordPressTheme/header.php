@@ -1,5 +1,37 @@
-<?php get_header(); ?>
-<?php wp_head(); ?>
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="robots" content="noindex" />
+  <!-- meta情報 -->
+  <title>CodeUps</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <!-- ogp -->
+  <meta property="og:title" content="" />
+  <meta property="og:type" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:description" content="" />
+  <!-- ファビコン -->
+
+</head>
+<?php 
+$campaign = esc_url(home_url('/campaign/'));
+$about = esc_url(home_url('/about-us/'));
+$information = esc_url(home_url('/information/'));
+$blog = esc_url(home_url('/blog/'));
+$voice = esc_url(home_url('/voice/'));
+$price = esc_url(home_url('/price/'));
+$faq = esc_url(home_url('/faq/'));
+$contact = esc_url(home_url('/contact/'));
+$privacy = esc_url(home_url('/privacy/'));
+$terms = esc_url(home_url('/terms/'));
+?>
 
 <body>
   <header class="header">
@@ -8,53 +40,54 @@
         <div class="nav__items">
           <ul class="nav__items-left">
             <li class="nav__item nav__item--bold">
-              <a href="./campaign.html">キャンペーン</a>
+              <a href="
+              <?php echo $campaign; ?>">キャンペーン</a>
             </li>
             <li class="nav__item"><a href="#">ライセンス取得</a></li>
             <li class="nav__item"><a href="#">貸切体験ダイビング</a></li>
             <li class="nav__item"><a href="#">ナイトダイビング</a></li>
 
             <li class="nav__item nav__item--bold">
-              <a href="./about.html">私たちについて</a>
+              <a href="<?php echo $about; ?>">私たちについて</a>
             </li>
 
             <li class="nav__item nav__item--bold">
-              <a href="./information.html">ダイビング情報</a>
+              <a href="<?php echo $information; ?>">ダイビング情報</a>
             </li>
             <li class="nav__item"><a href="#">ライセンス講習</a></li>
             <li class="nav__item"><a href="#">体験ダイビング</a></li>
             <li class="nav__item"><a href="#">ファンダイビング</a></li>
 
             <li class="nav__item nav__item--bold">
-              <a href="./blog.html">ブログ</a>
+              <a href="<?php echo $blog; ?>">ブログ</a>
             </li>
           </ul>
           <ul class="nav__items-right">
             <li class="nav__item nav__item--bold">
-              <a href="./voice.html">お客様の声</a>
+              <a href="<?php echo $voice; ?>">お客様の声</a>
             </li>
 
             <li class="nav__item nav__item--bold">
-              <a href="./price.html">料金一覧</a>
+              <a href="<?php echo $price; ?>">料金一覧</a>
             </li>
             <li class="nav__item"><a href="#">ライセンス講習</a></li>
             <li class="nav__item"><a href="#">体験ダイビング</a></li>
             <li class="nav__item"><a href="#">ファンダイビング</a></li>
 
             <li class="nav__item nav__item--bold">
-              <a href="./FAQ.html">よくある質問</a>
+              <a href="<?php echo $faq; ?>">よくある質問</a>
             </li>
 
             <li class="nav__item nav__item--bold">
-              <a href="./privacy.html">プライバシー<br />ポリシー</a>
+              <a href="<?php echo $privacy; ?>">プライバシー<br />ポリシー</a>
             </li>
 
             <li class="nav__item nav__item--bold">
-              <a href="./terms.html">利用規約</a>
+              <a href="<?php echo $terms; ?>">利用規約</a>
             </li>
 
             <li class="nav__item nav__item--bold">
-              <a href="./contact-page.html">お問い合わせ</a>
+              <a href="<?php echo $contact; ?>">お問い合わせ</a>
             </li>
           </ul>
         </div>
@@ -63,62 +96,62 @@
 
     <div class="header__inner">
       <h1 class="header__inner-logo">
-        <a href="./index.html" class="logo">
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
           <picture class="logo__img-codeups">
             <source media="(max-width: 767px)"
-              srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps1.svg" />
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps1.svg" />
             <source media="(min-width: 767px)"
-              srcset="<?php echo get_theme_file_uri(); ?>//images/common/CodeUps.svg" />
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps1.svg" alt="codeUps-icon" />
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps.svg" />
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps1.svg" alt="codeUps-icon" />
           </picture>
         </a>
       </h1>
-      <nav class="hader__nav nav-pc">
+      <nav class="header__nav nav-pc">
         <ul class="nav-pc__items">
           <li>
-            <a href="./campaign.html">
+            <a href="<?php echo $campaign; ?>">
               <h2 class="nav-pc__item-title">Campaign</h2>
               <p class="nav-pc__items-subtitle">キャンペーン</p>
             </a>
           </li>
           <li>
-            <a href="./about.html">
+            <a href="<?php echo $about; ?>">
               <h2 class="nav-pc__item-title">About us</h2>
               <p class="nav-pc__items-subtitle">私たちについて</p>
             </a>
           </li>
           <li>
-            <a href="./information.html">
+            <a href="<?php echo $information; ?>">
               <h2 class="nav-pc__item-title">Information</h2>
               <p class="nav-pc__items-subtitle">ダイビング情報</p>
             </a>
           </li>
           <li>
-            <a href="./blog.html">
+            <a href="<?php echo $blog; ?>">
               <h2 class="nav-pc__item-title">Blog</h2>
               <p class="nav-pc__items-subtitle">ブログ</p>
             </a>
           </li>
           <li>
-            <a href="./voice.html">
+            <a href="<?php echo $voice; ?>">
               <h2 class="nav-pc__item-title">Voice</h2>
               <p class="nav-pc__items-subtitle">お客様の声</p>
             </a>
           </li>
           <li>
-            <a href="./price.html">
+            <a href="<?php echo $price; ?>">
               <h2 class="nav-pc__item-title">Price</h2>
               <p class="nav-pc__items-subtitle">料金一覧</p>
             </a>
           </li>
           <li>
-            <a href="./FAQ.html">
+            <a href="<?php echo $faq; ?>">
               <h2 class="nav-pc__item-title">FAQ</h2>
               <p class="nav-pc__items-subtitle">よくある質問</p>
             </a>
           </li>
           <li>
-            <a href="./contact-page.html">
+            <a href="<?php echo $contact; ?>">
               <h2 class="nav-pc__item-title">Contact</h2>
               <p class="nav-pc__items-subtitle">お問合せ</p>
             </a>
@@ -132,38 +165,6 @@
       </div>
     </div>
     <div class="header__home js-header-home">
-      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/images/common/home@2x.png" alt="" /></a>
+      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/home@2x.png" alt="" /></a>
     </div>
   </header>
-
-  <main>
-    <section class="sub-mv">
-      <div class="sub-mv__hero">
-        <h1 class="sub-mv__titles page-title">contact</h1>
-      </div>
-      <div class="sub-mv__img js-hero-contents">
-        <picture>
-          <source media="(max-width: 767px)"
-            srcset="<?php echo get_theme_file_uri(); ?>//images/common/contact-page-sp1.jpg">
-          <source media="(min-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>//images/common/contact-pc.jpg">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact-pc.jpg" alt=" 砂浜の画像">
-        </picture>
-      </div>
-    </section>
-
-    <?php get_template_part('parts/breadcrumbs')?>
-
-    <section class="contact-page-contents l-contact-page-contents">
-      <div class="contact-page-contents__inner inner">
-        <?php echo do_shortcode('[contact-form-7 id="5d871dd" title="コンタクトフォーム 1"]'); ?>
-      </div>
-
-    </section>
-
-
-
-
-  </main>
-
-  <?php wp_footer();?>
-  <?php get_footer(); ?>

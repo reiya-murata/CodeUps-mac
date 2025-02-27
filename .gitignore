@@ -1,5 +1,2 @@
-.vscode/
-_gulp/node_modules/
-_gulp/package-lock.json/
-.DS_Store
+_gulp/node_modules
 dist
