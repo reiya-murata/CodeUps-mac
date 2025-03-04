@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php wp_head(); ?>
+
 
 <?php 
 $campaign = esc_url(home_url('/campaign/'));
@@ -37,48 +37,50 @@ $terms = esc_url(home_url('/terms/'));
     <div class="campaign-page-contents__inner inner">
       <div class="campaign-page-contents__tab-menu tab-menus">
 
-        <?php
-    // タクソノミー 'campaign_category' のタームを取得
-    $terms = get_terms(array(
-        'taxonomy' => 'campaign_category',
-        'hide_empty' => false,
-    ));
+        <a href="<?php echo esc_url(home_url('/campaign/')); ?>"
+          class="tab-menu <?php if (!is_tax('campaign_category')) echo 'active'; ?>">ALL</a>
 
-    if (!is_wp_error($terms)) {
-        foreach ($terms as $term): ?>
+        <?php
+        if (taxonomy_exists('campaign_category')) {
+            $parent_terms = get_terms(array(
+                'taxonomy'   => 'campaign_category',
+                'hide_empty' => false,
+                'parent'     => 0,
+            ));
+
+            if (!empty($parent_terms) && !is_wp_error($parent_terms)) {
+                foreach ($parent_terms as $parent_term) {
+                    $child_terms = get_terms(array(
+                        'taxonomy'   => 'campaign_category',
+                        'hide_empty' => false,
+                        'parent'     => $parent_term->term_id,
+                    ));
+
+                    if (!empty($child_terms) && !is_wp_error($child_terms)) {
+                        foreach ($child_terms as $term) {
+                            $term_link = get_term_link($term);
+                            ?>
         <a href="<?php echo esc_url(get_term_link($term)); ?>"
-          class="tab-menu <?php if (is_tax('campaign_category', $term->slug)) echo 'active'; ?>">
+          class="tab-menu <?php echo (get_queried_object_id() === $term->term_id) ? 'active' : ''; ?>">
           <?php echo esc_html($term->name); ?>
         </a>
-        <?php endforeach;
-    } ?>
+
+        <?php
+                        }
+                    }
+                }
+            }
+        } else {
+            echo '<p>タクソノミー "campaign_category" が登録されていません。</p>';
+        }
+        ?>
       </div>
 
 
       <div class="campaign-slides campaign-slide-campaign-page">
-        <?php
-        $paged = get_query_var('paged') ? get_query_var('paged') : 1; // 現在のページ番号を取得
-
-        $queried_object = get_queried_object();
-        $term_slug = isset($queried_object->slug) ? $queried_object->slug : '';
-
-        $args = array(
-            'post_type'      => 'campaign',
-            'posts_per_page' => 4,
-            'paged'          => $paged, // ページネーション対応
-            'tax_query'      => array(
-                array(
-                    'taxonomy' => 'campaign_category',
-                    'field'    => 'slug',
-                    'terms'    => $term_slug,
-                ),
-            ),
-        );
-
-        $query = new WP_Query($args);
-
-        if ($query->have_posts()) :
-          while ($query->have_posts()) : $query->the_post();
+        <?php if (have_posts()):
+        while(have_posts()):
+          the_post();
         ?>
 
         <div class="campaign-slide-card">
@@ -149,63 +151,14 @@ $terms = esc_url(home_url('/terms/'));
         <?php endif; ?>
       </div>
 
-      <div class="campaign-page-contents__button wp-pagenavi">
-        <?php 
-        if (function_exists('wp_pagenavi')) {
-            wp_pagenavi(array('query' => $query));
-        }
-        ?>
+      <div class="campaign-page-contents__button">
+        <?php wp_pagenavi();?>
       </div>
     </div>
   </section>
 
-  <section class="contact l-contact">
-    <div class="contact__inner inner">
-      <div class="contact__card">
-        <div class="contact__left">
-          <div class="contact__logo-codeups">
-            <picture class="logo__contact-codeups">
-              <source media="(max-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
-              <source media="(min-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
-            </picture>
-          </div>
-          <div class="contact__left-address">
-            <div class="contact__contents">
-              <p class="contact__content">
-                沖縄県那覇市1-1 <br />
-                TEL:0120-000-0000 <br />
-                営業時間:8:30-19:00 <br />
-                定休日:毎週火曜日
-              </p>
-            </div>
 
-            <div class="contact__map">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
-            </div>
-          </div>
-        </div>
-
-        <div class="contact__right">
-          <div class="contact__title section-title--contact">
-            <p class="section-title__main">contact</p>
-            <h2 class="section-title__sub">お問い合わせ</h2>
-          </div>
-          <h3 class="section-title__sub contact__sub">
-            ご予約・お問い合わせはコチラ
-          </h3>
-          <div class="contact__button">
-            <a href="<?php echo $contact?>" class="button">
-              Contact us<span class="button__stickarrow"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
-<?php wp_footer(); ?>
+
 <?php get_footer(); ?>

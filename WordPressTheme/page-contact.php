@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php wp_head(); ?>
+
 
 
 <main>
@@ -32,5 +32,5 @@
 
 </main>
 
-<?php wp_footer();?>
+
 <?php get_footer(); ?>

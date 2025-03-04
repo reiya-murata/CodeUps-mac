@@ -32,6 +32,7 @@ $contact = esc_url(home_url('/contact/'));
 $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 ?>
+<?php wp_head(); ?>
 
 <body>
   <header class="header">

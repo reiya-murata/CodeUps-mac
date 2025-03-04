@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php wp_head(); ?>
+
 <?php 
 $campaign = esc_url(home_url('/campaign/'));
 $about = esc_url(home_url('/about-us/'));
@@ -149,7 +149,7 @@ $terms = esc_url(home_url('/terms/'));
         <?php endwhile; endif; ?>
       </div>
 
-      <div class="campaign-page-contents__button wp-pagenavi">
+      <div class="campaign-page-contents__button">
         <?php wp_pagenavi(); ?>
       </div>
     </div>
@@ -203,5 +203,5 @@ $terms = esc_url(home_url('/terms/'));
   </section>
 </main>
 
-<?php wp_footer(); ?>
+
 <?php get_footer(); ?>

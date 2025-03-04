@@ -5,6 +5,9 @@
   @include mq(md) {
   }
 }
+.contact--display-none{
+  display: none;
+}
 
 .contact::before {
   content: "";

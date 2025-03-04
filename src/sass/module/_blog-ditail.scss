@@ -28,6 +28,19 @@
 }
 
 
+.blog-detail__content h2 {
+  position: relative;
+  font-size: rem(24);
+  border-bottom: 1px solid $blue;
+
+  @include mq(md) {
+    font-size: rem(32);
+    width: 100%;
+  }
+
+}
+
+
 
 .blog-detail__img img {
   display: block;
@@ -41,16 +54,7 @@
   }
 }
 
-.blog-detail__title h2{
-  position: relative;
-  font-size: rem(24);
-  border-bottom: 1px solid $blue;
 
-  @include mq(md) {
-    font-size: rem(32);
-    width: 65%;
-  }
-}
 
 .blog-detail__content-img {
   margin-top: rem(24);
@@ -66,24 +70,33 @@
   font-size: rem(14);
 }
 
-.blog-detail__text {
+.blog-detail__text p{
   margin-top: rem(20);
   font-size: rem(16);
+
   @include mq(md) {
-  margin-top: rem(40);
+    margin-top: rem(40);
   }
 }
 
-.blog-detail__list {
+.blog-detail__text figure {
+  margin-top: rem(24);
+
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.blog-detail__text ul {
   margin-top: rem(40);
 }
 
-.blog-detail__list li {
+.blog-detail__text li {
   position: relative;
   margin-left: rem(27);
 }
 
-.blog-detail__list li::before {
+.blog-detail__text li::before {
   content: "";
   display: block;
   position: absolute;
@@ -96,8 +109,11 @@
   transform: translate(0, -50%);
 }
 
-.blog-detail__button.wp-pagenavi{
+.blog-detail__button {
+  display: flex;
+  justify-content: center;
   margin-top: rem(40);
+
   @include mq(md) {
     margin-top: rem(80);
   }

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php wp_head(); ?>
+
 <?php 
 $campaign = esc_url(home_url('/campaign/'));
 $about = esc_url(home_url('/about-us/'));
@@ -82,7 +82,7 @@ $terms = esc_url(home_url('/terms/'));
     $voice_3 = get_field('voice_3');
 ?>
         <div class="voice-cards__item">
-          <a href="<?php the_permalink(); ?>" class="voice-card">
+          <div class="voice-card">
             <div class="voice-card__inner">
               <div class="voice-card__header">
                 <div class="voice-card__header-left">
@@ -92,7 +92,7 @@ $terms = esc_url(home_url('/terms/'));
                     <?php echo esc_html($voice_1); ?>
                     <?php endif; ?>
                     <?php if ($voice_2): ?>
-                    / <?php echo esc_html($voice_2); ?>
+                    <?php echo esc_html($voice_2); ?>
                     <?php endif; ?>
                   </div>
                   <?php endif; ?>
@@ -125,80 +125,24 @@ $terms = esc_url(home_url('/terms/'));
 
               <div class="voice-card__body">
                 <p class="voice-card__text">
-                  <?php if ($voice_3): ?>
-                  <?php 
-              // $voice_3 が175文字以上なら省略
-              if (mb_strlen($voice_3) > 175) {
-                echo esc_html(mb_substr($voice_3, 0, 175)) . '...'; // 175文字を超える場合、省略する
-              } else {
-                echo esc_html($voice_3); // 171文字未満ならそのまま表示
-              }
-            ?>
-                  <?php else: ?>
-                  ここにテキストが入ります。
-                  <?php endif; ?>
+                  <?php echo esc_html($voice_3); ?>
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
         <?php endwhile; endif; ?>
 
       </div>
 
-      <div class="voice-page-contents__wp-pagenavi wp-pagenavi">
+      <div class="voice-page-contents__wp-pagenavi">
         <?php wp_pagenavi(); ?>
       </div>
     </div>
   </section>
 
-  <section class="contact l-contact">
-    <div class="contact__inner inner">
-      <div class="contact__card">
-        <div class="contact__left">
-          <div class="contact__logo-codeups">
-            <picture class="logo__contact-codeups">
-              <source media="(max-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
-              <source media="(min-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
-            </picture>
-          </div>
-          <div class="contact__left-address">
-            <div class="contact__contents">
-              <p class="contact__content">
-                沖縄県那覇市1-1 <br />
-                TEL:0120-000-0000 <br />
-                営業時間:8:30-19:00 <br />
-                定休日:毎週火曜日
-              </p>
-            </div>
 
-            <div class="contact__map">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
-            </div>
-          </div>
-        </div>
-
-        <div class="contact__right">
-          <div class="contact__title section-title--contact">
-            <p class="section-title__main">contact</p>
-            <h2 class="section-title__sub">お問い合わせ</h2>
-          </div>
-          <h3 class="section-title__sub contact__sub">
-            ご予約・お問い合わせはコチラ
-          </h3>
-          <div class="contact__button">
-            <a href="<?php echo $contact ?>" class="button">
-              Contact us<span class="button__stickarrow"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
-<?php wp_footer(); ?>
+
 <?php get_footer(); ?>

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php wp_head(); ?>
+
 <?php 
 $campaign = esc_url(home_url('/campaign/'));
 $about = esc_url(home_url('/about-us/'));
@@ -15,17 +15,8 @@ $terms = esc_url(home_url('/terms/'));
 
 <main>
   <section class="page-404">
-    <section class="breadcrumbs l-page-404-top">
-      <div class="breadcrumbs__inner inner">
-        <div class="breadcrumbs__category page-category page-category--404">
-          <?php if (function_exists('bcn_display'))
-      {
-        bcn_display();
-      }
-      ?>
-        </div>
-      </div>
-    </section>
+
+    <?php get_template_part('parts/breadcrumbs'); ?>
 
     <section class="page-404-contents l-page-404-contents">
       <div class="page-404-contents__inner inner">
@@ -47,6 +38,6 @@ $terms = esc_url(home_url('/terms/'));
 
 
 </main>
-<?php wp_footer(); ?>
+
 
 <?php get_footer(); ?>

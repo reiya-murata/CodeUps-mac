@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php wp_head(); ?>
+
 <?php 
 $campaign = esc_url(home_url('/campaign/'));
 $about = esc_url(home_url('/about-us/'));
@@ -29,19 +29,19 @@ $terms = esc_url(home_url('/terms/'));
 
 
             <?php
-$mainvisuals = SCF::get('mainvisuals', 21); // 投稿ID 21のデータを取得
+            $mainvisuals = SCF::get('mainvisuals', 21); // 投稿ID 21のデータを取得
 
-if (!empty($mainvisuals)) :
-    foreach ($mainvisuals as $mainvisual) :
-        // 画像IDをURLに変換
-        $mainvisual_pc = !empty($mainvisual['mainvisual_pc']) ? wp_get_attachment_image_url($mainvisual['mainvisual_pc'], 'full') : '';
-        $mainvisual_sp = !empty($mainvisual['mainvisual_sp']) ? wp_get_attachment_image_url($mainvisual['mainvisual_sp'], 'full') : '';
+              if (!empty($mainvisuals)) :
+              foreach ($mainvisuals as $mainvisual) :
+            // 画像IDをURLに変換
+                $mainvisual_pc = !empty($mainvisual['mainvisual_pc']) ? wp_get_attachment_image_url($mainvisual['mainvisual_pc'], 'full') : '';
+                $mainvisual_sp = !empty($mainvisual['mainvisual_sp']) ? wp_get_attachment_image_url($mainvisual['mainvisual_sp'], 'full') : '';
 
-        // 画像データがない場合はスキップ
-        if (!$mainvisual_pc && !$mainvisual_sp) {
-            continue;
-        }
-?>
+              // 画像データがない場合はスキップ
+                  if (!$mainvisual_pc && !$mainvisual_sp) {
+                  continue;
+                    }
+                    ?>
             <div class="hero__slide swiper-slide">
               <picture class="hero__mainvisual">
                 <source media="(max-width: 767px)" srcset="<?php echo esc_url($mainvisual_sp); ?>" />
@@ -50,11 +50,11 @@ if (!empty($mainvisuals)) :
               </picture>
             </div>
             <?php
-    endforeach;
-else :
-    echo '<p>メインビジュアルの画像がありません。</p>';
-endif;
-?>
+              endforeach;
+              else :
+              echo '<p>メインビジュアルの画像がありません。</p>';
+              endif;
+            ?>
 
 
           </div>
@@ -648,54 +648,7 @@ $voicetext = get_field('voice_3');
     </div>
   </section>
 
-  <section class="contact l-contact">
-    <div class="contact__inner inner">
-      <div class="contact__card">
-        <div class="contact__left">
-          <div class="contact__logo-codeups">
-            <picture class="logo__contact-codeups">
-              <source media="(max-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
-              <source media="(min-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="codeUpsのロゴ" />
-            </picture>
-          </div>
-          <div class="contact__left-address">
-            <div class="contact__contents">
-              <p class="contact__content">
-                沖縄県那覇市1-1 <br />
-                TEL:0120-000-0000 <br />
-                営業時間:8:30-19:00 <br />
-                定休日:毎週火曜日
-              </p>
-            </div>
 
-            <div class="contact__map">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
-            </div>
-          </div>
-        </div>
-
-        <div class="contact__right">
-          <div class="contact__title">
-            <div class="section-title section-title--contact">
-              <p class="section-title__main">contact</p>
-              <h2 class="section-title__sub">お問い合わせ</h2>
-            </div>
-          </div>
-          <h3 class="contact__sub section-title__sub">
-            ご予約・お問い合わせはコチラ
-          </h3>
-          <div class="contact__button">
-            <a href="<?php echo $contact ?>" class="button">
-              Contact us<span class="button__stickarrow"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
-<?php wp_footer();?>
+
 <?php get_footer(); ?>

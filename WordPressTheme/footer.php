@@ -11,7 +11,57 @@ $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 $sitemap = esc_url(home_url('/sitemap/'));
 ?>
-<footer class="footer l-footer">
+<?php wp_footer(); ?>
+<section class="contact l-contact
+  <?php echo (is_404() || is_page(array('contact', 'thanks'))) ? 'contact--display-none' : ''; ?>">
+  <div class="contact__inner inner">
+    <div class="contact__card">
+      <div class="contact__left">
+        <div class="contact__logo-codeups">
+          <picture class="logo__contact-codeups">
+            <source media="(max-width: 767px)"
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
+            <source media="(min-width: 767px)"
+              srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="codeUpsのロゴ" />
+          </picture>
+        </div>
+        <div class="contact__left-address">
+          <div class="contact__contents">
+            <p class="contact__content">
+              沖縄県那覇市1-1 <br />
+              TEL:0120-000-0000 <br />
+              営業時間:8:30-19:00 <br />
+              定休日:毎週火曜日
+            </p>
+          </div>
+
+          <div class="contact__map">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__right">
+        <div class="contact__title">
+          <div class="section-title section-title--contact">
+            <p class="section-title__main">contact</p>
+            <h2 class="section-title__sub">お問い合わせ</h2>
+          </div>
+        </div>
+        <h3 class="contact__sub section-title__sub">
+          ご予約・お問い合わせはコチラ
+        </h3>
+        <div class="contact__button">
+          <a href="<?php echo $contact ?>" class="button">
+            Contact us<span class="button__stickarrow"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer l-footer  <?php echo is_404() ? 'l-404-footer' : ''; ?>">
   <div class="footer__inner inner">
     <div class="footer__icons nav-icons">
       <div class="nav-icons__icon">
@@ -62,9 +112,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
               <li class="nav__item nav__item--bold">
                 <a href="<?php echo $information;?>"> ダイビング情報</a>
               </li>
-              <li class="nav__item nav__item--bold">
-                <a href="<?php echo $sitemap;?>">サイトマップ</a>
-              </li>
+              <li class="nav__item"><a href="#">ライセンス講習</a></li>
               <li class="nav__item"><a href="#">体験ダイビング</a></li>
               <li class="nav__item">
                 <a href="#">ファンダイビング</a>
@@ -103,6 +151,9 @@ $sitemap = esc_url(home_url('/sitemap/'));
               </li>
               <li class="nav__item nav__item--bold">
                 <a href="<?php echo $contact;?>">お問い合わせ</a>
+              </li>
+              <li class="nav__item nav__item--bold">
+                <a href="<?php echo $sitemap;?>">サイトマップ</a>
               </li>
             </ul>
           </div>

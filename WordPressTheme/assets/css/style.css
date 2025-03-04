@@ -160,9 +160,12 @@ a {
 }
 
 .l-404-footer {
-	margin-top: 0;
-	padding-bottom: 6rem;
-	padding-top: 5rem;
+	margin-top: 0 !important;
+}
+
+.l-404-footer {
+	color: #fff;
+	padding-top: 0;
 }
 
 .l-about-page {
@@ -186,7 +189,7 @@ a {
 }
 
 .l-breadcrumbs {
-	margin-top: 0.5rem;
+	padding-top: 0.5rem;
 }
 
 .l-campaign-page-contents {
@@ -561,18 +564,18 @@ a {
 	flex-direction: column;
 }
 
+.blog-detail__content h2 {
+	border-bottom: 1px solid #408f95;
+	font-size: 1.5rem;
+	position: relative;
+}
+
 .blog-detail__img img {
 	-o-object-fit: cover;
 	background-position: center;
 	display: block;
 	object-fit: cover;
 	width: 100vw;
-}
-
-.blog-detail__title h2 {
-	border-bottom: 1px solid #408f95;
-	font-size: 1.5rem;
-	position: relative;
 }
 
 .blog-detail__content-img {
@@ -585,21 +588,25 @@ a {
 	font-weight: 300;
 }
 
-.blog-detail__text {
+.blog-detail__text p {
 	font-size: 1rem;
 	margin-top: 1.25rem;
 }
 
-.blog-detail__list {
+.blog-detail__text figure {
+	margin-top: 1.5rem;
+}
+
+.blog-detail__text ul {
 	margin-top: 2.5rem;
 }
 
-.blog-detail__list li {
+.blog-detail__text li {
 	margin-left: 1.6875rem;
 	position: relative;
 }
 
-.blog-detail__list li::before {
+.blog-detail__text li::before {
 	background-image: url("../images/common/hitode.svg");
 	background-repeat: no-repeat;
 	content: "";
@@ -612,7 +619,9 @@ a {
 	width: 1rem;
 }
 
-.blog-detail__button.wp-pagenavi {
+.blog-detail__button {
+	display: flex;
+	justify-content: center;
 	margin-top: 2.5rem;
 }
 
@@ -1151,6 +1160,10 @@ a {
 
 .contact {
 	position: relative;
+}
+
+.contact--display-none {
+	display: none;
 }
 
 .contact::before {
@@ -3461,7 +3474,7 @@ html {
 }
 
 .l-404-footer {
-	padding-top: 8.75rem;
+	margin-top: 0;
 }
 
 .l-about-page {
@@ -3802,25 +3815,29 @@ html {
 	flex-direction: column;
 }
 
+.blog-detail__content h2 {
+	font-size: 2rem;
+	width: 100%;
+}
+
 .blog-detail__img img {
 	height: 34.25rem;
 	width: 100vw;
-}
-
-.blog-detail__title h2 {
-	font-size: 2rem;
-	width: 65%;
 }
 
 .blog-detail__content-img {
 	margin-top: 2.5rem;
 }
 
-.blog-detail__text {
+.blog-detail__text p {
 	margin-top: 2.5rem;
 }
 
-.blog-detail__button.wp-pagenavi {
+.blog-detail__text figure {
+	margin-top: 2.5rem;
+}
+
+.blog-detail__button {
 	margin-top: 5rem;
 }
 
