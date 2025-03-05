@@ -42,9 +42,22 @@
 }
 
 .information-page-contents__tabs {
-  display: none;
+  display: none; /* 常にブロック要素として扱う */
+  transition: 0.3s;
 }
+
 
 .information-page-contents__tabs.active {
   display: block;
+  animation: ease-in-out forwards;
+    animation-duration: 0.9s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timeline: auto;
+    animation-range-start: normal;
+
 }

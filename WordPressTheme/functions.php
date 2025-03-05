@@ -158,7 +158,7 @@ add_action('init', 'custom_taxonomy_voice_category');
 // Contact Form 7 送信後にリダイレクト
 function custom_redirect_after_submission()
 {
-  ?>
+    ?>
 <script type="text/javascript">
 document.addEventListener('wpcf7mailsent', function(event) {
   window.location.href = 'https://rachel0309.com/codeups-wordpress/contact-thanks'; // フルURLに変更
@@ -204,8 +204,7 @@ add_action('wp_head', function() {
 
 function custom_archive_posts_per_page($query) {
     if ($query->is_main_query() && !is_admin() && is_date()) {
-      $query->set('posts_per_page', 10);
+        $query->set('posts_per_page', 10);
     }
-  }
-  add_action('pre_get_posts', 'custom_archive_posts_per_page');
-  
+    }
+    add_action('pre_get_posts', 'custom_archive_posts_per_page');

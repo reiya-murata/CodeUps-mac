@@ -26,18 +26,18 @@ $terms = esc_url(home_url('/terms/'));
           <div class="swiper-wrapper">
             <div class="hero__slide swiper-slide">
               <?php
-// 現在のページの投稿IDを取得
-$post_id = get_the_ID();
+                // 現在のページの投稿IDを取得
+                $post_id = get_the_ID();
 
-// SCFから 'mainvisuals' グループフィールドを取得
-$mainvisuals = SCF::get('mainvisuals', $post_id);
+                // SCFから 'mainvisuals' グループフィールドを取得
+                $mainvisuals = SCF::get('mainvisuals', $post_id);
 
-// mainvisuals が存在する場合
-if ($mainvisuals) :
-    // 'mainvisual_pc' と 'mainvisual_sp' をそれぞれ取得
-    $mainvisual_pc = isset($mainvisuals['mainvisual_pc']) ? esc_url($mainvisuals['mainvisual_pc']) : get_theme_file_uri() . '/assets/images/common/main-view.pc.1.jpg'; // デフォルトのPC画像
-    $mainvisual_sp = isset($mainvisuals['mainvisual_sp']) ? esc_url($mainvisuals['mainvisual_sp']) : get_theme_file_uri() . '/assets/images/common/main-view.1.jpg'; // デフォルトのSP画像
-?>
+                // mainvisuals が存在する場合
+                if ($mainvisuals) :
+                // 'mainvisual_pc' と 'mainvisual_sp' をそれぞれ取得
+                $mainvisual_pc = isset($mainvisuals['mainvisual_pc']) ? esc_url($mainvisuals['mainvisual_pc']) : get_theme_file_uri() . '/assets/images/common/main-view.pc.1.jpg'; // デフォルトのPC画像
+                $mainvisual_sp = isset($mainvisuals['mainvisual_sp']) ? esc_url($mainvisuals['mainvisual_sp']) : get_theme_file_uri() . '/assets/images/common/main-view.1.jpg'; // デフォルトのSP画像
+              ?>
 
               <div class="hero__slide swiper-slide">
                 <picture class="hero__mainvisual">
@@ -48,11 +48,11 @@ if ($mainvisuals) :
               </div>
 
               <?php
-else :
-    // mainvisuals が空の場合
-    echo 'メインビジュアルが設定されていません。';
-endif;
-?>
+                else :
+                // mainvisuals が空の場合
+                echo 'メインビジュアルが設定されていません。';
+                endif;
+              ?>
 
             </div>
           </div>

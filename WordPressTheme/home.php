@@ -35,13 +35,13 @@ $terms = esc_url(home_url('/terms/'));
 
       <div class="blog-page-contents__cards blog-cards blog-cards--2clum">
         <?php if (have_posts()): 
-  while (have_posts()):
-    the_post(); ?>
+        while (have_posts()):
+          the_post(); ?>
         <div class="blog-cards__item">
           <a href="<?php the_permalink(); ?>" class="blog-card">
             <div class="blog-card__header">
               <?php if(get_the_post_thumbnail()):
-          ?>
+              ?>
               <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>の画像" />
               <?php else: ?>
               <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
@@ -56,10 +56,10 @@ $terms = esc_url(home_url('/terms/'));
               </h2>
               <p class="blog-card__text">
                 <?php 
-            // 投稿の本文を72文字で省略
-            $content = get_the_content();
-            echo wp_trim_words($content, 90, '...'); 
-            ?>
+                  // 投稿の本文を72文字で省略
+                  $content = get_the_content();
+                  echo wp_trim_words($content, 90, '...'); 
+                ?>
               </p>
             </div>
           </a>

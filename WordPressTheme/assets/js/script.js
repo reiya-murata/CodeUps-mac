@@ -343,3 +343,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hash = window.location.hash; // URLの#以降を取得
+  if (hash) {
+    const targetTab = document.querySelector(hash);
+    if (targetTab) {
+      // すべてのタブを非アクティブにする
+      document.querySelectorAll(".js-information-tabbody").forEach(tab => {
+        tab.classList.remove("active");
+      });
+      // 選択されたタブをアクティブにする
+      targetTab.classList.add("active");
+
+      // タブのボタンもアクティブにする
+      document.querySelectorAll(".js-tab-menu2").forEach(button => {
+        button.classList.remove("active");
+      });
+      document.querySelector(`[data-target="${hash.substring(1)}"]`)?.classList.add("active");
+    }
+  }
+});

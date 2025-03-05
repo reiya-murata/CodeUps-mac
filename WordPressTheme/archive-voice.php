@@ -40,47 +40,47 @@ $terms = esc_url(home_url('/terms/'));
 
         <?php
         if (taxonomy_exists('voice_category')) {
-            $parent_terms = get_terms(array(
-                'taxonomy'   => 'voice_category',
-                'hide_empty' => false,
-                'parent'     => 0,
+          $parent_terms = get_terms(array(
+            'taxonomy'   => 'voice_category',
+            'hide_empty' => false,
+            'parent'     => 0,
             ));
 
-            if (!empty($parent_terms) && !is_wp_error($parent_terms)) {
-                foreach ($parent_terms as $parent_term) {
-                    $child_terms = get_terms(array(
-                        'taxonomy'   => 'voice_category',
-                        'hide_empty' => false,
-                        'parent'     => $parent_term->term_id,
-                    ));
+        if (!empty($parent_terms) && !is_wp_error($parent_terms)) {
+          foreach ($parent_terms as $parent_term) {
+          $child_terms = get_terms(array(
+            'taxonomy'   => 'voice_category',
+            'hide_empty' => false,
+            'parent'     => $parent_term->term_id,
+            ));
 
-                    if (!empty($child_terms) && !is_wp_error($child_terms)) {
-                        foreach ($child_terms as $term) {
-                            ?>
+        if (!empty($child_terms) && !is_wp_error($child_terms)) {
+        foreach ($child_terms as $term) {
+        ?>
         <a href="<?php echo esc_url(get_term_link($term)); ?>"
           class="tab-menu <?php echo (is_tax('voice_category', $term->term_id) ? 'active' : ''); ?>">
           <?php echo esc_html($term->name); ?>
         </a>
         <?php
-                        }
-                    }
                 }
+              }
             }
+          }
         } else {
-            echo '<p>タクソノミー "voice_category" が登録されていません。</p>';
+          echo '<p>タクソノミー "voice_category" が登録されていません。</p>';
         }
         ?>
       </div>
 
       <div class="voice-page-contents__cards voice-cards">
         <?php if (have_posts()):
-  while(have_posts()):
-    the_post();
+          while(have_posts()):
+          the_post();
 
-    $voice_1 = get_field('voice_1');
-    $voice_2 = get_field('voice_2');
-    $voice_3 = get_field('voice_3');
-?>
+          $voice_1 = get_field('voice_1');
+          $voice_2 = get_field('voice_2');
+          $voice_3 = get_field('voice_3');
+        ?>
         <div class="voice-cards__item">
           <div class="voice-card">
             <div class="voice-card__inner">
@@ -99,14 +99,14 @@ $terms = esc_url(home_url('/terms/'));
 
                   <div class="voice-card__icon card-icon">
                     <?php 
-              $terms = get_the_terms(get_the_ID(), 'voice_category');
-              if (!empty($terms) && !is_wp_error($terms)):
-                foreach ($terms as $term):
-                  echo esc_html($term->name);
-                  break;
-                endforeach;
-              endif;
-            ?>
+                      $terms = get_the_terms(get_the_ID(), 'voice_category');
+                      if (!empty($terms) && !is_wp_error($terms)):
+                        foreach ($terms as $term):
+                          echo esc_html($term->name);
+                        break;
+                        endforeach;
+                      endif;
+                    ?>
                   </div>
 
                   <div class="voice-card__title">

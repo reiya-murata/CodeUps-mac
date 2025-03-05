@@ -1035,6 +1035,7 @@ a {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 	padding-top: 1.5rem;
+	transition: 0.3s all;
 }
 
 .campaign-tab__left {
@@ -1942,10 +1943,21 @@ input[type=checkbox]:checked {
 }
 
 .information-page-contents__tabs {
-	display: none;
+	display: none; /* 常にブロック要素として扱う */
+	transition: 0.3s;
 }
 
 .information-page-contents__tabs.active {
+	animation-timeline: auto;
+	animation-range-start: normal;
+	animation: ease-in-out forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-play-state: running;
+	animation-timing-function: ease-in-out;
 	display: block;
 }
 

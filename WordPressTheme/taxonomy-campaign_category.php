@@ -42,34 +42,34 @@ $terms = esc_url(home_url('/terms/'));
 
         <?php
         if (taxonomy_exists('campaign_category')) {
-            $parent_terms = get_terms(array(
-                'taxonomy'   => 'campaign_category',
-                'hide_empty' => false,
-                'parent'     => 0,
+          $parent_terms = get_terms(array(
+            'taxonomy'   => 'campaign_category',
+            'hide_empty' => false,
+            'parent'     => 0,
             ));
 
-            if (!empty($parent_terms) && !is_wp_error($parent_terms)) {
-                foreach ($parent_terms as $parent_term) {
-                    $child_terms = get_terms(array(
-                        'taxonomy'   => 'campaign_category',
-                        'hide_empty' => false,
-                        'parent'     => $parent_term->term_id,
-                    ));
+        if (!empty($parent_terms) && !is_wp_error($parent_terms)) {
+        foreach ($parent_terms as $parent_term) {
+          $child_terms = get_terms(array(
+            'taxonomy'   => 'campaign_category',
+            'hide_empty' => false,
+            'parent'     => $parent_term->term_id,
+            ));
 
-                    if (!empty($child_terms) && !is_wp_error($child_terms)) {
-                        foreach ($child_terms as $term) {
-                            $term_link = get_term_link($term);
-                            ?>
+        if (!empty($child_terms) && !is_wp_error($child_terms)) {
+        foreach ($child_terms as $term) {
+        $term_link = get_term_link($term);
+        ?>
         <a href="<?php echo esc_url(get_term_link($term)); ?>"
           class="tab-menu <?php echo (get_queried_object_id() === $term->term_id) ? 'active' : ''; ?>">
           <?php echo esc_html($term->name); ?>
         </a>
 
         <?php
-                        }
-                    }
                 }
+              }
             }
+          }
         } else {
             echo '<p>タクソノミー "campaign_category" が登録されていません。</p>';
         }

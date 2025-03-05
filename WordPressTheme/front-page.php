@@ -77,14 +77,14 @@ $terms = esc_url(home_url('/terms/'));
           <div class="swiper-wrapper campaign__slider">
             <!-- サブループ開始（カスタム投稿 campaign） -->
             <?php
-$args = array(
-  'post_type' => 'campaign',
-  'posts_per_page' => 8,
-);
-$the_query = new WP_Query($args);
+              $args = array(
+              'post_type' => 'campaign',
+              'posts_per_page' => 8,
+              );
+              $the_query = new WP_Query($args);
 
-if ($the_query->have_posts()):
-?>
+              if ($the_query->have_posts()):
+            ?>
             <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
             <?php
       // カテゴリー情報の取得
@@ -96,7 +96,7 @@ if ($the_query->have_posts()):
 
       $campaign_2 = get_field('campaign-2');
       $campaign_3 = get_field('campaign-3');
-    ?>
+      ?>
 
             <!-- Slides -->
             <div class="campaign__slide swiper-slide">
@@ -254,13 +254,13 @@ if ($the_query->have_posts()):
       <div class="blog__cards blog-cards">
         <!-- サブループ開始（通常投稿 blog） -->
         <?php
-$args = array(
-  'post_type' => 'post',
-  'posts_per_page' => 3,
-);
-$the_query = new WP_Query($args);
-if ($the_query->have_posts()):
-?>
+          $args = array(
+          'post_type' => 'post',
+          'posts_per_page' => 3,
+          );
+          $the_query = new WP_Query($args);
+        if ($the_query->have_posts()):
+        ?>
         <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
         <div class="blog-cards__item">
           <a href="<?php the_permalink(); ?>" class="blog-card">
@@ -280,7 +280,7 @@ if ($the_query->have_posts()):
               // 抜粋を取得し180文字以上は省略
               $excerpt = get_the_excerpt();
               echo esc_html(mb_strimwidth($excerpt, 0, 180, '...'));
-            ?>
+                ?>
               </p>
             </div>
           </a>
@@ -315,29 +315,29 @@ if ($the_query->have_posts()):
         <!-- サブループ開始（カスタム投稿 voice） -->
         <!-- サブループ開始（カスタム投稿 voice） -->
         <?php
-$args = array(
-  'post_type' => 'voice',
-  'posts_per_page' => 2,
-);
-$query = new WP_Query($args);
-?>
+          $args = array(
+          'post_type' => 'voice',
+          'posts_per_page' => 2,
+          );
+          $query = new WP_Query($args);
+        ?>
 
         <?php if ($query->have_posts()) : ?>
         <?php while ($query->have_posts()) : $query->the_post(); ?>
         <?php
-$categories = get_the_terms(get_the_ID(), 'voice_category');
-$category_classes = '';
+          $categories = get_the_terms(get_the_ID(), 'voice_category');
+          $category_classes = '';
 
-if ($categories && !is_wp_error($categories)) {
-  foreach ($categories as $category) {
-    $category_classes .= ' js-tab-' . esc_attr($category->term_id);
-  }
-}
+        if ($categories && !is_wp_error($categories)) {
+        foreach ($categories as $category) {
+        $category_classes .= ' js-tab-' . esc_attr($category->term_id);
+          }
+        }
 
-$age = get_field('voice_1');
-$gender = get_field('voice_2');
-$voicetext = get_field('voice_3');
-?>
+        $age = get_field('voice_1');
+        $gender = get_field('voice_2');
+        $voicetext = get_field('voice_3');
+        ?>
 
         <div class="voice-cards__item<?php echo esc_attr($category_classes); ?>">
           <a href="<?php the_permalink(); ?>" class="voice-card">
@@ -365,9 +365,9 @@ $voicetext = get_field('voice_3');
                 <?php if ($voicetext): ?>
                 <p class="voice-card__text">
                   <?php 
-          // 350文字以上は省略して「...」を追加
-          echo esc_html(mb_strimwidth($voicetext, 0, 350, '...'));
-          ?>
+                    // 350文字以上は省略して「...」を追加
+                    echo esc_html(mb_strimwidth($voicetext, 0, 350, '...'));
+                  ?>
                 </p>
                 <?php endif; ?>
               </div>
@@ -432,12 +432,12 @@ $voicetext = get_field('voice_3');
                 </div>
               </div>
               <?php
-                        endif;
-                    endforeach;
+              endif;
+              endforeach;
                 } else {
                     // もし $license が配列でない場合（単一値の場合など）
                     if (!empty($license['name_1']) && !empty($license['price_1'])) :
-                ?>
+                  ?>
               <div class="price__item">
                 <div class="price__item-title">
                   <?php echo esc_html($license['name_1']); ?>
@@ -447,11 +447,11 @@ $voicetext = get_field('voice_3');
                 </div>
               </div>
               <?php
-                    endif;
+              endif;
                 }
-            endif;
+          endif;
         } else {
-            echo '該当する価格ページが見つかりません。';
+          echo '該当する価格ページが見つかりません。';
         }
         ?>
             </div>
@@ -462,24 +462,24 @@ $voicetext = get_field('voice_3');
             <div class="price__items">
 
               <?php
-        // 'price' のページを取得
-        $price_page = get_page_by_path('price');
+                // 'price' のページを取得
+                $price_page = get_page_by_path('price');
 
-        // ページが見つかった場合
-        if ($price_page) {
-            $post_id = $price_page->ID; // 投稿IDを取得
+                // ページが見つかった場合
+              if ($price_page) {
+                $post_id = $price_page->ID; // 投稿IDを取得
 
-            // SCF からデータを取得
-            $experience = SCF::get('experience', $post_id);
+                // SCF からデータを取得
+                $experience = SCF::get('experience', $post_id);
 
-            // データが取得できている場合
-            if ($license) : 
+                // データが取得できている場合
+              if ($license) : 
                 // SCFで取得したデータが配列であるかを確認
-                if (is_array($experience)) {
-                    foreach ($experience as $entry) :
+              if (is_array($experience)) {
+              foreach ($experience as $entry) :
                         // name_1 と price_1 が存在している場合のみ表示
-                        if (!empty($entry['name_2']) && !empty($entry['price_2'])) :
-                ?>
+              if (!empty($entry['name_2']) && !empty($entry['price_2'])) :
+              ?>
               <div class="price__item">
                 <div class="price__item-title">
                   <?php echo esc_html($entry['name_2']); ?>
@@ -489,8 +489,8 @@ $voicetext = get_field('voice_3');
                 </div>
               </div>
               <?php
-                        endif;
-                    endforeach;
+              endif;
+              endforeach;
                 } else {
                     // もし $license が配列でない場合（単一値の場合など）
                     if (!empty($experience['name_2']) && !empty($experience['price_2'])) :
@@ -504,7 +504,7 @@ $voicetext = get_field('voice_3');
                 </div>
               </div>
               <?php
-                    endif;
+              endif;
                 }
             endif;
         } else {
@@ -519,23 +519,23 @@ $voicetext = get_field('voice_3');
             <div class="price__items">
 
               <?php
-        // 'price' のページを取得
-        $price_page = get_page_by_path('price');
+                // 'price' のページを取得
+                $price_page = get_page_by_path('price');
 
-        // ページが見つかった場合
-        if ($price_page) {
-            $post_id = $price_page->ID; // 投稿IDを取得
+                // ページが見つかった場合
+              if ($price_page) {
+                $post_id = $price_page->ID; // 投稿IDを取得
 
-            // SCF からデータを取得
-            $fan = SCF::get('fan', $post_id);
+                // SCF からデータを取得
+                $fan = SCF::get('fan', $post_id);
 
-            // データが取得できている場合
-            if ($fan) : 
+                // データが取得できている場合
+                if ($fan) : 
                 // SCFで取得したデータが配列であるかを確認
                 if (is_array($fan)) {
-                    foreach ($fan as $entry) :
-                        // name_1 と price_1 が存在している場合のみ表示
-                        if (!empty($entry['name_3']) && !empty($entry['price_3'])) :
+                foreach ($fan as $entry) :
+                // name_1 と price_1 が存在している場合のみ表示
+                if (!empty($entry['name_3']) && !empty($entry['price_3'])) :
                 ?>
               <div class="price__item">
                 <div class="price__item-title">
@@ -546,11 +546,11 @@ $voicetext = get_field('voice_3');
                 </div>
               </div>
               <?php
-                        endif;
-                    endforeach;
+              endif;
+              endforeach;
                 } else {
                     // もし $license が配列でない場合（単一値の場合など）
-                    if (!empty($fan['name_3']) && !empty($fan['price_3'])) :
+                if (!empty($fan['name_3']) && !empty($fan['price_3'])) :
                 ?>
               <div class="price__item">
                 <div class="price__item-title">
@@ -561,7 +561,7 @@ $voicetext = get_field('voice_3');
                 </div>
               </div>
               <?php
-                    endif;
+              endif;
                 }
             endif;
         } else {
@@ -576,23 +576,23 @@ $voicetext = get_field('voice_3');
             <div class="price__items">
 
               <?php
-        // 'price' のページを取得
-        $price_page = get_page_by_path('price');
+                // 'price' のページを取得
+                $price_page = get_page_by_path('price');
 
-        // ページが見つかった場合
-        if ($price_page) {
-            $post_id = $price_page->ID; // 投稿IDを取得
+                // ページが見つかった場合
+              if ($price_page) {
+                $post_id = $price_page->ID; // 投稿IDを取得
 
-            // SCF からデータを取得
-            $special = SCF::get('special', $post_id);
+                // SCF からデータを取得
+                $special = SCF::get('special', $post_id);
 
-            // データが取得できている場合
-            if ($special) : 
+                // データが取得できている場合
+                if ($special) : 
                 // SCFで取得したデータが配列であるかを確認
                 if (is_array($special)) {
-                    foreach ($special as $entry) :
-                        // name_1 と price_1 が存在している場合のみ表示
-                        if (!empty($entry['name_4']) && !empty($entry['price_4'])) :
+                foreach ($special as $entry) :
+                // name_1 と price_1 が存在している場合のみ表示
+                if (!empty($entry['name_4']) && !empty($entry['price_4'])) :
                 ?>
               <div class="price__item">
                 <div class="price__item-title">
@@ -603,11 +603,11 @@ $voicetext = get_field('voice_3');
                 </div>
               </div>
               <?php
-                        endif;
-                    endforeach;
-                } else {
-                    // もし $license が配列でない場合（単一値の場合など）
-                    if (!empty($special['name_4']) && !empty($special['price_4'])) :
+              endif;
+              endforeach;
+              } else {
+                // もし $license が配列でない場合（単一値の場合など）
+                if (!empty($special['name_4']) && !empty($special['price_4'])) :
                 ?>
               <div class="price__item">
                 <div class="price__item-title">
@@ -618,12 +618,12 @@ $voicetext = get_field('voice_3');
                 </div>
               </div>
               <?php
-                    endif;
+              endif;
                 }
             endif;
-        } else {
+          } else {
             echo '該当する価格ページが見つかりません。';
-        }
+          }
         ?>
             </div>
           </div>

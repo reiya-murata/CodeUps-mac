@@ -35,12 +35,12 @@ $terms = esc_url(home_url('/terms/'));
   <section class="price-page-contents l-price-page-contents">
     <div class="price-page-contents__inner inner--sub">
       <?php
-$post_id = get_the_ID();
-$license = SCF::get('license', $post_id); // 投稿IDを指定してデータ取得
+        $post_id = get_the_ID();
+        $license = SCF::get('license', $post_id); // 投稿IDを指定してデータ取得
 
-if ($license && is_array($license)) : // データが存在し、配列であることを確認
-?>
-      <div class="price-page-content">
+      if ($license && is_array($license)) : // データが存在し、配列であることを確認
+      ?>
+      <div class="price-page-content" id="license">
         <div class="price-page-content__category">
           <p>ライセンス講習</p>
         </div>
@@ -62,22 +62,22 @@ if ($license && is_array($license)) : // データが存在し、配列である
         </table>
       </div>
       <?php
-endif;
-?>
+      endif;
+      ?>
 
 
       <?php
-$post_id = get_the_ID();
-$experience = SCF::get('experience', $post_id); // 投稿IDを指定してデータ取得
+        $post_id = get_the_ID();
+        $experience = SCF::get('experience', $post_id); // 投稿IDを指定してデータ取得
 
-if ($experience === null) {
-    echo '<p>SCFデータが取得できません。</p>';
-}
+      if ($experience === null) {
+        echo '<p>SCFデータが取得できません。</p>';
+        }
 
-if ($experience && is_array($experience)) : // データが存在し、配列であることを確認
-?>
+      if ($experience && is_array($experience)) : // データが存在し、配列であることを確認
+    ?>
 
-      <div class="price-page-content">
+      <div class="price-page-content" id="experience">
         <div class="price-page-content__category">
           <p>体験ダイビング</p>
         </div>
@@ -99,23 +99,23 @@ if ($experience && is_array($experience)) : // データが存在し、配列で
         </table>
       </div>
       <?php
-endif;
-?>
+      endif;
+      ?>
 
 
 
       <?php
-$post_id = get_the_ID();
-$fan = SCF::get('fan', $post_id); // 投稿IDを指定してデータ取得
+        $post_id = get_the_ID();
+        $fan = SCF::get('fan', $post_id); // 投稿IDを指定してデータ取得
 
-if ($fan === null) {
-    echo '<p>SCFデータが取得できません。</p>';
-}
+      if ($fan === null) {
+        echo '<p>SCFデータが取得できません。</p>';
+        }
 
-if ($fan && is_array($fan)) : // データが存在し、配列であることを確認
-?>
+      if ($fan && is_array($fan)) : // データが存在し、配列であることを確認
+      ?>
 
-      <div class="price-page-content">
+      <div class="price-page-content" id="fan">
         <div class="price-page-content__category">
           <p>ファンダイビング</p>
         </div>
@@ -137,24 +137,24 @@ if ($fan && is_array($fan)) : // データが存在し、配列であること�
         </table>
       </div>
       <?php
-endif;
-?>
+      endif;
+      ?>
 
 
 
 
       <?php
-$post_id = get_the_ID();
-$special = SCF::get('special', $post_id); // 投稿IDを指定してデータ取得
+        $post_id = get_the_ID();
+        $special = SCF::get('special', $post_id); // 投稿IDを指定してデータ取得
 
-if ($special === null) {
-    echo '<p>SCFデータが取得できません。</p>';
-}
+      if ($special === null) {
+        echo '<p>SCFデータが取得できません。</p>';
+        }
 
-if ($special && is_array($special)) : // データが存在し、配列であることを確認
-?>
+      if ($special && is_array($special)) : // データが存在し、配列であることを確認
+      ?>
 
-      <div class="price-page-content">
+      <div class="price-page-content" id="special">
         <div class="price-page-content__category">
           <p>スペシャルダイビング</p>
         </div>
@@ -176,8 +176,8 @@ if ($special && is_array($special)) : // データが存在し、配列である
         </table>
       </div>
       <?php
-endif;
-?>
+      endif;
+      ?>
 
 
 

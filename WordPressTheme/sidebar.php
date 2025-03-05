@@ -6,12 +6,12 @@
   <div class="sidebar__popularity-cards">
     <!-- サブループ開始／ブログ人気3件 -->
     <?php
-        $args = array(
-          'post_type' => 'post',
-          'posts_per_page' => 3,
-          'meta_key' => 'post_views_count',
-          'orderby' => 'meta_value_num',
-          'order' => 'DESC',
+      $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC',
         );
         $the_query = new WP_Query($args);
         if ($the_query->have_posts()):
@@ -39,8 +39,8 @@
 
     </div>
     <?php endwhile;
-          wp_reset_postdata();
-        endif; ?>
+      wp_reset_postdata();
+    endif; ?>
     <!-- サブループ終了 -->
 
   </div>
@@ -50,17 +50,17 @@
     <h2>口コミ</h2>
   </div>
   <?php
-        // 最新のカスタム投稿タイプ 'voice' を取得
-        $latest_voice_post = new WP_Query(array(
-          'post_type' => 'voice',
-          'posts_per_page' => 1, // 表示する記事の数
-          'post_status' => 'publish' // 公開済みの記事のみ
-        ));
+    // 最新のカスタム投稿タイプ 'voice' を取得
+    $latest_voice_post = new WP_Query(array(
+      'post_type' => 'voice',
+      'posts_per_page' => 1, // 表示する記事の数
+      'post_status' => 'publish' // 公開済みの記事のみ
+      ));
 
-        if ($latest_voice_post->have_posts()) :
-          while ($latest_voice_post->have_posts()) :
-            $latest_voice_post->the_post();
-        ?>
+  if ($latest_voice_post->have_posts()) :
+  while ($latest_voice_post->have_posts()) :
+  $latest_voice_post->the_post();
+  ?>
 
 
   <div class="sidebar__review-cards">
@@ -100,24 +100,25 @@
   </div>
   <div class="sidebar__campaign-cards">
     <?php
-          // 最新のカスタム投稿タイプ 'campaign' を取得
-          $latest_campaign_posts = new WP_Query(array(
-            'post_type' => 'campaign',
-            'posts_per_page' => 2, // 表示する記事の数
-            'post_status' => 'publish' // 公開済みの記事のみ
-          ));
+      // 最新のカスタム投稿タイプ 'campaign' を取得
+      $latest_campaign_posts = new WP_Query(array(
+      'post_type' => 'campaign',
+      'posts_per_page' => 2, // 表示する記事の数
+      'post_status' => 'publish' // 公開済みの記事のみ
+      ));
 
-          if ($latest_campaign_posts->have_posts()) :
-            while ($latest_campaign_posts->have_posts()) :
-              $latest_campaign_posts->the_post();
-          ?>
+      if ($latest_campaign_posts->have_posts()) :
+      while ($latest_campaign_posts->have_posts()) :
+        $latest_campaign_posts->the_post();
+    ?>
 
     <div class="sidebar-campaign-cards__item">
       <a href="<?php the_permalink(); ?>" class="sidebar-campaign-card">
         <div class="sidebar-campaign-card__header">
           <?php if (has_post_thumbnail()) :
-                        the_post_thumbnail('medium', array('alt' => get_the_title(), 'loading' => 'lazy', 'decoding' => 'async'));
-                      else : ?>
+            the_post_thumbnail('medium', array('alt' => get_the_title(), 'loading' => 'lazy', 'decoding' => 'async'));
+            else : 
+          ?>
 
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign.1.jpg" alt="サンゴの画像" />
           <?php endif; ?>
@@ -143,12 +144,12 @@
       </a>
     </div>
     <?php
-            endwhile;
-            wp_reset_postdata();
-          else :
-            echo '<p>No campaign posts found.</p>';
-          endif;
-          ?>
+    endwhile;
+      wp_reset_postdata();
+    else :
+      echo '<p>No campaign posts found.</p>';
+    endif;
+    ?>
 
 
 
@@ -168,37 +169,36 @@
   <div class="sidebar-archives">
     <div class="sidebar-archive open js-sidebar-archive1">
       <?php
-$years = $wpdb->get_results("
-  SELECT DISTINCT YEAR(post_date) AS year, MONTH(post_date) AS month
-  FROM $wpdb->posts
-  WHERE post_status = 'publish'
-  AND post_type = 'post'
-  ORDER BY post_date DESC
-");
+        $years = $wpdb->get_results("
+        SELECT DISTINCT YEAR(post_date) AS year, MONTH(post_date) AS month
+        FROM $wpdb->posts
+        WHERE post_status = 'publish'
+        AND post_type = 'post'
+        ORDER BY post_date DESC
+        ");
 
-$current_year = null;
+        $current_year = null;
 
-if ($years) {
-  echo '<ul class="sidebar-archive__list">';
+      if ($years) {
+        echo '<ul class="sidebar-archive__list">';
 
-  foreach ($years as $year) {
-    // 年が変わったら新しいリストを作成
-    if ($current_year !== $year->year) {
+      foreach ($years as $year) {
+        // 年が変わったら新しいリストを作成
+      if ($current_year !== $year->year) {
       if ($current_year !== null) {
         echo '</ol></li>'; // 前の年のリストを閉じる
       }
-      $current_year = $year->year;
+        $current_year = $year->year;
 
-      // 年の表示と月リストの開始
-      echo '<li class="sidebar-archive__item">';
-      echo '<button class="sidebar-archive__year">' . esc_html($year->year) . '</button>';
-      echo '<ol class="sidebar-archive__months">';
-    }
-    $month_link = get_month_link($year->year, $year->month);
-    // 月のリンク
+        // 年の表示と月リストの開始
+        echo '<li class="sidebar-archive__item">';
+        echo '<button class="sidebar-archive__year">' . esc_html($year->year) . '</button>';
+        echo '<ol class="sidebar-archive__months">';
+      }
+      $month_link = get_month_link($year->year, $year->month);
+        // 月のリンク
     echo '<li class="sidebar-archive__month">';
-    echo '<a href="' . esc_url($month_link) . '">'
-      . esc_html($year->month) . '月</a>';
+    echo '<a href="' . esc_url($month_link) . '">'. esc_html($year->month) . '月</a>';
     echo '</li>';
   }
 

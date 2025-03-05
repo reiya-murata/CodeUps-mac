@@ -43,9 +43,10 @@ $terms = esc_url(home_url('/terms/'));
     </div>
   </section>
   <?php endwhile;
-        else :
-          echo '<p>投稿が見つかりませんでした。</p>';
-    endif; ?>
+    else :
+      echo '<p>投稿が見つかりませんでした。</p>';
+  endif; 
+  ?>
   </div>
   </div>
   </section>

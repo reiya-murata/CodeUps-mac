@@ -9,6 +9,7 @@
   padding-left: rem(24);
   padding-right: rem(24);
   margin-bottom: rem(20);
+  transition: 0.3s all;
   @include mq(md) {
     gap: rem(40);
     margin-top: rem(24);

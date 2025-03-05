@@ -37,17 +37,17 @@ $terms = esc_url(home_url('/terms/'));
     <div class="faq-contents__inner inner--sub">
 
       <?php
-            // 現在の投稿のIDを取得
-            $post_id = get_the_ID();
-            // SCFプラグインを使ってカスタムフィールドグループを取得
-            $faq_list = SCF::get('faq_list', $post_id);
-            if (!empty($faq_list)) :
-                foreach ($faq_list as $faq_list) :
-                    $faq_question = $faq_list['question'];
-                    $faq_answer = $faq_list['answer'];
-                    // 質問と回答が両方存在する場合のみ表示
-                    if (!empty($faq_question) && !empty($faq_answer)) :
-            ?>
+        // 現在の投稿のIDを取得
+        $post_id = get_the_ID();
+        // SCFプラグインを使ってカスタムフィールドグループを取得
+        $faq_list = SCF::get('faq_list', $post_id);
+        if (!empty($faq_list)) :
+        foreach ($faq_list as $faq_list) :
+          $faq_question = $faq_list['question'];
+          $faq_answer = $faq_list['answer'];
+        // 質問と回答が両方存在する場合のみ表示
+        if (!empty($faq_question) && !empty($faq_answer)) :
+      ?>
 
 
 
@@ -68,12 +68,12 @@ $terms = esc_url(home_url('/terms/'));
         </div>
       </div>
       <?php
-                    endif;
-                  endforeach;
-            else :
-                echo '<p>No FAQ items found.</p>';
-            endif;
-            ?>
+        endif;
+        endforeach;
+        else :
+          echo '<p>No FAQ items found.</p>';
+        endif;
+      ?>
 
     </div>
   </section>
