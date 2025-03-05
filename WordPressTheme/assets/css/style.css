@@ -1450,7 +1450,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
-	width: 69%;
+	width: 100%;
 }
 
 .contactform__checkbox {
@@ -4239,6 +4239,10 @@ html {
 
 .contactform-togle::before {
 	top: 3.125rem;
+}
+
+.contactform__checkboxs {
+	width: 69%;
 }
 
 .contactform__agreement {

@@ -205,7 +205,10 @@
   display: flex;
   gap: rem(4);
   flex-direction: column;
+  width: 100%;
+  @include mq("md") {
   width: 69%;
+  }
 }
 
 .contactform__checkbox {

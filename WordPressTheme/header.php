@@ -32,6 +32,11 @@ $contact = esc_url(home_url('/contact/'));
 $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 ?>
+<?php
+$fan_link = get_term_link('fan', 'campaign_category');
+$license_link = get_term_link('license', 'campaign_category');
+$experience_link = get_term_link('experience', 'campaign_category');
+?>
 <?php wp_head(); ?>
 
 <body>
@@ -44,7 +49,7 @@ $terms = esc_url(home_url('/terms/'));
               <a href="
               <?php echo $campaign; ?>">キャンペーン</a>
             </li>
-            <li class="nav__item"><a href="<?php echo esc_url($license_link); ?>">">ライセンス取得</a></li>
+            <li class="nav__item"><a href="<?php echo esc_url($license_link); ?>">ライセンス取得</a></li>
             <li class="nav__item"><a href="<?php echo esc_url($fan_link); ?>">貸切体験ダイビング</a></li>
             <li class="nav__item"><a href="<?php echo esc_url($experience_link); ?>">ナイトダイビング</a></li>
 
