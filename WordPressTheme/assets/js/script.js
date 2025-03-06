@@ -249,6 +249,8 @@ function toggleAccordion(archive) {
     archive.classList.add('open');
   }
 }
+
+//faq
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.js-modal').forEach(function (question) {
     question.addEventListener('click', function () {

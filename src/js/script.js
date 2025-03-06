@@ -59,8 +59,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-
 // swiper メインビュー
 const hero__swiper = new Swiper(".js-hero-swiper", {
   spaceBetween: 30,
@@ -76,7 +74,6 @@ const hero__swiper = new Swiper(".js-hero-swiper", {
   },
 
 });
-
 
 //campaign__swiper
 var swiper = new Swiper(".js-campaign__swiper", {
@@ -191,9 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-
-
-
 // information-pageタブ
 document.addEventListener('DOMContentLoaded', function () {
   // タブボタンをすべて取得
@@ -221,7 +215,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-
 
 
 // サイドバーアコーディオン
@@ -262,10 +255,7 @@ function toggleAccordion(archive) {
   }
 }
 
-
-
-
-
+//faq
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.js-modal').forEach((question) => {
     question.addEventListener('click', () => {
@@ -281,12 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-  
-  
-
-
-
 
 // コンタクトフォーム
 document.addEventListener('DOMContentLoaded', function () {
