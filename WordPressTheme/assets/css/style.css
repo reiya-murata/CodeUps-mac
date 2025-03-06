@@ -1660,6 +1660,10 @@ input[type=checkbox]:checked {
 	margin-top: 2.5rem;
 }
 
+.gallery__img-item {
+	pointer-events: none;
+}
+
 .gallery__img:nth-child(6n+1) {
 	-o-object-fit: cover;
 	height: 100%;
@@ -4303,12 +4307,15 @@ html {
 
 .gallery__imgs {
 	grid-gap: 0.5rem 0.5rem;
-	cursor: pointer;
 	display: grid;
 	gap: 0.5rem 0.5rem;
 	grid-auto-flow: row dense;
 	grid-template-columns: repeat(13, 1fr);
 	margin-top: 5rem;
+}
+
+.gallery__img-item {
+	pointer-events: painted;
 }
 
 .gallery__img:nth-child(6n+1) {
