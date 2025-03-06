@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="" />
   <meta property="og:description" content="" />
   <!-- ファビコン -->
-
+  <?php wp_head(); ?>
 </head>
 <?php 
 $campaign = esc_url(home_url('/campaign/'));
@@ -36,7 +36,7 @@ $fan_link = get_term_link('fan', 'campaign_category');
 $license_link = get_term_link('license', 'campaign_category');
 $experience_link = get_term_link('experience', 'campaign_category');
 ?>
-<?php wp_head(); ?>
+
 
 <body>
   <header class="header">
