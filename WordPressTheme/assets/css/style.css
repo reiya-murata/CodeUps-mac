@@ -4303,6 +4303,7 @@ html {
 
 .gallery__imgs {
 	grid-gap: 0.5rem 0.5rem;
+	cursor: pointer;
 	display: grid;
 	gap: 0.5rem 0.5rem;
 	grid-auto-flow: row dense;

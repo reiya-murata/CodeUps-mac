@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // モーダル要素が存在する場合のみ処理を行う
   if (modal && modalImage) {
     // すべての画像を取得
-    const galleryImages = document.querySelectorAll('.js-gallery-img');
+    const galleryImages = document.querySelectorAll('.gallery__img-item');
 
     // 各画像にクリックイベントを追加
     galleryImages.forEach(img => {
@@ -266,29 +266,22 @@ function toggleAccordion(archive) {
 
 
 
-  // FAQ 全ての質問部分(js-modal)にイベントを追加
+document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.js-modal').forEach((question) => {
     question.addEventListener('click', () => {
-      // 親要素(faq-content)を取得
-      const faqItem = question.closest('.faq-content-lines');
+      const faqItem = question.closest('.faq-content');
       if (!faqItem) return;
-  
-      // faq-content-line2を取得
-      const faqLine2 = faqItem.querySelector('.faq-content__line2');
-  
-      // 質問部分と回答部分を取得
+
       const answer = faqItem.querySelector('.js-faq-content');
-  
-      // activeクラスをトグル
-      question.classList.toggle('active'); // クリックされた質問部分
-      if (answer) {
-        answer.classList.toggle('active'); // 回答部分
-      }
-      if (faqLine2) {
-        faqLine2.classList.toggle('active'); // faq-content-line2
-      }
+      const faqLine2 = faqItem.querySelector('.faq-content__line2');
+
+      question.classList.toggle('active');
+      if (answer) answer.classList.toggle('active');
+      if (faqLine2) faqLine2.classList.toggle('active');
     });
   });
+});
+
   
   
 
