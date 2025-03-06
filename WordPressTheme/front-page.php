@@ -23,20 +23,14 @@ $terms = esc_url(home_url('/terms/'));
     <div class="hero__imgs">
       <div class="hero__img">
         <div class="swiper hero__swiper js-hero-swiper">
-
           <div class="swiper-wrapper">
-
-
-
             <?php
             $mainvisuals = SCF::get('mainvisuals', 21); // 投稿ID 21のデータを取得
-
               if (!empty($mainvisuals)) :
               foreach ($mainvisuals as $mainvisual) :
             // 画像IDをURLに変換
                 $mainvisual_pc = !empty($mainvisual['mainvisual_pc']) ? wp_get_attachment_image_url($mainvisual['mainvisual_pc'], 'full') : '';
                 $mainvisual_sp = !empty($mainvisual['mainvisual_sp']) ? wp_get_attachment_image_url($mainvisual['mainvisual_sp'], 'full') : '';
-
               // 画像データがない場合はスキップ
                   if (!$mainvisual_pc && !$mainvisual_sp) {
                   continue;
@@ -55,15 +49,13 @@ $terms = esc_url(home_url('/terms/'));
               echo '<p>メインビジュアルの画像がありません。</p>';
               endif;
             ?>
-
-
           </div>
-
         </div>
       </div>
     </div>
     </div>
   </section>
+
   <section class="campaign l-campaign">
     <div class="campaign__inner inner">
       <div class="campaign__title section-title">
@@ -73,7 +65,6 @@ $terms = esc_url(home_url('/terms/'));
       <div class="campaign__swiper">
         <div class="swiper campaign__swiper js-campaign__swiper">
           <!-- Additional required wrapper -->
-
           <div class="swiper-wrapper campaign__slider">
             <!-- サブループ開始（カスタム投稿 campaign） -->
             <?php
@@ -82,7 +73,6 @@ $terms = esc_url(home_url('/terms/'));
               'posts_per_page' => 8,
               );
               $the_query = new WP_Query($args);
-
               if ($the_query->have_posts()):
             ?>
             <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
@@ -93,11 +83,9 @@ $terms = esc_url(home_url('/terms/'));
       if (!empty($categories) && !is_wp_error($categories)) {
         $category_name = $categories[0]->name;
       }
-
       $campaign_2 = get_field('campaign-2');
       $campaign_3 = get_field('campaign-3');
       ?>
-
             <!-- Slides -->
             <div class="campaign__slide swiper-slide">
               <div class="slide-card">
@@ -110,25 +98,20 @@ $terms = esc_url(home_url('/terms/'));
                     <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="noimage">
                     <?php endif; ?>
                   </div>
-
                   <div class="slide-card__body">
                     <div class="slide-card__icon card-icon">
                       <h2 class="slide-card__icon-title"><?php echo esc_html($category_name); ?></h2>
                     </div>
-
                     <div class="slide-card__title-campaign">
                       <h2><?php echo esc_html(get_the_title()); ?></h2>
                     </div>
-
                     <p class="slide-card__text-campaign">全部コミコミ(お一人様)</p>
-
                     <div class="slide-card__prices">
                       <div class="slide-card__prices-aria">
                         <?php if ($campaign_2): ?>
                         <h3 class="slide-card__price"><?php echo esc_html($campaign_2); ?></h3>
                         <?php endif; ?>
                       </div>
-
                       <div class="slide-card__discounts">
                         <?php if ($campaign_3): ?>
                         <h3 class="slide-card__discount"><?php echo esc_html($campaign_3); ?></h3>
@@ -142,22 +125,15 @@ $terms = esc_url(home_url('/terms/'));
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
             <?php endif; ?>
-
-
-
-
-
           </div>
         </div>
       </div>
-
       <div class="campaign__swiper-next">
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/right-arrow.png" alt="右へ" />
       </div>
       <div class="campaign__swiper-prev">
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/left-arrow.png" alt="左へ" />
       </div>
-
       <div class="campaign__button">
         <a href="<?php echo $campaign ?>" class="button">
           View more<span class="button__stickarrow"></span>
@@ -182,11 +158,9 @@ $terms = esc_url(home_url('/terms/'));
               srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.2.jpg" />
             <source media="(min-width: 767px)"
               srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg" />
-
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
           </picture>
         </div>
-
         <div class="about__content">
           <div class="about__content-titles">
             <h2 class="about__content-title">
@@ -195,7 +169,6 @@ $terms = esc_url(home_url('/terms/'));
               the Ocean
             </h2>
           </div>
-
           <div class="about__texts">
             <p class="about__text">
               ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
@@ -250,7 +223,6 @@ $terms = esc_url(home_url('/terms/'));
         <p class="section-title__main">blog</p>
         <h2 class="section-title__sub">ブログ</h2>
       </div>
-
       <div class="blog__cards blog-cards">
         <!-- サブループ開始（通常投稿 blog） -->
         <?php
@@ -271,7 +243,6 @@ $terms = esc_url(home_url('/terms/'));
               <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="noimage">
               <?php endif; ?>
             </div>
-
             <div class="blog-card__body">
               <time class="blog-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m/d'); ?></time>
               <h2 class="blog-card__title"><?php the_title(); ?></h2>
@@ -289,14 +260,7 @@ $terms = esc_url(home_url('/terms/'));
         <?php wp_reset_postdata(); ?>
         <?php endif; ?>
         <!-- サブループ終了 -->
-
-
-
-
-
-
       </div>
-
       <div class="blog__button">
         <a href="<?php echo $blog?>" class="button">
           View more<span class="button__stickarrow"> </span>
@@ -313,7 +277,6 @@ $terms = esc_url(home_url('/terms/'));
       </div>
       <div class="voice__cards voice-cards">
         <!-- サブループ開始（カスタム投稿 voice） -->
-        <!-- サブループ開始（カスタム投稿 voice） -->
         <?php
           $args = array(
           'post_type' => 'voice',
@@ -321,24 +284,20 @@ $terms = esc_url(home_url('/terms/'));
           );
           $query = new WP_Query($args);
         ?>
-
         <?php if ($query->have_posts()) : ?>
         <?php while ($query->have_posts()) : $query->the_post(); ?>
         <?php
           $categories = get_the_terms(get_the_ID(), 'voice_category');
           $category_classes = '';
-
         if ($categories && !is_wp_error($categories)) {
         foreach ($categories as $category) {
         $category_classes .= ' js-tab-' . esc_attr($category->term_id);
           }
         }
-
         $age = get_field('voice_1');
         $gender = get_field('voice_2');
         $voicetext = get_field('voice_3');
         ?>
-
         <div class="voice-cards__item<?php echo esc_attr($category_classes); ?>">
           <a href="<?php the_permalink(); ?>" class="voice-card">
             <div class="voice-card__inner">
@@ -346,12 +305,10 @@ $terms = esc_url(home_url('/terms/'));
               <div class="voice-card__header">
                 <div class="voice-card__header-left">
                   <div class="voice-card__age"><?php echo esc_html($age); ?>(<?php echo esc_html($gender); ?>)</div>
-
                   <div class="voice-card__icon card-icon"><?php echo esc_html($categories[0]->name ?? '未分類'); ?></div>
                   <div class="voice-card__title"><?php the_title(); ?></div>
                 </div>
                 <?php endif; ?>
-
                 <div class="voice-card__img colorbox">
                   <?php if (has_post_thumbnail()) : ?>
                   <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
@@ -359,7 +316,6 @@ $terms = esc_url(home_url('/terms/'));
                   <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="noimage">
                   <?php endif; ?>
                 </div>
-
               </div>
               <div class="voice-card__body">
                 <?php if ($voicetext): ?>
@@ -374,16 +330,10 @@ $terms = esc_url(home_url('/terms/'));
             </div>
           </a>
         </div>
-
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
         <?php endif; ?>
-
-
-
-
       </div>
-
       <div class="voice__button">
         <a href="<?php echo $voice?>" class="button">
           View more<span class="button__stickarrow"></span>
@@ -403,25 +353,23 @@ $terms = esc_url(home_url('/terms/'));
           <div class="price__content--fast">
             <div class="price__content-title">ライセンス講習</div>
             <div class="price__items">
-
               <?php
-        // 'price' のページを取得
-        $price_page = get_page_by_path('price');
+              // 'price' のページを取得
+              $price_page = get_page_by_path('price');
+              // ページが見つかった場合
+              if ($price_page) {
+              $post_id = $price_page->ID; // 投稿IDを取得
 
-        // ページが見つかった場合
-        if ($price_page) {
-            $post_id = $price_page->ID; // 投稿IDを取得
+              // SCF からデータを取得
+              $license = SCF::get('license', $post_id);
 
-            // SCF からデータを取得
-            $license = SCF::get('license', $post_id);
-
-            // データが取得できている場合
-            if ($license) : 
+              // データが取得できている場合
+              if ($license) : 
                 // SCFで取得したデータが配列であるかを確認
                 if (is_array($license)) {
-                    foreach ($license as $entry) :
-                        // name_1 と price_1 が存在している場合のみ表示
-                        if (!empty($entry['name_1']) && !empty($entry['price_1'])) :
+                  foreach ($license as $entry) :
+                    // name_1 と price_1 が存在している場合のみ表示
+                    if (!empty($entry['name_1']) && !empty($entry['price_1'])) :
                 ?>
               <div class="price__item">
                 <div class="price__item-title">
@@ -434,10 +382,10 @@ $terms = esc_url(home_url('/terms/'));
               <?php
               endif;
               endforeach;
-                } else {
-                    // もし $license が配列でない場合（単一値の場合など）
-                    if (!empty($license['name_1']) && !empty($license['price_1'])) :
-                  ?>
+              } else {
+              // もし $license が配列でない場合（単一値の場合など）
+              if (!empty($license['name_1']) && !empty($license['price_1'])) :
+              ?>
               <div class="price__item">
                 <div class="price__item-title">
                   <?php echo esc_html($license['name_1']); ?>
@@ -448,7 +396,7 @@ $terms = esc_url(home_url('/terms/'));
               </div>
               <?php
               endif;
-                }
+              }
           endif;
         } else {
           echo '該当する価格ページが見つかりません。';
@@ -456,22 +404,17 @@ $terms = esc_url(home_url('/terms/'));
         ?>
             </div>
           </div>
-
           <div class="price__content">
             <div class="price__content-title">体験ダイビング</div>
             <div class="price__items">
-
               <?php
                 // 'price' のページを取得
                 $price_page = get_page_by_path('price');
-
                 // ページが見つかった場合
               if ($price_page) {
                 $post_id = $price_page->ID; // 投稿IDを取得
-
                 // SCF からデータを取得
                 $experience = SCF::get('experience', $post_id);
-
                 // データが取得できている場合
               if ($license) : 
                 // SCFで取得したデータが配列であるかを確認
@@ -513,22 +456,17 @@ $terms = esc_url(home_url('/terms/'));
         ?>
             </div>
           </div>
-
           <div class="price__content">
             <div class="price__content-title">ファンダイビング</div>
             <div class="price__items">
-
               <?php
                 // 'price' のページを取得
                 $price_page = get_page_by_path('price');
-
                 // ページが見つかった場合
               if ($price_page) {
                 $post_id = $price_page->ID; // 投稿IDを取得
-
                 // SCF からデータを取得
                 $fan = SCF::get('fan', $post_id);
-
                 // データが取得できている場合
                 if ($fan) : 
                 // SCFで取得したデータが配列であるかを確認
@@ -566,26 +504,21 @@ $terms = esc_url(home_url('/terms/'));
             endif;
         } else {
             echo '該当する価格ページが見つかりません。';
-        }
+          }
         ?>
             </div>
           </div>
-
           <div class="price__content">
             <div class="price__content-title">スペシャルダイビング</div>
             <div class="price__items">
-
               <?php
                 // 'price' のページを取得
                 $price_page = get_page_by_path('price');
-
                 // ページが見つかった場合
               if ($price_page) {
                 $post_id = $price_page->ID; // 投稿IDを取得
-
                 // SCF からデータを取得
                 $special = SCF::get('special', $post_id);
-
                 // データが取得できている場合
                 if ($special) : 
                 // SCFで取得したデータが配列であるかを確認
@@ -628,7 +561,6 @@ $terms = esc_url(home_url('/terms/'));
             </div>
           </div>
         </div>
-
         <div class="price__contents-right colorbox">
           <picture>
             <source media="(max-width: 767px)"
@@ -647,7 +579,6 @@ $terms = esc_url(home_url('/terms/'));
       </div>
     </div>
   </section>
-
 
 </main>
 

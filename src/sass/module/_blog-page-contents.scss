@@ -9,10 +9,6 @@
   }
 }
 
-.blog-page-contents__sidebar {
-  @include mq(md) {}
-}
-
 .blog-page-contents__cards {
   position: relative;
 }

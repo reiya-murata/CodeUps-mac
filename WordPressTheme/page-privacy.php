@@ -29,7 +29,6 @@ $terms = esc_url(home_url('/terms/'));
     </div>
   </section>
 
-
   <?php get_template_part('parts/breadcrumbs')?>
 
   <section class="privacy-contents l-privacy-contents ">
@@ -40,8 +39,6 @@ $terms = esc_url(home_url('/terms/'));
       <div class="privacy-contents__text">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <?php the_content(); ?>
-
-
       </div>
     </div>
   </section>
@@ -50,10 +47,6 @@ $terms = esc_url(home_url('/terms/'));
       echo '<p>投稿が見つかりませんでした。</p>';
   endif; ?>
 
-
-
 </main>
-
-
 
 <?php get_footer(); ?>

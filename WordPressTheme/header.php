@@ -7,7 +7,6 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="robots" content="noindex" />
   <!-- meta情報 -->
-  <title>CodeUps</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <!-- ogp -->
@@ -52,11 +51,9 @@ $experience_link = get_term_link('experience', 'campaign_category');
             <li class="nav__item"><a href="<?php echo esc_url($license_link); ?>">ライセンス取得</a></li>
             <li class="nav__item"><a href="<?php echo esc_url($fan_link); ?>">貸切体験ダイビング</a></li>
             <li class="nav__item"><a href="<?php echo esc_url($experience_link); ?>">ナイトダイビング</a></li>
-
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $about; ?>">私たちについて</a>
             </li>
-
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $information; ?>">ダイビング情報</a>
             </li>
@@ -69,7 +66,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
             <li class="nav__item"><a
                 href="<?php echo esc_url(home_url('/information/#information-page-contents__tab2')); ?>">ファンダイビング</a>
             </li>
-
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $blog; ?>">ブログ</a>
             </li>
@@ -78,26 +74,21 @@ $experience_link = get_term_link('experience', 'campaign_category');
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $voice; ?>">お客様の声</a>
             </li>
-
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $price; ?>">料金一覧</a>
             </li>
             <li class="nav__item"><a href="<?php echo esc_url(home_url('/price/#license')); ?>">ライセンス講習</a></li>
             <li class="nav__item"><a href="<?php echo esc_url(home_url('/price/#experience')); ?>">体験ダイビング</a></li>
             <li class="nav__item"><a href="<?php echo esc_url(home_url('/price/#fan')); ?>">ファンダイビング</a></li>
-
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $faq; ?>">よくある質問</a>
             </li>
-
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $privacy; ?>">プライバシー<br />ポリシー</a>
             </li>
-
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $terms; ?>">利用規約</a>
             </li>
-
             <li class="nav__item nav__item--bold">
               <a href="<?php echo $contact; ?>">お問い合わせ</a>
             </li>
@@ -105,7 +96,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
         </div>
       </div>
     </nav>
-
     <div class="header__inner">
       <h1 class="header__inner-logo">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">

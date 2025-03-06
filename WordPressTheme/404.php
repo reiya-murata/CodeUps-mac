@@ -34,10 +34,9 @@ $terms = esc_url(home_url('/terms/'));
         </div>
       </div>
     </section>
+
   </section>
 
-
 </main>
-
 
 <?php get_footer(); ?>

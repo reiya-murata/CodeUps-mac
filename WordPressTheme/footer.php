@@ -18,9 +18,8 @@ $experience_link = get_term_link('experience', 'campaign_category');
 ?>
 
 
-<?php wp_footer(); ?>
-<section class="contact l-contact
-  <?php echo (is_404() || is_page(array('contact', 'thanks'))) ? 'contact--display-none' : ''; ?>">
+<?php if (!(is_404() || is_page(array('contact', 'thanks')))) : ?>
+<section class="contact l-contact">
   <div class="contact__inner inner">
     <div class="contact__card">
       <div class="contact__left">
@@ -42,13 +41,11 @@ $experience_link = get_term_link('experience', 'campaign_category');
               定休日:毎週火曜日
             </p>
           </div>
-
           <div class="contact__map">
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
           </div>
         </div>
       </div>
-
       <div class="contact__right">
         <div class="contact__title">
           <div class="section-title section-title--contact">
@@ -68,6 +65,8 @@ $experience_link = get_term_link('experience', 'campaign_category');
     </div>
   </div>
 </section>
+<?php endif; ?>
+
 <footer class="footer l-footer  <?php echo is_404() ? 'l-404-footer' : ''; ?>">
   <div class="footer__inner inner">
     <div class="footer__icons nav-icons">
@@ -89,7 +88,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
               alt="インスタグラムのアイコン" />
           </a>
         </div>
-
       </div>
     </div>
     <nav class="footer__nav nav nav--bottom">
@@ -114,7 +112,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
                 <a href="<?php echo $about;?>"> 私たちについて</a>
               </li>
             </ul>
-
             <ul class="nav__flex ">
               <li class="nav__item nav__item--bold">
                 <a href="<?php echo $information;?>"> ダイビング情報</a>
@@ -128,7 +125,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
               <li class="nav__item"><a
                   href="<?php echo esc_url(home_url('/information/#information-page-contents__tab2')); ?>">ファンダイビング</a>
               </li>
-
               <li class="nav__item nav__item--bold">
                 <a href="<?php echo $blog;?>">ブログ</a>
               </li>
@@ -139,7 +135,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
               <li class="nav__item nav__item--bold">
                 <a href="<?php echo $voice;?>">お客様の声</a>
               </li>
-
               <li class="nav__item nav__item--bold">
                 <a href="<?php echo $price;?>">料金一覧</a>
               </li>
@@ -149,7 +144,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
                 <a href="<?php echo esc_url(home_url('/price/#fan')); ?>">ファンダイビング</a>
               </li>
             </ul>
-
             <ul class="nav__flex">
               <li class="nav__item nav__item--bold">
                 <a href="<?php echo $faq;?>">よくある質問</a>
@@ -175,7 +169,9 @@ $experience_link = get_term_link('experience', 'campaign_category');
       <p>Copyright © 2021 - 2023 CodeUps LLC. All Rights Reserved.</p>
     </div>
   </div>
+  <?php wp_footer(); ?>
 </footer>
+
 </body>
 
 </html>

@@ -28,11 +28,11 @@ $terms = esc_url(home_url('/terms/'));
     </div>
 
   </section>
+
   <?php get_template_part('parts/breadcrumbs')?>
 
   <section class="blog-page-contents l-blog-page-contents">
     <div class="blog-page-contents__inner inner">
-
       <div class="blog-page-contents__cards blog-cards blog-cards--2clum">
         <?php if (have_posts()): 
         while (have_posts()):
@@ -65,19 +65,15 @@ $terms = esc_url(home_url('/terms/'));
           </a>
         </div>
         <?php endwhile; endif; ?>
-
       </div>
-
-
-      <div class="blog-page__  ">
+      <div class="blog-page__wp-pagenavi  ">
         <?php wp_pagenavi(); ?>
-
       </div>
-      <?php get_sidebar(); ?>
+
+      <?php get_sidebar();?>
 
     </div>
   </section>
-
 
 </main>
 

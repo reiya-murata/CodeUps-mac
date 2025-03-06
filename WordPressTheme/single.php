@@ -35,7 +35,6 @@ $terms = esc_url(home_url('/terms/'));
       <?php if (have_posts()):
       while (have_posts()):
         the_post(); ?>
-
       <div class="blog-detail-content">
         <div class="blog-detail__content">
           <time datetime="<?php the_time('c'); ?>" class="blog-detail__date blog-detail-date">
@@ -61,33 +60,22 @@ $terms = esc_url(home_url('/terms/'));
             $prev = get_previous_post(true); // 同じ投稿タイプのみに限定
             $next = get_next_post(true);
             ?>
-
             <?php if ($prev): ?>
             <a class="previouspostslink" href="<?php echo esc_url(get_permalink($prev->ID)); ?>">＜</a>
             <?php endif; ?>
-
             <?php if ($next): ?>
             <a class="nextpostslink" href="<?php echo esc_url(get_permalink($next->ID)); ?>">＞</a>
             <?php endif; ?>
-
             <?php endwhile; endif; ?>
-
           </div>
-
         </div>
-
-
-
-        <?php get_sidebar(); ?>
-
+        <div class="blog-page-contents__sidebar">
+          <?php get_sidebar(); ?>
+        </div>
       </div>
     </div>
   </section>
 
-
-
-
 </main>
-
 
 <?php get_footer(); ?>

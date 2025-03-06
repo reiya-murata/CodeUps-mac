@@ -13,7 +13,6 @@ $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 ?>
 
-
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">
@@ -29,6 +28,7 @@ $terms = esc_url(home_url('/terms/'));
       </picture>
     </div>
   </section>
+
   <?php get_template_part('parts/breadcrumbs')?>
 
   <section class="about-page l-about-page">
@@ -42,7 +42,6 @@ $terms = esc_url(home_url('/terms/'));
             srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg">
           <source media="(min-width: 767px)"
             srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg">
-
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
         </picture>
       </div>
@@ -65,7 +64,6 @@ $terms = esc_url(home_url('/terms/'));
     </div>
   </section>
 
-
   <section class="gallery l-gallery">
     <div class="gallery__inner inner">
       <div class="gallery__title section-title">
@@ -76,25 +74,20 @@ $terms = esc_url(home_url('/terms/'));
         <?php
           // 'page-about-us' のページを取得
           $page_about_us = get_page_by_path('about-us');
-
           // ページが見つかった場合
           if ($page_about_us) :
           // 'about-us' ページの投稿IDを取得
           $post_id = $page_about_us->ID;
-
           // SCF から 'gallery__imgs' グループフィールドを取得
           $gallery = SCF::get('gallery__imgs', $post_id);
-
           // 画像データが存在する場合
           if ($gallery) :
           // ギャラリー内の各画像をループで表示
           foreach ($gallery as $image) :
           // 画像IDを取得
           $image_id = $image['gallery__img']; // 'gallery__img' はフィールドのキー名
-
           // 画像IDから画像URLを取得
           $image_url = wp_get_attachment_url($image_id);
-
           // 画像URLが存在する場合のみ表示
           if ($image_url) :
         ?>
@@ -117,10 +110,10 @@ $terms = esc_url(home_url('/terms/'));
         <!-- モーダル部分 -->
         <div id="imageModal" class="gallery__modal">
           <img class="gallery__modal-content" id="modalImage" alt="拡大画像" />
-          <div id="caption"></div>
+          <div id="caption">
+          </div>
         </div>
       </div>
-
 
   </section>
 

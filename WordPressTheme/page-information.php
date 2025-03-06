@@ -13,7 +13,6 @@ $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 ?>
 
-
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">
@@ -30,7 +29,6 @@ $terms = esc_url(home_url('/terms/'));
     </div>
   </section>
 
-
   <?php get_template_part('parts/breadcrumbs')?>
 
   <section class="information-page-contents l-information-page-contents">
@@ -43,9 +41,7 @@ $terms = esc_url(home_url('/terms/'));
         <button class="information-page-contents__tab-icon tab-icon--3 js-tab-menu2"
           data-target="information-page-contents__tab3">体験<br class="pc-hidden">ダイビング</button>
       </div>
-
       <div class="information-page-contents__tabs active js-information-tabbody" id="information-page-contents__tab1">
-
         <div class="campaign-tab">
           <div class="campaign-tab__left">
             <div class="campaign-tab__title">
@@ -62,10 +58,7 @@ $terms = esc_url(home_url('/terms/'));
           </div>
         </div>
       </div>
-
-
       <div class="information-page-contents__tabs js-information-tabbody" id="information-page-contents__tab2">
-
         <div class="campaign-tab">
           <div class="campaign-tab__left">
             <div class="campaign-tab__title">
@@ -81,9 +74,6 @@ $terms = esc_url(home_url('/terms/'));
           </div>
         </div>
       </div>
-
-
-
       <div class="information-page-contents__tabs js-information-tabbody" id="information-page-contents__tab3">
         <div class="campaign-tab">
           <div class="campaign-tab__left">
@@ -103,9 +93,6 @@ $terms = esc_url(home_url('/terms/'));
     </div>
   </section>
 
-
 </main>
-
-
 
 <?php get_footer(); ?>

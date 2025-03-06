@@ -13,7 +13,6 @@ $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 ?>
 
-
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">
@@ -31,6 +30,7 @@ $terms = esc_url(home_url('/terms/'));
   </section>
 
   <?php get_template_part('parts/breadcrumbs')?>
+
   <section class="thanks-page__inner inner">
     <div class=" thanks-page-top__contents">
       <div class="thanks-page-top__content1">
@@ -41,13 +41,8 @@ $terms = esc_url(home_url('/terms/'));
         お送り頂きました内容を確認の上、<br class="thanks-page-top__content-sp">3営業日以内に折り返しご連絡させて頂きます。<br>
         また、ご記入頂いたメールアドレスへ、<br class="thanks-page-top__content-sp">自動返信の確認メールをお送りしております。</div>
     </div>
-
   </section>
 
-
-
-
 </main>
-
 
 <?php get_footer(); ?>

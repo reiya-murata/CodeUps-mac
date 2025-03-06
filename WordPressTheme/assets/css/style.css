@@ -665,6 +665,10 @@ a {
 	position: relative;
 }
 
+.blog-page__wp-pagenavi {
+	margin-top: 5rem;
+}
+
 .blog {
 	position: relative;
 }

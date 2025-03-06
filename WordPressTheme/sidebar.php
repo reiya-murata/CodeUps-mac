@@ -1,4 +1,4 @@
-<div class="blog-page__sidebar sidebar">
+<div class="sidebar">
 
   <div class="sidebar__popularity sidebar-title ">
     <h2>人気記事</h2>

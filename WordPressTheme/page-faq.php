@@ -13,7 +13,6 @@ $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 ?>
 
-
 <main>
 
   <section class="sub-mv">
@@ -35,7 +34,6 @@ $terms = esc_url(home_url('/terms/'));
 
   <section class="faq-contents  l-faq-contents">
     <div class="faq-contents__inner inner--sub">
-
       <?php
         // 現在の投稿のIDを取得
         $post_id = get_the_ID();
@@ -48,10 +46,6 @@ $terms = esc_url(home_url('/terms/'));
         // 質問と回答が両方存在する場合のみ表示
         if (!empty($faq_question) && !empty($faq_answer)) :
       ?>
-
-
-
-
       <div class="faq-content">
         <div class="faq-content__question active js-modal">
           <p>
@@ -74,59 +68,9 @@ $terms = esc_url(home_url('/terms/'));
           echo '<p>No FAQ items found.</p>';
         endif;
       ?>
-
     </div>
   </section>
 
-  <section class="contact l-contact">
-    <div class="contact__inner inner">
-      <div class="contact__card">
-        <div class="contact__left">
-          <div class="contact__logo-codeups">
-            <picture class="logo__contact-codeups">
-              <source media="(max-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps__bottom-sp.svg" />
-              <source media="(min-width: 767px)"
-                srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" />
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/cordUps_blue.svg" alt="cordUpsのロゴ" />
-            </picture>
-          </div>
-          <div class="contact__left-address">
-            <div class="contact__contents">
-              <p class="contact__content">
-                沖縄県那覇市1-1 <br />
-                TEL:0120-000-0000 <br />
-                営業時間:8:30-19:00 <br />
-                定休日:毎週火曜日
-              </p>
-            </div>
-
-            <div class="contact__map">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact.1.jpg" alt="地図の画像" />
-            </div>
-          </div>
-        </div>
-
-        <div class="contact__right">
-          <div class="contact__title">
-            <div class="section-title section-title--contact">
-              <p class="section-title__main">contact</p>
-              <h2 class="section-title__sub">お問い合わせ</h2>
-            </div>
-          </div>
-          <h3 class="contact__sub section-title__sub">
-            ご予約・お問い合わせはコチラ
-          </h3>
-          <div class="contact__button">
-            <a href="<?php echo $contact?>" class="button">
-              Contact us<span class="button__stickarrow"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
-
 
 <?php get_footer(); ?>

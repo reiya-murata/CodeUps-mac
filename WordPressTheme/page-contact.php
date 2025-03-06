@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 
-
-
 <main>
+
   <section class="sub-mv">
     <div class="sub-mv__hero">
       <h1 class="sub-mv__titles page-title">contact</h1>
@@ -24,13 +23,8 @@
     <div class="contact-page-contents__inner inner">
       <?php echo do_shortcode('[contact-form-7 id="5d871dd" title="コンタクトフォーム 1"]'); ?>
     </div>
-
   </section>
 
-
-
-
 </main>
-
 
 <?php get_footer(); ?>

@@ -12,6 +12,7 @@ $contact = esc_url(home_url('/contact/'));
 $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 ?>
+
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">
@@ -26,13 +27,11 @@ $terms = esc_url(home_url('/terms/'));
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-page-pc.jpg" alt=" 魚の群れの画像">
       </picture>
     </div>
-
   </section>
   <?php get_template_part('parts/breadcrumbs')?>
 
   <section class="blog-page-contents l-blog-page-contents">
     <div class="blog-page-contents__inner inner">
-
       <div class="blog-page-contents__cards blog-cards blog-cards--2clum">
         <?php if (have_posts()): 
         while (have_posts()):
@@ -55,24 +54,27 @@ $terms = esc_url(home_url('/terms/'));
               </h2>
               </h2>
               <p class=" blog-card__text">
-                <?php the_content(); ?>
+                <?php
+                  $content = get_the_content();
+                  $max_length = 175;
+                if (mb_strlen($content) > $max_length) {
+                  $content = mb_substr($content, 0, $max_length) . '...'; // 175文字にカットして省略
+                }
+                echo $content;
+                ?>
               </p>
             </div>
           </a>
         </div>
         <?php endwhile; endif; ?>
       </div>
-
-
       <div class="blog-page__wp-pagenavi ">
         <?php wp_pagenavi(); ?>
-
       </div>
-      <?php get_sidebar(); ?>
 
+      <?php get_sidebar(); ?>
     </div>
   </section>
-
 
 </main>
 

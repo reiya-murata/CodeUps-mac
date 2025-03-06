@@ -15,11 +15,9 @@ $terms = esc_url(home_url('/terms/'));
 
 <main>
   <section class="sub-mv">
-
     <div class="sub-mv__hero">
       <h1 class="sub-mv__titles page-title">terms of Service</h1>
     </div>
-
     <div class="sub-mv__img js-hero-contents">
       <picture>
         <source media="(max-width: 767px)"
@@ -51,10 +49,6 @@ $terms = esc_url(home_url('/terms/'));
   </div>
   </section>
 
-
 </main>
-
-
-
 
 <?php get_footer(); ?>

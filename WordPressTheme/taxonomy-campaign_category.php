@@ -40,49 +40,38 @@ $terms = esc_url(home_url('/terms/'));
         <a href="<?php echo esc_url(home_url('/campaign/')); ?>"
           class="tab-menu <?php if (!is_tax('campaign_category')) echo 'active'; ?>">ALL</a>
 
-        <?php
-        if (taxonomy_exists('campaign_category')) {
-          $parent_terms = get_terms(array(
-            'taxonomy'   => 'campaign_category',
-            'hide_empty' => false,
-            'parent'     => 0,
+        <?php if (taxonomy_exists('campaign_category')): 
+        $parent_terms = get_terms(array(
+        'taxonomy'   => 'campaign_category',
+        'hide_empty' => false,
+        'parent'     => 0,
+        ));
+        if (!empty($parent_terms) && !is_wp_error($parent_terms)): 
+        foreach ($parent_terms as $parent_term): 
+            $child_terms = get_terms(array(
+                'taxonomy'   => 'campaign_category',
+                'hide_empty' => false,
+                'parent'     => $parent_term->term_id,
             ));
-
-        if (!empty($parent_terms) && !is_wp_error($parent_terms)) {
-        foreach ($parent_terms as $parent_term) {
-          $child_terms = get_terms(array(
-            'taxonomy'   => 'campaign_category',
-            'hide_empty' => false,
-            'parent'     => $parent_term->term_id,
-            ));
-
-        if (!empty($child_terms) && !is_wp_error($child_terms)) {
-        foreach ($child_terms as $term) {
-        $term_link = get_term_link($term);
-        ?>
+            if (!empty($child_terms) && !is_wp_error($child_terms)): 
+              foreach ($child_terms as $term): ?>
         <a href="<?php echo esc_url(get_term_link($term)); ?>"
           class="tab-menu <?php echo (get_queried_object_id() === $term->term_id) ? 'active' : ''; ?>">
           <?php echo esc_html($term->name); ?>
         </a>
-
-        <?php
-                }
-              }
-            }
-          }
-        } else {
-            echo '<p>タクソノミー "campaign_category" が登録されていません。</p>';
-        }
-        ?>
+        <?php endforeach; 
+            endif;
+          endforeach; 
+        endif;
+        else: ?>
+        <p>タクソノミー "campaign_category" が登録されていません。</p>
+        <?php endif; ?>
       </div>
-
-
       <div class="campaign-slides campaign-slide-campaign-page">
         <?php if (have_posts()):
         while(have_posts()):
           the_post();
         ?>
-
         <div class="campaign-slide-card">
           <div class="campaign-slide-card__header">
             <?php if (has_post_thumbnail()): ?>
@@ -108,7 +97,6 @@ $terms = esc_url(home_url('/terms/'));
               </h2>
             </div>
             <?php endif; ?>
-
             <div class="campaign-slide-card__title-campaign">
               <h2><?php the_title(); ?></h2>
             </div>
@@ -150,15 +138,12 @@ $terms = esc_url(home_url('/terms/'));
         <p>キャンペーン情報はまだありません。</p>
         <?php endif; ?>
       </div>
-
       <div class="campaign-page-contents__button">
         <?php wp_pagenavi();?>
       </div>
     </div>
   </section>
 
-
 </main>
-
 
 <?php get_footer(); ?>

@@ -28,17 +28,14 @@ $terms = esc_url(home_url('/terms/'));
               <?php
                 // 現在のページの投稿IDを取得
                 $post_id = get_the_ID();
-
                 // SCFから 'mainvisuals' グループフィールドを取得
                 $mainvisuals = SCF::get('mainvisuals', $post_id);
-
                 // mainvisuals が存在する場合
                 if ($mainvisuals) :
                 // 'mainvisual_pc' と 'mainvisual_sp' をそれぞれ取得
                 $mainvisual_pc = isset($mainvisuals['mainvisual_pc']) ? esc_url($mainvisuals['mainvisual_pc']) : get_theme_file_uri() . '/assets/images/common/main-view.pc.1.jpg'; // デフォルトのPC画像
                 $mainvisual_sp = isset($mainvisuals['mainvisual_sp']) ? esc_url($mainvisuals['mainvisual_sp']) : get_theme_file_uri() . '/assets/images/common/main-view.1.jpg'; // デフォルトのSP画像
               ?>
-
               <div class="hero__slide swiper-slide">
                 <picture class="hero__mainvisual">
                   <source media="(max-width: 767px)" srcset="<?php echo $mainvisual_sp; ?>" />
@@ -46,14 +43,12 @@ $terms = esc_url(home_url('/terms/'));
                   <img src="<?php echo $mainvisual_pc; ?>" alt="turtle-img" />
                 </picture>
               </div>
-
               <?php
                 else :
                 // mainvisuals が空の場合
                 echo 'メインビジュアルが設定されていません。';
                 endif;
               ?>
-
             </div>
           </div>
         </div>
@@ -69,7 +64,6 @@ $terms = esc_url(home_url('/terms/'));
       <div class="campaign__swiper">
         <div class="swiper campaign__swiper js-campaign__swiper">
           <!-- Additional required wrapper -->
-
           <div class="swiper-wrapper campaign__slider">
             <!-- Slides -->
             <div class="campaign__slide swiper-slide">
@@ -90,7 +84,6 @@ $terms = esc_url(home_url('/terms/'));
                     <p class="slide-card__text-campaign">
                       全部コミコミ(お一人様)
                     </p>
-
                     <div class="slide-card__prices">
                       <div class="slide-card__prices-aria">
                         <h3 class="slide-card__price">¥20,000</h3>
@@ -103,7 +96,6 @@ $terms = esc_url(home_url('/terms/'));
                 </a>
               </div>
             </div>
-
             <div class="campaign__slide swiper-slide">
               <div class="slide-card">
                 <a href="#">
@@ -148,7 +140,6 @@ $terms = esc_url(home_url('/terms/'));
                     <p class="slide-card__text-campaign">
                       全部コミコミ(お一人様)
                     </p>
-
                     <div class="slide-card__prices">
                       <div class="slide-card__prices-aria">
                         <h3 class="slide-card__price">¥24,000</h3>
@@ -177,7 +168,6 @@ $terms = esc_url(home_url('/terms/'));
                     <p class="slide-card__text-campaign">
                       全部コミコミ(お一人様)
                     </p>
-
                     <div class="slide-card__prices">
                       <div class="slide-card__prices-aria-">
                         <h3 class="slide-card__price">¥10,000</h3>
@@ -208,7 +198,6 @@ $terms = esc_url(home_url('/terms/'));
                     <p class="slide-card__text-campaign">
                       全部コミコミ(お一人様)
                     </p>
-
                     <div class="slide-card__prices">
                       <div class="slide-card__prices-aria">
                         <h3 class="slide-card__price">¥20,000</h3>
@@ -221,7 +210,6 @@ $terms = esc_url(home_url('/terms/'));
                 </a>
               </div>
             </div>
-
             <div class="campaign__slide swiper-slide">
               <div class="slide-card">
                 <a href="#">
@@ -266,7 +254,6 @@ $terms = esc_url(home_url('/terms/'));
                     <p class="slide-card__text-campaign">
                       全部コミコミ(お一人様)
                     </p>
-
                     <div class="slide-card__prices">
                       <div class="slide-card__prices-aria">
                         <h3 class="slide-card__price">¥24,000</h3>
@@ -295,7 +282,6 @@ $terms = esc_url(home_url('/terms/'));
                     <p class="slide-card__text-campaign">
                       全部コミコミ(お一人様)
                     </p>
-
                     <div class="slide-card__prices">
                       <div class="slide-card__prices-aria-">
                         <h3 class="slide-card__price">¥10,000</h3>
@@ -311,14 +297,12 @@ $terms = esc_url(home_url('/terms/'));
           </div>
         </div>
       </div>
-
       <div class="campaign__swiper-next">
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/right-arrow.png" alt="右へ" />
       </div>
       <div class="campaign__swiper-prev">
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/left-arrow.png" alt="左へ" />
       </div>
-
       <div class="campaign__button">
         <a href="<?php echo $campaign ?>" class="button">
           View more<span class="button__stickarrow"></span>
@@ -343,11 +327,9 @@ $terms = esc_url(home_url('/terms/'));
               srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.2.jpg" />
             <source media="(min-width: 767px)"
               srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg" />
-
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about.pc2.jpg" alt="黄色の魚の画像" />
           </picture>
         </div>
-
         <div class="about__content">
           <div class="about__content-titles">
             <h2 class="about__content-title">
@@ -356,7 +338,6 @@ $terms = esc_url(home_url('/terms/'));
               the Ocean
             </h2>
           </div>
-
           <div class="about__texts">
             <p class="about__text">
               ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
@@ -411,9 +392,7 @@ $terms = esc_url(home_url('/terms/'));
         <p class="section-title__main">blog</p>
         <h2 class="section-title__sub">ブログ</h2>
       </div>
-
       <div class="blog__cards blog-cards">
-
         <div class="blog-cards__item">
           <a href="" class="blog-card">
             <div class="blog-card__header">
@@ -430,7 +409,6 @@ $terms = esc_url(home_url('/terms/'));
             </div>
           </a>
         </div>
-
         <div class="blog-cards__item">
           <a href="#" class="blog-card">
             <div class="blog-card__header">
@@ -447,7 +425,6 @@ $terms = esc_url(home_url('/terms/'));
             </div>
           </a>
         </div>
-
         <div class="blog-cards__item">
           <a href="#" class="blog-card">
             <div class="blog-card__header">
@@ -464,9 +441,7 @@ $terms = esc_url(home_url('/terms/'));
             </div>
           </a>
         </div>
-
       </div>
-
       <div class="blog__button">
         <a href="<?php echo $blog ?>" class="button">
           View more<span class="button__stickarrow"> </span>
@@ -509,7 +484,6 @@ $terms = esc_url(home_url('/terms/'));
             </div>
           </a>
         </div>
-
         <div class="voice-cards__item">
           <a href="#" class="voice-card">
             <div class="voice-card__inner">
@@ -537,7 +511,6 @@ $terms = esc_url(home_url('/terms/'));
           </a>
         </div>
       </div>
-
       <div class="voice__button">
         <a href="<?php echo $voice ?>" class="button">
           View more<span class="button__stickarrow"></span>
@@ -569,14 +542,12 @@ $terms = esc_url(home_url('/terms/'));
                 </div>
                 <div class="price__item-price">¥60,000</div>
               </div>
-
               <div class="price__item">
                 <div class="price__item-title">レスキュー＋EFRコース</div>
                 <div class="price__item-price">¥70,000</div>
               </div>
             </div>
           </div>
-
           <div class="price__content">
             <div class="price__content-title">体験ダイビング</div>
             <div class="price__items">
@@ -606,7 +577,6 @@ $terms = esc_url(home_url('/terms/'));
               </div>
             </div>
           </div>
-
           <div class="price__content">
             <div class="price__content-title">ファンダイビング</div>
             <div class="price__items">
@@ -636,7 +606,6 @@ $terms = esc_url(home_url('/terms/'));
               </div>
             </div>
           </div>
-
           <div class="price__content">
             <div class="price__content-title">スペシャルダイビング</div>
             <div class="price__items">
@@ -651,7 +620,6 @@ $terms = esc_url(home_url('/terms/'));
             </div>
           </div>
         </div>
-
         <div class="price__contents-right colorbox">
           <picture>
             <source media="(max-width: 767px)"
@@ -670,7 +638,6 @@ $terms = esc_url(home_url('/terms/'));
       </div>
     </div>
   </section>
-
 
 </main>
 

@@ -146,44 +146,32 @@ box.each(function () {
 
 // galleryモーダル
 document.addEventListener('DOMContentLoaded', function () {
-  // モーダルの要素を取得
   var modal = document.getElementById('imageModal');
   var modalImage = document.getElementById('modalImage');
 
-  // スクロール位置を記録する変数
   var scrollPosition = 0;
 
-  // モーダル要素が存在する場合のみ処理を行う
   if (modal && modalImage) {
-    // すべての画像を取得
-    var galleryImages = document.querySelectorAll('.js-gallery-img');
-
-    // 各画像にクリックイベントを追加
+    var galleryImages = document.querySelectorAll('.gallery__img-item'); // 修正: 画像を取得
     galleryImages.forEach(function (img) {
       img.addEventListener('click', function () {
-        // 現在のスクロール位置を記録
         scrollPosition = window.scrollY;
-
-        // bodyを固定してスクロール無効化
         document.body.style.overflow = 'hidden';
-        modal.style.display = "block"; // モーダルを表示
-        modalImage.src = this.src; // クリックされた画像をモーダルに表示
+
+        modal.style.display = "flex"; // 修正: `block` ではなく `flex` に
+        modalImage.src = this.src; // 修正: `this.src` をセット
       });
     });
 
-    // モーダル外をクリックすると閉じる
     modal.addEventListener('click', function (event) {
       if (event.target === modal) {
-        modal.style.display = "none"; // モーダルを非表示
-
-        // スクロールロックを解除
+        modal.style.display = "none";
         document.body.style.overflow = '';
-
-        // **スクロール位置を元に戻さない**
       }
     });
   }
 });
+
 
 // information-pageタブ
 document.addEventListener('DOMContentLoaded', function () {
@@ -342,25 +330,4 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = './thanks.html';
     }
   });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const hash = window.location.hash; // URLの#以降を取得
-  if (hash) {
-    const targetTab = document.querySelector(hash);
-    if (targetTab) {
-      // すべてのタブを非アクティブにする
-      document.querySelectorAll(".js-information-tabbody").forEach(tab => {
-        tab.classList.remove("active");
-      });
-      // 選択されたタブをアクティブにする
-      targetTab.classList.add("active");
-
-      // タブのボタンもアクティブにする
-      document.querySelectorAll(".js-tab-menu2").forEach(button => {
-        button.classList.remove("active");
-      });
-      document.querySelector(`[data-target="${hash.substring(1)}"]`)?.classList.add("active");
-    }
-  }
 });
