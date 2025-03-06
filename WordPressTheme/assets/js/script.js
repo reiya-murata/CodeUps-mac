@@ -146,32 +146,44 @@ box.each(function () {
 
 // galleryモーダル
 document.addEventListener('DOMContentLoaded', function () {
+  // モーダルの要素を取得
   var modal = document.getElementById('imageModal');
   var modalImage = document.getElementById('modalImage');
 
+  // スクロール位置を記録する変数
   var scrollPosition = 0;
 
+  // モーダル要素が存在する場合のみ処理を行う
   if (modal && modalImage) {
-    var galleryImages = document.querySelectorAll('.gallery__img-item'); // 修正: 画像を取得
+    // すべての画像を取得
+    var galleryImages = document.querySelectorAll('.js-gallery-img');
+
+    // 各画像にクリックイベントを追加
     galleryImages.forEach(function (img) {
       img.addEventListener('click', function () {
+        // 現在のスクロール位置を記録
         scrollPosition = window.scrollY;
-        document.body.style.overflow = 'hidden';
 
-        modal.style.display = "flex"; // 修正: `block` ではなく `flex` に
-        modalImage.src = this.src; // 修正: `this.src` をセット
+        // bodyを固定してスクロール無効化
+        document.body.style.overflow = 'hidden';
+        modal.style.display = "block"; // モーダルを表示
+        modalImage.src = this.src; // クリックされた画像をモーダルに表示
       });
     });
 
+    // モーダル外をクリックすると閉じる
     modal.addEventListener('click', function (event) {
       if (event.target === modal) {
-        modal.style.display = "none";
+        modal.style.display = "none"; // モーダルを非表示
+
+        // スクロールロックを解除
         document.body.style.overflow = '';
+
+        // **スクロール位置を元に戻さない**
       }
     });
   }
 });
-
 
 // information-pageタブ
 document.addEventListener('DOMContentLoaded', function () {
