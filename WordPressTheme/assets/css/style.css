@@ -2785,7 +2785,9 @@ table {
 .sidebar-campaign-card__header img {
 	-o-object-fit: cover;
 	aspect-ratio: 333/223;
+	height: auto;
 	object-fit: cover;
+	width: 100%;
 }
 
 .sidebar-campaign-card__body {
@@ -2897,6 +2899,7 @@ table {
 
 .sidebar-review-card__header img {
 	-o-object-fit: cover;
+	height: auto;
 	object-fit: cover;
 }
 
@@ -3158,6 +3161,7 @@ table {
 	-o-object-fit: cover;
 	background-position: center;
 	display: block;
+	height: 100%;
 	object-fit: cover;
 	width: 100vw;
 }
@@ -4872,10 +4876,6 @@ html {
 	padding: 0;
 }
 
-.sidebar-campaign-card__header img {
-	width: 100%;
-}
-
 .sidebar-campaign-card__body {
 	text-align: center;
 	width: 100%;
@@ -5056,7 +5056,6 @@ html {
 }
 
 .sub-mv {
-	height: 100%;
 	width: 100vw;
 }
 

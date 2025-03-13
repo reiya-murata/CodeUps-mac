@@ -16,8 +16,9 @@
 .sidebar-campaign-card__header img {
   aspect-ratio: 333 /223;
   object-fit: cover;
-  @include mq(md) {
-    width: 100%;
+  width: 100%;
+  height: auto;
+  @include mq(md) { 
   }
 }
 
