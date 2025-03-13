@@ -162,6 +162,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
       </div>
     </div>
     <div class="header__home js-header-home">
-      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/home@2x.png" alt="" /></a>
+      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/home@2x.png" alt="topに戻るボタン" /></a>
     </div>
   </header>

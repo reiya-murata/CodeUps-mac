@@ -128,8 +128,6 @@ $experience_link = get_term_link('experience', 'campaign_category');
                 <a
                   href="<?php echo esc_url(add_query_arg('tab', 'tab-content3', home_url('/information'))); ?>">体験ダイビング</a>
               </li>
-
-
               <li class="nav__item nav__item--bold">
                 <a href="<?php echo $blog;?>">ブログ</a>
               </li>

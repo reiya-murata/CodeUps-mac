@@ -49,7 +49,6 @@ $price = esc_url(home_url('/price/'));
         </div>
       </div>
     </div>
-    </div>
   </section>
 
   <section class="campaign l-campaign">

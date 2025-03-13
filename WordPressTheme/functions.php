@@ -91,69 +91,6 @@ function change_post_menu_label() {
 // admin_menu アクションフックにフック
 add_action('admin_menu', 'change_post_menu_label');
 
-// カスタム投稿タイプ「campaign」を登録
-function custom_post_type_campaign() {
-    register_post_type('campaign',
-        array(
-            'labels'      => array(
-                'name'          => __('キャンペーン'),
-                'singular_name' => __('キャンペーン'),
-            ),
-            'public'      => true,
-            'has_archive' => true, // アーカイブを有効化
-            'rewrite'     => array('slug' => 'campaign'), // 固定ページと競合しないようにスラッグ設定
-            'supports'    => array('title', 'editor', 'thumbnail'),
-            'taxonomies'  => array('campaign_category'),
-        )
-    );
-}
-add_action('init', 'custom_post_type_campaign');
-
-// カスタムタクソノミー「campaign_category」を登録
-function custom_taxonomy_campaign_category() {
-    register_taxonomy('campaign_category', 'campaign', array(
-        'labels'        => array(
-            'name'          => __('キャンペーンカテゴリー'),
-            'singular_name' => __('キャンペーンカテゴリー'),
-        ),
-        'public'        => true,
-        'hierarchical'  => true,
-        'rewrite'       => array('slug' => 'campaign-category', 'with_front' => false), // パーマリンクの設定
-    ));
-}
-add_action('init', 'custom_taxonomy_campaign_category');
-
-// カスタム投稿タイプ「voice」を登録
-function custom_post_type_voice() {
-    register_post_type('voice',
-        array(
-            'labels'      => array(
-                'name'          => __('お客様の声'),
-                'singular_name' => __('お客様の声'),
-            ),
-            'public'      => true,
-            'has_archive' => true, // アーカイブを有効化
-            'rewrite'     => array('slug' => 'voice'), // 固定ページと競合しないようにスラッグ設定
-            'supports'    => array('title', 'editor', 'thumbnail'),
-            'taxonomies'  => array('voice_category'),
-        )
-    );
-}
-add_action('init', 'custom_post_type_voice');
-
-// カスタムタクソノミー「voice_category」を登録
-function custom_taxonomy_voice_category() {
-    register_taxonomy('voice_category', 'voice', array(
-        'labels'        => array(
-            'name'          => __('お客様の声'),
-            'singular_name' => __('お客様の声'),
-        ),
-        'public'        => true,
-        'hierarchical'  => true,
-        'rewrite'       => array('slug' => 'voice-category', 'with_front' => false), // パーマリンクの設定
-    ));
-}
-add_action('init', 'custom_taxonomy_voice_category');
 
 // Contact Form 7 送信後にリダイレクト
 function custom_redirect_after_submission()
