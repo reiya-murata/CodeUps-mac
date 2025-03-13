@@ -73,6 +73,7 @@
   background-size: contain;
   object-fit: cover;
   background-repeat: no-repeat;
+  border: 1px solid $blue;
   width: rem(14);
   height: rem(14);
   z-index: 10;
@@ -102,15 +103,20 @@
 .wpcf7-spinner{
   display: none;
 }
+.wpcf7-spinner:hover{
+  display: none;
+}
 .contactform__field input {
   display: flex;
   text-align: start;
   border: 1px solid $blue;
-
   @include mq("md") {}
 }
 .wpcf7-form-control-wrap{
   width: 69%;
+}
+.wpcf7-submit{
+  border: none !important;
 }
 
 

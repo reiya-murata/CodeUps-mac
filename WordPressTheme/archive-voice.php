@@ -1,19 +1,5 @@
 <?php get_header(); ?>
 
-<?php 
-$campaign = esc_url(home_url('/campaign/'));
-$about = esc_url(home_url('/about-us/'));
-$information = esc_url(home_url('/information/'));
-$blog = esc_url(home_url('/blog/'));
-$voice = esc_url(home_url('/voice/'));
-$price = esc_url(home_url('/price/'));
-$faq = esc_url(home_url('/faq/'));
-$contact = esc_url(home_url('/contact/'));
-$privacy = esc_url(home_url('/privacy/'));
-$terms = esc_url(home_url('/terms/'));
-?>
-
-
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">

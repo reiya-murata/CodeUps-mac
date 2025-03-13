@@ -186,33 +186,53 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // information-pageタブ
-document.addEventListener('DOMContentLoaded', function () {
-  // タブボタンをすべて取得
-  var tabButtons2 = document.querySelectorAll('.js-tab-menu2');
+document.addEventListener("DOMContentLoaded", function () {
+  var tabs = document.querySelectorAll(".information-page-contents__tab-icon");
+  var contents = document.querySelectorAll(".information-page-contents__tabs");
 
-  // タブボタンにクリックイベントを追加
-  tabButtons2.forEach(function (button) {
-    button.addEventListener('click', function () {
-      // 全てのタブコンテンツを非表示にする（activeクラスを削除）
-      var informationTabBodies = document.querySelectorAll('.js-information-tabbody');
-      informationTabBodies.forEach(function (tabBody) {
-        tabBody.classList.remove('active'); // 全てのタブコンテンツから active クラスを削除
+  // ボタンのクリックイベント
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener("click", function () {
+      // 他のタブとコンテンツのactiveクラスを削除
+      tabs.forEach(function (t) {
+        return t.classList.remove("active");
+      });
+      contents.forEach(function (c) {
+        return c.classList.remove("active");
       });
 
-      // 対応するタブコンテンツを表示する（activeクラスを追加）
-      var targetId = this.getAttribute('data-target'); // クリックされたボタンの data-target 属性を取得
-      var targetTabBody = document.getElementById(targetId); // 該当するタブコンテンツを取得
-      if (targetTabBody) {
-        targetTabBody.classList.add('active'); // 該当するタブコンテンツに active クラスを追加
-      }
+      // クリックしたタブと対応するコンテンツにactiveクラスを追加
+      tab.classList.add("active");
+      contents[index].classList.add("active");
 
-      // クリックされたボタンをアクティブ状態にする
-      tabButtons2.forEach(function (btn) {
-        return btn.classList.remove('active');
-      }); // 全ボタンのアクティブ状態を解除
-      this.classList.add('active'); // クリックされたボタンをアクティブに
+      // クエリパラメータを更新（ブラウザのバックボタン対応）
+      window.history.pushState(null, '', "?tab=tab-content".concat(index + 1));
     });
   });
+
+  // URLのクエリパラメータに基づいてタブをアクティブにする
+  var urlParams = new URLSearchParams(window.location.search);
+  var activeTab = urlParams.get('tab');
+  if (activeTab) {
+    // URLに基づいてタブとコンテンツを表示
+    tabs.forEach(function (tab, index) {
+      var targetTab = "tab-content".concat(index + 1);
+      var targetContent = document.querySelector("#".concat(targetTab));
+
+      // もしURLに一致するタブがあれば、そのタブとコンテンツをアクティブに
+      if (activeTab === targetTab) {
+        tab.classList.add('active');
+        targetContent.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+        targetContent.classList.remove('active');
+      }
+    });
+  } else {
+    // デフォルトのタブを表示
+    tabs[0].classList.add("active");
+    contents[0].classList.add("active");
+  }
 });
 
 // サイドバーアコーディオン

@@ -7,10 +7,6 @@ $information = esc_url(home_url('/information/'));
 $blog = esc_url(home_url('/blog/'));
 $voice = esc_url(home_url('/voice/'));
 $price = esc_url(home_url('/price/'));
-$faq = esc_url(home_url('/faq/'));
-$contact = esc_url(home_url('/contact/'));
-$privacy = esc_url(home_url('/privacy/'));
-$terms = esc_url(home_url('/terms/'));
 ?>
 
 <main>
@@ -224,7 +220,7 @@ $terms = esc_url(home_url('/terms/'));
         <h2 class="section-title__sub">ブログ</h2>
       </div>
       <div class="blog__cards blog-cards">
-        <!-- サブループ開始（通常投稿 blog） -->
+        <!-- メインループ開始（通常投稿 blog） -->
         <?php
           $args = array(
           'post_type' => 'post',
@@ -256,9 +252,7 @@ $terms = esc_url(home_url('/terms/'));
             </div>
           </a>
         </div>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
+        <?php endwhile; wp_reset_postdata(); endif; ?>
         <!-- サブループ終了 -->
       </div>
       <div class="blog__button">

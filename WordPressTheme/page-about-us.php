@@ -1,18 +1,5 @@
 <?php get_header(); ?>
 
-<?php 
-$campaign = esc_url(home_url('/campaign/'));
-$about = esc_url(home_url('/about-us/'));
-$information = esc_url(home_url('/information/'));
-$blog = esc_url(home_url('/blog/'));
-$voice = esc_url(home_url('/voice/'));
-$price = esc_url(home_url('/price/'));
-$faq = esc_url(home_url('/faq/'));
-$contact = esc_url(home_url('/contact/'));
-$privacy = esc_url(home_url('/privacy/'));
-$terms = esc_url(home_url('/terms/'));
-?>
-
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">
@@ -64,6 +51,18 @@ $terms = esc_url(home_url('/terms/'));
     </div>
   </section>
 
+  <?php
+  // 'page-about-us' のページを取得
+  $page_about_us = get_page_by_path('about-us');
+  // ページが見つかった場合
+  if ($page_about_us) :
+    // 'about-us' ページの投稿IDを取得
+    $post_id = $page_about_us->ID;
+    // SCF から 'gallery__imgs' グループフィールドを取得
+    $gallery = SCF::get('gallery__imgs', $post_id);
+    // ギャラリーが存在する場合のみ表示
+    if ($gallery) :
+  ?>
   <section class="gallery l-gallery">
     <div class="gallery__inner inner">
       <div class="gallery__title section-title">
@@ -72,50 +71,35 @@ $terms = esc_url(home_url('/terms/'));
       </div>
       <div class="gallery__imgs">
         <?php
-          // 'page-about-us' のページを取得
-          $page_about_us = get_page_by_path('about-us');
-          // ページが見つかった場合
-          if ($page_about_us) :
-          // 'about-us' ページの投稿IDを取得
-          $post_id = $page_about_us->ID;
-          // SCF から 'gallery__imgs' グループフィールドを取得
-          $gallery = SCF::get('gallery__imgs', $post_id);
-          // 画像データが存在する場合
-          if ($gallery) :
-          // ギャラリー内の各画像をループで表示
-          foreach ($gallery as $image) :
+        // ギャラリー内の各画像をループで表示
+        foreach ($gallery as $image) :
           // 画像IDを取得
           $image_id = $image['gallery__img']; // 'gallery__img' はフィールドのキー名
           // 画像IDから画像URLを取得
           $image_url = wp_get_attachment_url($image_id);
           // 画像URLが存在する場合のみ表示
           if ($image_url) :
-        ?>
+      ?>
         <div class="gallery__img">
           <img src="<?php echo esc_url($image_url); ?>" alt="Gallery Image" class="gallery__img-item" />
         </div>
         <?php
-        endif;
+          endif;
         endforeach;
-          else :
-          // ギャラリーが空の場合
-          echo 'ギャラリー画像がありません。';
-        endif;
-        else :
-          // 'page-about-us' ページが見つからない場合
-          echo '該当するページが見つかりません。';
-        endif;
-        ?>
-
+      ?>
         <!-- モーダル部分 -->
         <div id="imageModal" class="gallery__modal">
           <img class="gallery__modal-content" id="modalImage" alt="拡大画像" />
-          <div id="caption">
-          </div>
+          <div id="caption"></div>
         </div>
       </div>
-
+    </div>
   </section>
+  <?php
+    endif;
+  endif;
+?>
+
 
 </main>
 

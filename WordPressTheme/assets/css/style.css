@@ -666,6 +666,7 @@ a {
 }
 
 .blog-page__wp-pagenavi {
+	grid-row: 2;
 	margin-top: 5rem;
 }
 
@@ -819,8 +820,19 @@ a {
 	display: flex;
 }
 
+.button--contact:hover {
+	color: #408f95;
+	display: flex;
+}
+
+.button--contact:hover input {
+	color: #408f95;
+	display: flex;
+}
+
 .wpcf7-submit {
 	color: #fff;
+	display: flex;
 }
 
 .campaign-page {
@@ -1331,6 +1343,7 @@ a {
 	background-image: url("../images/common/check.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
+	border: 1px solid #408f95;
 	content: "";
 	display: inline;
 	height: 0.875rem;
@@ -1356,6 +1369,10 @@ a {
 	display: none;
 }
 
+.wpcf7-spinner:hover {
+	display: none;
+}
+
 .contactform__field input {
 	border: 1px solid #408f95;
 	display: flex;
@@ -1364,6 +1381,10 @@ a {
 
 .wpcf7-form-control-wrap {
 	width: 69%;
+}
+
+.wpcf7-submit {
+	border: none !important;
 }
 
 .contactform input::-moz-placeholder {

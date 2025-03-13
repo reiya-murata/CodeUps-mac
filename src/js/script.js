@@ -189,32 +189,53 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // information-pageタブ
-document.addEventListener('DOMContentLoaded', function () {
-  // タブボタンをすべて取得
-  const tabButtons2 = document.querySelectorAll('.js-tab-menu2');
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".information-page-contents__tab-icon");
+  const contents = document.querySelectorAll(".information-page-contents__tabs");
 
-  // タブボタンにクリックイベントを追加
-  tabButtons2.forEach(button => {
-    button.addEventListener('click', function () {
-      // 全てのタブコンテンツを非表示にする（activeクラスを削除）
-      const informationTabBodies = document.querySelectorAll('.js-information-tabbody');
-      informationTabBodies.forEach(tabBody => {
-        tabBody.classList.remove('active'); // 全てのタブコンテンツから active クラスを削除
-      });
+  // ボタンのクリックイベント
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", function () {
+      // 他のタブとコンテンツのactiveクラスを削除
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
 
-      // 対応するタブコンテンツを表示する（activeクラスを追加）
-      const targetId = this.getAttribute('data-target'); // クリックされたボタンの data-target 属性を取得
-      const targetTabBody = document.getElementById(targetId); // 該当するタブコンテンツを取得
-      if (targetTabBody) {
-        targetTabBody.classList.add('active'); // 該当するタブコンテンツに active クラスを追加
-      }
+      // クリックしたタブと対応するコンテンツにactiveクラスを追加
+      tab.classList.add("active");
+      contents[index].classList.add("active");
 
-      // クリックされたボタンをアクティブ状態にする
-      tabButtons2.forEach(btn => btn.classList.remove('active')); // 全ボタンのアクティブ状態を解除
-      this.classList.add('active'); // クリックされたボタンをアクティブに
+      // クエリパラメータを更新（ブラウザのバックボタン対応）
+      window.history.pushState(null, '', `?tab=tab-content${index + 1}`);
     });
   });
+
+  // URLのクエリパラメータに基づいてタブをアクティブにする
+  const urlParams = new URLSearchParams(window.location.search);
+  const activeTab = urlParams.get('tab');
+  if (activeTab) {
+    // URLに基づいてタブとコンテンツを表示
+    tabs.forEach((tab, index) => {
+      const targetTab = `tab-content${index + 1}`;
+      const targetContent = document.querySelector(`#${targetTab}`);
+
+      // もしURLに一致するタブがあれば、そのタブとコンテンツをアクティブに
+      if (activeTab === targetTab) {
+        tab.classList.add('active');
+        targetContent.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+        targetContent.classList.remove('active');
+      }
+    });
+  } else {
+    // デフォルトのタブを表示
+    tabs[0].classList.add("active");
+    contents[0].classList.add("active");
+  }
 });
+
+
+
 
 
 // サイドバーアコーディオン

@@ -26,6 +26,7 @@
 
 .blog-page__wp-pagenavi{
   margin-top: rem(80);
+  grid-row: 2;
   @include mq(md) {
   }
 }

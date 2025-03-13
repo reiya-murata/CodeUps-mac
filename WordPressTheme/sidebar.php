@@ -113,7 +113,7 @@
     ?>
 
     <div class="sidebar-campaign-cards__item">
-      <a href="<?php the_permalink(); ?>" class="sidebar-campaign-card">
+      <div class="sidebar-campaign-card">
         <div class="sidebar-campaign-card__header">
           <?php if (has_post_thumbnail()) :
             the_post_thumbnail('medium', array('alt' => get_the_title(), 'loading' => 'lazy', 'decoding' => 'async'));
@@ -141,7 +141,7 @@
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
     <?php
     endwhile;

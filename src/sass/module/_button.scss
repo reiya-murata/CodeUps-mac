@@ -125,6 +125,15 @@
 .button--contact{
   display: flex;
 }
+.button--contact:hover{
+  display: flex;
+  color: $blue;
+}
+.button--contact:hover input{
+  display: flex;
+  color: $blue;
+}
 .wpcf7-submit{
+  display: flex;
   color: $white;
 }

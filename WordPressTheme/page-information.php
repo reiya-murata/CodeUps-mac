@@ -1,18 +1,5 @@
 <?php get_header(); ?>
 
-<?php 
-$campaign = esc_url(home_url('/campaign/'));
-$about = esc_url(home_url('/about-us/'));
-$information = esc_url(home_url('/information/'));
-$blog = esc_url(home_url('/blog/'));
-$voice = esc_url(home_url('/voice/'));
-$price = esc_url(home_url('/price/'));
-$faq = esc_url(home_url('/faq/'));
-$contact = esc_url(home_url('/contact/'));
-$privacy = esc_url(home_url('/privacy/'));
-$terms = esc_url(home_url('/terms/'));
-?>
-
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">
@@ -34,14 +21,12 @@ $terms = esc_url(home_url('/terms/'));
   <section class="information-page-contents l-information-page-contents">
     <div class="information-page-contents__inner inner">
       <div class="information-page-contents__tab-menu">
-        <button class="information-page-contents__tab-icon tab-icon--1 active js-tab-menu2"
-          data-target="information-page-contents__tab1">ライセンス講習</button>
-        <button class="information-page-contents__tab-icon tab-icon--2 js-tab-menu2"
-          data-target="information-page-contents__tab2">ファン<br class="pc-hidden"> ダイビング</button>
-        <button class="information-page-contents__tab-icon tab-icon--3 js-tab-menu2"
-          data-target="information-page-contents__tab3">体験<br class="pc-hidden">ダイビング</button>
+        <button id="tab-btn1" class="information-page-contents__tab-icon tab-icon--1 active">ライセンス講習</button>
+        <button id="tab-btn2" class="information-page-contents__tab-icon tab-icon--2">ファンダイビング</button>
+        <button id="tab-btn3" class="information-page-contents__tab-icon tab-icon--3">体験ダイビング</button>
       </div>
-      <div class="information-page-contents__tabs active js-information-tabbody" id="information-page-contents__tab1">
+
+      <div id="tab-content1" class="information-page-contents__tabs active">
         <div class="campaign-tab">
           <div class="campaign-tab__left">
             <div class="campaign-tab__title">
@@ -58,15 +43,15 @@ $terms = esc_url(home_url('/terms/'));
           </div>
         </div>
       </div>
-      <div class="information-page-contents__tabs js-information-tabbody" id="information-page-contents__tab2">
+
+      <div id="tab-content2" class="information-page-contents__tabs">
         <div class="campaign-tab">
           <div class="campaign-tab__left">
             <div class="campaign-tab__title">
               <p>ファンダイビング</p>
             </div>
             <div class="campaign-tab__text">
-              <p>ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
-              </p>
+              <p>ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！</p>
             </div>
           </div>
           <div class="campaign-tab__right">
@@ -74,15 +59,15 @@ $terms = esc_url(home_url('/terms/'));
           </div>
         </div>
       </div>
-      <div class="information-page-contents__tabs js-information-tabbody" id="information-page-contents__tab3">
+
+      <div id="tab-content3" class="information-page-contents__tabs">
         <div class="campaign-tab">
           <div class="campaign-tab__left">
             <div class="campaign-tab__title">
               <p>体験ダイビング</p>
             </div>
             <div class="campaign-tab__text">
-              <p>ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
-              </p>
+              <p>ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！</p>
             </div>
           </div>
           <div class="campaign-tab__right">

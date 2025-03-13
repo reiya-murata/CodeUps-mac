@@ -32,44 +32,50 @@ $terms = esc_url(home_url('/terms/'));
 
   <?php get_template_part('parts/breadcrumbs')?>
 
-  <section class="faq-contents  l-faq-contents">
+  <?php
+  // 現在の投稿のIDを取得
+  $post_id = get_the_ID();
+  // SCFプラグインを使ってカスタムフィールドグループを取得
+  $faq_list = SCF::get('faq_list', $post_id);
+  if (!empty($faq_list)) : // faq_listが空でない場合のみ表示
+?>
+  <section class="faq-contents l-faq-contents">
     <div class="faq-contents__inner inner--sub">
       <?php
-        // 現在の投稿のIDを取得
-        $post_id = get_the_ID();
-        // SCFプラグインを使ってカスタムフィールドグループを取得
-        $faq_list = SCF::get('faq_list', $post_id);
-        if (!empty($faq_list)) :
         foreach ($faq_list as $faq_list) :
           $faq_question = $faq_list['question'];
           $faq_answer = $faq_list['answer'];
-        // 質問と回答が両方存在する場合のみ表示
-        if (!empty($faq_question) && !empty($faq_answer)) :
+          // 質問と回答が両方存在する場合のみ表示
+          if (!empty($faq_question) && !empty($faq_answer)) :
       ?>
+
       <div class="faq-content">
-        <div class="faq-content__question active js-modal">
-          <p>
-            <?php echo esc_html($faq_question); ?></p>
-          <div class="faq-content-lines">
-            <span class="faq-content__line1"></span>
-            <span class="faq-content__line2 active"></span>
+        <div class="faq-content__item">
+          <div class="faq-content__question active js-modal">
+            <p>
+              <?php echo esc_html($faq_question); ?></p>
+            <div class="faq-content-lines">
+              <span class="faq-content__line1"></span>
+              <span class="faq-content__line2 active"></span>
+            </div>
+          </div>
+          <div class="faq-content__answer active js-faq-content">
+            <p>
+              <?php echo nl2br(esc_html($faq_answer)); ?>
+            </p>
           </div>
         </div>
-        <div class="faq-content__answer active js-faq-content">
-          <p>
-            <?php echo nl2br(esc_html($faq_answer)); ?>
-          </p>
-        </div>
-      </div>
-      <?php
+        <?php
         endif;
         endforeach;
-        else :
-          echo '<p>No FAQ items found.</p>';
-        endif;
-      ?>
-    </div>
+        ?>
+      </div>
   </section>
+  <?php
+  else :
+    // FAQがない場合は何も表示しない
+  endif;
+?>
 
 </main>
 

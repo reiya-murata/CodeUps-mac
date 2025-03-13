@@ -12,6 +12,11 @@ $contact = esc_url(home_url('/contact/'));
 $privacy = esc_url(home_url('/privacy/'));
 $terms = esc_url(home_url('/terms/'));
 ?>
+<?php
+$fan_link = get_term_link('fan', 'campaign_category');
+$license_link = get_term_link('license', 'campaign_category');
+$experience_link = get_term_link('experience', 'campaign_category');
+?>
 
 <main>
   <section class="sub-mv">
@@ -42,13 +47,13 @@ $terms = esc_url(home_url('/terms/'));
                   <a href="<?php echo $campaign ?>">キャンペーン</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#">ライセンス取得</a>
+                  <a href="<?php echo esc_url($license_link); ?>">ライセンス取得</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#">貸切体験ダイビング</a>
+                  <a href="<?php echo esc_url($fan_link); ?>">貸切体験ダイビング</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#">ナイトダイビング</a>
+                  <a href="<?php echo esc_url($experience_link); ?>">ナイトダイビング</a>
                 </li>
                 <li class="nav__item nav__item--black">
                   <a href="<?php echo $about ?>"> 私たちについて</a>
@@ -59,11 +64,15 @@ $terms = esc_url(home_url('/terms/'));
                   <a href="<?php echo $information ?>"> ダイビング情報</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#">ライセンス講習</a>
+                  <a
+                    href="<?php echo esc_url(add_query_arg('tab', 'tab-content1', home_url('/information'))); ?>">ライセンス講習</a>
                 </li>
-                <li class="nav__item"><a href="#">体験ダイビング</a></li>
+                <li class="nav__item"><a
+                    href="<?php echo esc_url(add_query_arg('tab', 'tab-content3', home_url('/information'))); ?>">体験ダイビング</a>
+                </li>
                 <li class="nav__item">
-                  <a href="#">ファンダイビング</a>
+                  <a href="<?php echo esc_url(add_query_arg('tab', 'tab-content2', home_url('/information'))); ?>">
+                    ファンダイビング</a>
                 </li>
                 <li class="nav__item nav__item--black">
                   <a href="<?php echo $blog ?>">ブログ</a>
@@ -78,10 +87,10 @@ $terms = esc_url(home_url('/terms/'));
                 <li class="nav__item nav__item--black">
                   <a href="<?php echo $price ?>">料金一覧</a>
                 </li>
-                <li class="nav__item"><a href="#">ライセンス講習</a></li>
-                <li class="nav__item"><a href="#">体験ダイビング</a></li>
+                <li class="nav__item"><a href="<?php echo esc_url(home_url('/price/#license')); ?>">ライセンス講習</a></li>
+                <li class="nav__item"><a href="<?php echo esc_url(home_url('/price/#experience')); ?>">体験ダイビング</a></li>
                 <li class="nav__item">
-                  <a href="#">ファンダイビング</a>
+                  <a href="<?php echo esc_url(home_url('/price/#fan')); ?>">ファンダイビング</a>
                 </li>
               </ul>
               <ul class="nav__flex">
