@@ -4,6 +4,9 @@
 .sidebar-review-card__header img {
   object-fit: cover;
   height: auto;
+  aspect-ratio: 294 / 218;
+  width: rem(294);
+  height: auto;
 }
 
 .sidebar-review-card__body {

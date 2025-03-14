@@ -2787,7 +2787,7 @@ table {
 	aspect-ratio: 333/223;
 	height: auto;
 	object-fit: cover;
-	width: 100%;
+	width: 18.375rem;
 }
 
 .sidebar-campaign-card__body {
@@ -2899,8 +2899,11 @@ table {
 
 .sidebar-review-card__header img {
 	-o-object-fit: cover;
+	aspect-ratio: 294/218;
+	height: auto;
 	height: auto;
 	object-fit: cover;
+	width: 18.375rem;
 }
 
 .sidebar-review-card__body {
