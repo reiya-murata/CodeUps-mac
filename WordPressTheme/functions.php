@@ -165,3 +165,4 @@ function custom_archive_posts_per_page($query) {
     }
     return $title;
 });
+add_filter('wp_img_tag_add_auto_sizes', '__return_false');
