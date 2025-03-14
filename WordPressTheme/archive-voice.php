@@ -71,7 +71,7 @@
                     <?php echo esc_html($voice_1); ?>
                     <?php endif; ?>
                     <?php if ($voice_2): ?>
-                    <?php echo esc_html($voice_2); ?>
+                    (<?php echo esc_html($voice_2); ?>)
                     <?php endif; ?>
                   </div>
                   <?php endif; ?>
