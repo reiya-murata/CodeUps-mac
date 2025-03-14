@@ -3,7 +3,9 @@
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">
-      <h1 class="sub-mv__hero-titles page-title">blog</h1>
+      <h1 class="sub-mv__hero-titles page-title">
+        <?php the_archive_title();?>
+      </h1>
     </div>
     <div class="sub-mv__img js-hero-contents">
       <picture>

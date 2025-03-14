@@ -65,10 +65,10 @@ $voice_3 = get_field('voice_3');
           <a href="#" class="voice-card">
             <div class="voice-card__inner">
               <div class="voice-card__header">
+                <?php if ($voice_1 || $voice_2): ?>
                 <div class="voice-card__header-left">
-                  <?php if ($voice_1 || $voice_2): ?>
+                  <?php if ($voice_1): ?>
                   <div class="voice-card__age">
-                    <?php if ($voice_1): ?>
                     <?php echo esc_html($voice_1); ?>
                     <?php endif; ?>
                     <?php if ($voice_2): ?>
@@ -91,17 +91,17 @@ $voice_3 = get_field('voice_3');
                     <?php the_title(); ?>
                   </div>
                 </div>
+                <?php if (get_the_post_thumbnail()): ?>
                 <div class="voice-card__img colorbox">
-                  <?php if (get_the_post_thumbnail()): ?>
                   <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>の画像" />
                   <?php else: ?>
                   <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
                   <?php endif; ?>
                 </div>
               </div>
+              <?php if ($voice_3): ?>
               <div class="voice-card__body">
                 <p class="voice-card__text">
-                  <?php if ($voice_3): ?>
                   <?php echo esc_html($voice_3); ?>
                   <?php else: ?>
                   ここにテキストが入ります。

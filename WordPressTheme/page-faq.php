@@ -48,9 +48,8 @@ if (!empty($faq_list)) : // faq_listが空でない場合のみ表示
           // 質問と回答が両方存在する場合のみ表示
           if (!empty($faq_question) && !empty($faq_answer)) :
       ?>
-
-      <div class="faq-content">
-        <div class="faq-content__item">
+      <div class="faq-contents__item">
+        <div class="faq-content">
           <div class="faq-content__question active js-modal">
             <p>
               <?php echo esc_html($faq_question); ?></p>

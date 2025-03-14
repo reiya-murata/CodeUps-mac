@@ -92,19 +92,19 @@ $contact = esc_url(home_url('/contact/'));
             </div>
             <p class="campaign-slide-card__text-campaign">全部コミコミ(お一人様)</p>
             <div class="campaign-slide-card__prices">
+              <?php if (get_field('campaign-2')): ?>
               <div class="campaign-slide-card__prices-aria">
-                <?php if (get_field('campaign-2')): ?>
                 <h3 class="campaign-slide-card__price"><?php the_field('campaign-2'); ?></h3>
                 <?php endif; ?>
               </div>
+              <?php if (get_field('campaign-3')): ?>
               <div class="campaign-slide-card__discounts">
-                <?php if (get_field('campaign-3')): ?>
                 <h3 class="campaign-slide-card__discount"><?php the_field('campaign-3'); ?></h3>
                 <?php endif; ?>
               </div>
             </div>
+            <?php if (get_field('campaign-4')): ?>
             <div class="campaign-slide-card__text-about">
-              <?php if (get_field('campaign-4')): ?>
               <p><?php the_field('campaign-4'); ?></p>
               <?php endif; ?>
             </div>

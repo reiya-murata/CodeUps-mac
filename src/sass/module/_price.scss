@@ -86,6 +86,9 @@
     margin: rem(40) 0 0;
   }
 }
+.price__content:nth-child(1){
+  margin: 0;
+}
 
 .price__img {
   object-fit: cover;

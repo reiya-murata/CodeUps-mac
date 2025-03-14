@@ -41,8 +41,6 @@ $price = esc_url(home_url('/price/'));
             </div>
             <?php
               endforeach;
-              else :
-              echo '<p>メインビジュアルの画像がありません。</p>';
               endif;
             ?>
           </div>
@@ -102,13 +100,13 @@ $price = esc_url(home_url('/price/'));
                     </div>
                     <p class="slide-card__text-campaign">全部コミコミ(お一人様)</p>
                     <div class="slide-card__prices">
+                      <?php if ($campaign_2): ?>
                       <div class="slide-card__prices-aria">
-                        <?php if ($campaign_2): ?>
                         <h3 class="slide-card__price"><?php echo esc_html($campaign_2); ?></h3>
                         <?php endif; ?>
                       </div>
+                      <?php if ($campaign_3): ?>
                       <div class="slide-card__discounts">
-                        <?php if ($campaign_3): ?>
                         <h3 class="slide-card__discount"><?php echo esc_html($campaign_3); ?></h3>
                         <?php endif; ?>
                       </div>
@@ -343,27 +341,21 @@ $price = esc_url(home_url('/price/'));
       </div>
       <div class="price__contents">
         <div class="price__contents-left">
-          <div class="price__content--fast">
+          <?php
+        // ライセンス講習
+        $price_page = get_page_by_path('price');
+        if ($price_page) {
+          $post_id = $price_page->ID;
+          $license = SCF::get('license', $post_id);
+          if ($license && (is_array($license) && !empty($license))) :
+        ?>
+          <div class="price__content">
             <div class="price__content-title">ライセンス講習</div>
             <div class="price__items">
               <?php
-              // 'price' のページを取得
-              $price_page = get_page_by_path('price');
-              // ページが見つかった場合
-              if ($price_page) {
-              $post_id = $price_page->ID; // 投稿IDを取得
-
-              // SCF からデータを取得
-              $license = SCF::get('license', $post_id);
-
-              // データが取得できている場合
-              if ($license) : 
-                // SCFで取得したデータが配列であるかを確認
-                if (is_array($license)) {
-                  foreach ($license as $entry) :
-                    // name_1 と price_1 が存在している場合のみ表示
-                    if (!empty($entry['name_1']) && !empty($entry['price_1'])) :
-                ?>
+            foreach ($license as $entry) :
+              if (!empty($entry['name_1']) && !empty($entry['price_1'])) :
+            ?>
               <div class="price__item">
                 <div class="price__item-title">
                   <?php echo esc_html($entry['name_1']); ?>
@@ -374,48 +366,24 @@ $price = esc_url(home_url('/price/'));
               </div>
               <?php
               endif;
-              endforeach;
-              } else {
-              // もし $license が配列でない場合（単一値の場合など）
-              if (!empty($license['name_1']) && !empty($license['price_1'])) :
-              ?>
-              <div class="price__item">
-                <div class="price__item-title">
-                  <?php echo esc_html($license['name_1']); ?>
-                </div>
-                <div class="price__item-price">
-                  <?php echo esc_html($license['price_1']); ?>
-                </div>
-              </div>
-              <?php
-              endif;
-              }
-          endif;
-        } else {
-          echo '該当する価格ページが見つかりません。';
-        }
-        ?>
+            endforeach;
+            ?>
             </div>
           </div>
+          <?php
+          endif;
+        }
+        // 体験ダイビング
+        $experience = SCF::get('experience', $post_id);
+        if ($experience && (is_array($experience) && !empty($experience))) :
+        ?>
           <div class="price__content">
             <div class="price__content-title">体験ダイビング</div>
             <div class="price__items">
               <?php
-                // 'price' のページを取得
-                $price_page = get_page_by_path('price');
-                // ページが見つかった場合
-              if ($price_page) {
-                $post_id = $price_page->ID; // 投稿IDを取得
-                // SCF からデータを取得
-                $experience = SCF::get('experience', $post_id);
-                // データが取得できている場合
-              if ($license) : 
-                // SCFで取得したデータが配列であるかを確認
-              if (is_array($experience)) {
-              foreach ($experience as $entry) :
-                        // name_1 と price_1 が存在している場合のみ表示
+            foreach ($experience as $entry) :
               if (!empty($entry['name_2']) && !empty($entry['price_2'])) :
-              ?>
+            ?>
               <div class="price__item">
                 <div class="price__item-title">
                   <?php echo esc_html($entry['name_2']); ?>
@@ -426,48 +394,23 @@ $price = esc_url(home_url('/price/'));
               </div>
               <?php
               endif;
-              endforeach;
-                } else {
-                    // もし $license が配列でない場合（単一値の場合など）
-                    if (!empty($experience['name_2']) && !empty($experience['price_2'])) :
-                ?>
-              <div class="price__item">
-                <div class="price__item-title">
-                  <?php echo esc_html($license['name_2']); ?>
-                </div>
-                <div class="price__item-price">
-                  <?php echo esc_html($license['price_2']); ?>
-                </div>
-              </div>
-              <?php
-              endif;
-                }
-            endif;
-        } else {
-            echo '該当する価格ページが見つかりません。';
-        }
-        ?>
+            endforeach;
+            ?>
             </div>
           </div>
+          <?php
+        endif;
+        // ファンダイビング
+        $fan = SCF::get('fan', $post_id);
+        if ($fan && (is_array($fan) && !empty($fan))) :
+        ?>
           <div class="price__content">
             <div class="price__content-title">ファンダイビング</div>
             <div class="price__items">
               <?php
-                // 'price' のページを取得
-                $price_page = get_page_by_path('price');
-                // ページが見つかった場合
-              if ($price_page) {
-                $post_id = $price_page->ID; // 投稿IDを取得
-                // SCF からデータを取得
-                $fan = SCF::get('fan', $post_id);
-                // データが取得できている場合
-                if ($fan) : 
-                // SCFで取得したデータが配列であるかを確認
-                if (is_array($fan)) {
-                foreach ($fan as $entry) :
-                // name_1 と price_1 が存在している場合のみ表示
-                if (!empty($entry['name_3']) && !empty($entry['price_3'])) :
-                ?>
+            foreach ($fan as $entry) :
+              if (!empty($entry['name_3']) && !empty($entry['price_3'])) :
+            ?>
               <div class="price__item">
                 <div class="price__item-title">
                   <?php echo esc_html($entry['name_3']); ?>
@@ -478,48 +421,23 @@ $price = esc_url(home_url('/price/'));
               </div>
               <?php
               endif;
-              endforeach;
-                } else {
-                    // もし $license が配列でない場合（単一値の場合など）
-                if (!empty($fan['name_3']) && !empty($fan['price_3'])) :
-                ?>
-              <div class="price__item">
-                <div class="price__item-title">
-                  <?php echo esc_html($license['name_3']); ?>
-                </div>
-                <div class="price__item-price">
-                  <?php echo esc_html($license['price_3']); ?>
-                </div>
-              </div>
-              <?php
-              endif;
-                }
-            endif;
-        } else {
-            echo '該当する価格ページが見つかりません。';
-          }
-        ?>
+            endforeach;
+            ?>
             </div>
           </div>
+          <?php
+        endif;
+        // スペシャルダイビング
+        $special = SCF::get('special', $post_id);
+        if ($special && (is_array($special) && !empty($special))) :
+        ?>
           <div class="price__content">
             <div class="price__content-title">スペシャルダイビング</div>
             <div class="price__items">
               <?php
-                // 'price' のページを取得
-                $price_page = get_page_by_path('price');
-                // ページが見つかった場合
-              if ($price_page) {
-                $post_id = $price_page->ID; // 投稿IDを取得
-                // SCF からデータを取得
-                $special = SCF::get('special', $post_id);
-                // データが取得できている場合
-                if ($special) : 
-                // SCFで取得したデータが配列であるかを確認
-                if (is_array($special)) {
-                foreach ($special as $entry) :
-                // name_1 と price_1 が存在している場合のみ表示
-                if (!empty($entry['name_4']) && !empty($entry['price_4'])) :
-                ?>
+            foreach ($special as $entry) :
+              if (!empty($entry['name_4']) && !empty($entry['price_4'])) :
+            ?>
               <div class="price__item">
                 <div class="price__item-title">
                   <?php echo esc_html($entry['name_4']); ?>
@@ -530,29 +448,13 @@ $price = esc_url(home_url('/price/'));
               </div>
               <?php
               endif;
-              endforeach;
-              } else {
-                // もし $license が配列でない場合（単一値の場合など）
-                if (!empty($special['name_4']) && !empty($special['price_4'])) :
-                ?>
-              <div class="price__item">
-                <div class="price__item-title">
-                  <?php echo esc_html($special['name_4']); ?>
-                </div>
-                <div class="price__item-price">
-                  <?php echo esc_html($special['price_4']); ?>
-                </div>
-              </div>
-              <?php
-              endif;
-                }
-            endif;
-          } else {
-            echo '該当する価格ページが見つかりません。';
-          }
-        ?>
+            endforeach;
+            ?>
             </div>
           </div>
+          <?php
+        endif;
+        ?>
         </div>
         <div class="price__contents-right colorbox">
           <picture>
@@ -572,6 +474,7 @@ $price = esc_url(home_url('/price/'));
       </div>
     </div>
   </section>
+
 
 </main>
 

@@ -91,6 +91,7 @@ a:not([class]) {
 /* Make images easier to work with */
 
 img {
+	contain-intrinsic-size: none;
 	display: block;
 	max-width: 100%;
 	width: 100%;
@@ -2537,6 +2538,10 @@ table {
 .price__content {
 	font-family: "Noto Sans JP", sans-serif;
 	width: 100%;
+}
+
+.price__content:nth-child(1) {
+	margin: 0;
 }
 
 .price__img {

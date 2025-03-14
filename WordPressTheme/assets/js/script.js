@@ -288,13 +288,13 @@ document.addEventListener('DOMContentLoaded', function () {
 // コンタクトフォーム
 document.addEventListener('DOMContentLoaded', function () {
   // フォーム要素を取得
-  var form = document.querySelector('#form');
+  var form = document.querySelector('form');
   var note = document.querySelector('.contactform__note');
   console.log("DOMContentLoaded triggered"); // ページの読み込み完了確認
 
   // フォームが見つからなかった場合の処理
   if (!form) {
-    console.warn("Form element not found. This script will not run on this page."); // 警告メッセージ
+    console.warn("Form element not found. This script will not run on this page.");
     return; // フォームが見つからなかったら以降の処理を中止
   }
   console.log("Form element found:", form); // formが取得されたことを確認
@@ -304,11 +304,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error("Submit button not found. Please ensure the form has a submit button.");
     return; // エラー時は以降の処理を中止
   }
+  console.log("Submit button found:", submitButton); // 送信ボタンが取得できたことを確認
 
-  // 送信ボタンのclickイベントの設定
-  submitButton.addEventListener('click', function (event) {
-    event.preventDefault(); // フォーム送信を止める
-    console.log("Submit button clicked"); // 送信ボタンがクリックされた確認
+  // フォーム送信時のカスタムイベント設定（Contact Form 7用）
+  form.addEventListener('wpcf7submit', function (event) {
     var isValid = true;
 
     // 必須項目を選択
@@ -318,21 +317,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // すべての必須フィールドのチェック
     requiredFields.forEach(function (field) {
       var parent = field.closest('.contactform__item') || field.closest('.contact__checkbox');
-      if (field.type === 'radio') {
+
+      // parentがnullでないことを確認
+      if (parent) {
         // ラジオボタンの必須チェック
-        var radioGroup = document.querySelector("input[name=\"".concat(field.name, "\"]:checked"));
-        if (!radioGroup) {
+        if (field.type === 'radio') {
+          var radioGroup = document.querySelector("input[name=\"".concat(field.name, "\"]:checked"));
+          if (!radioGroup) {
+            parent.classList.add('active');
+            isValid = false;
+          } else {
+            parent.classList.remove('active');
+          }
+        } else if (field.type === 'checkbox' && !field.checked) {
+          // チェックボックスの必須チェック
+          parent.classList.add('active');
+          isValid = false;
+        } else if (!field.value.trim()) {
+          // その他の必須フィールドの未入力チェック
           parent.classList.add('active');
           isValid = false;
         } else {
           parent.classList.remove('active');
         }
-      } else if (!field.value.trim()) {
-        // その他の必須フィールドの未入力チェック
-        parent.classList.add('active');
-        isValid = false;
       } else {
-        parent.classList.remove('active');
+        console.warn('Parent element not found for field:', field);
       }
     });
 
@@ -343,14 +352,29 @@ document.addEventListener('DOMContentLoaded', function () {
       if (note) {
         note.classList.add('active');
       }
+      event.preventDefault(); // バリデーション失敗時に送信をキャンセル
     } else {
-      console.log("Validation passed, redirecting to thanks.html");
+      console.log("Validation passed");
       form.classList.remove('active');
       if (note) {
         note.classList.remove('active');
       }
-      // バリデーションを通過した場合、リダイレクト
+      // フォーム送信成功時のリダイレクト
       window.location.href = './thanks.html';
+    }
+  });
+
+  // Contact Form 7の送信成功時の処理
+  form.addEventListener('wpcf7submit', function (event) {
+    if (event.detail.status === 'mail_sent') {
+      console.log("Form successfully submitted.");
+    }
+  });
+
+  // Contact Form 7の送信失敗時の処理
+  form.addEventListener('wpcf7submit', function (event) {
+    if (event.detail.status === 'validation_failed') {
+      console.log("Form submission failed due to validation errors.");
     }
   });
 });
