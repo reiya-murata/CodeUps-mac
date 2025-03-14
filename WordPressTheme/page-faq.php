@@ -70,7 +70,6 @@ $terms = esc_url(home_url('/terms/'));
         endforeach;
         ?>
       </div>
-    </div>
   </section>
   <?php
   else :
