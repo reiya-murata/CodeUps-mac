@@ -64,7 +64,7 @@
 
 
   <div class="sidebar__review-cards">
-    <div href="" class="sidebar-review-cards__item">
+    <div class="sidebar-review-cards__item">
 
       <div class="sidebar-review-card">
         <div class="sidebar-review-card__header">
