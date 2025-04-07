@@ -156,8 +156,17 @@ function custom_archive_posts_per_page($query) {
         $title = single_term_title('', false);
     } elseif (is_post_type_archive() ){
         $title = post_type_archive_title('', false);
-    } elseif (is_date()) {
-        $title = get_the_time('Y年n月');
+    }  elseif (is_date()) { /* 日付アーカイブの場合 */
+		$title = '';
+		if (get_query_var('year')) {
+			$title .= get_query_var('year') . '年';
+		}
+		if (get_query_var('monthnum')) {
+			$title .= get_query_var('monthnum') . '月';
+		}
+		if (get_query_var('day')) {
+			$title .= get_query_var('day') . '日';
+		}
     } elseif (is_search()) {
         $title = '検索結果：'.esc_html( get_search_query(false) );
     } elseif (is_404()) {
