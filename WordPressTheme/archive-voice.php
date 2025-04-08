@@ -25,21 +25,30 @@
           class="tab-menu <?php if (!is_tax('voice_category')) echo 'active'; ?>">ALL</a>
 
         <?php if (taxonomy_exists('voice_category')): 
-          $parent_terms = get_terms(array(
-          'taxonomy'   => 'voice_category',
-          'hide_empty' => false,
-          'parent'     => 0,
-          ));
+    $parent_terms = get_terms(array(
+        'taxonomy'   => 'voice_category',
+        'hide_empty' => false,
+        'parent'     => 0,
+    ));
 
-          if (!empty($parent_terms) && !is_wp_error($parent_terms)): 
-          foreach ($parent_terms as $parent_term): 
+    if (!empty($parent_terms) && !is_wp_error($parent_terms)): 
+        foreach ($parent_terms as $parent_term): 
+            // Display parent term
+            ?>
+        <a href="<?php echo esc_url(get_term_link($parent_term)); ?>"
+          class="tab-menu <?php echo (is_tax('voice_category', $parent_term->term_id) ? 'active' : ''); ?>">
+          <?php echo esc_html($parent_term->name); ?>
+        </a>
+
+        <?php
+            // Fetch child terms
             $child_terms = get_terms(array(
-              'taxonomy'   => 'voice_category',
-              'hide_empty' => false,
-              'parent'     => $parent_term->term_id,
+                'taxonomy'   => 'voice_category',
+                'hide_empty' => false,
+                'parent'     => $parent_term->term_id,
             ));
             if (!empty($child_terms) && !is_wp_error($child_terms)): 
-            foreach ($child_terms as $term): ?>
+                foreach ($child_terms as $term): ?>
         <a href="<?php echo esc_url(get_term_link($term)); ?>"
           class="tab-menu <?php echo (is_tax('voice_category', $term->term_id) ? 'active' : ''); ?>">
           <?php echo esc_html($term->name); ?>
@@ -48,7 +57,7 @@
           endif;
           endforeach; 
           endif;
-          else: ?>
+        else: ?>
         <p>タクソノミー "voice_category" が登録されていません。</p>
         <?php endif; ?>
       </div>

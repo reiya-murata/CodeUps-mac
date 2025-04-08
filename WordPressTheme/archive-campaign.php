@@ -30,24 +30,26 @@ $contact = esc_url(home_url('/contact/'));
         <a href="<?php echo esc_url(home_url('/campaign/')); ?>"
           class="tab-menu <?php if (!is_tax('campaign_category')) echo 'active'; ?>">ALL</a>
         <?php if (taxonomy_exists('campaign_category')): 
-        $terms = get_terms(array(
-        'taxonomy'   => 'campaign_category',
-        'hide_empty' => false,
-    ));
-    if (!empty($terms) && !is_wp_error($terms)): 
-        foreach ($terms as $term):
-          if ($term->parent === 0) continue; // 親タームはスキップ
-          $term_link = get_term_link($term);
-          ?>
+  $terms = get_terms(array(
+    'taxonomy'   => 'campaign_category',
+    'hide_empty' => false,
+  ));
+
+  if (!empty($terms) && !is_wp_error($terms)): 
+    foreach ($terms as $term):
+      $term_link = get_term_link($term);
+      ?>
         <a href="<?php echo esc_url($term_link); ?>"
           class="tab-menu <?php if (is_tax('campaign_category', $term->term_id)) echo 'active'; ?>">
           <?php echo esc_html($term->name); ?>
         </a>
-        <?php endforeach; 
-        endif;
-        else: ?>
+        <?php 
+          endforeach; 
+          endif;
+          else: ?>
         <p>タクソノミー "campaign_category" が登録されていません。</p>
         <?php endif; ?>
+
       </div>
       <!-- Slides -->
       <div class="campaign-slides campaign-slide-campaign-page">

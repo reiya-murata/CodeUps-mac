@@ -30,31 +30,24 @@ $voice_3 = get_field('voice_3');
         <a href="<?php echo esc_url(home_url('/voice/')); ?>"
           class="tab-menu <?php if (!is_tax('voice_category')) echo 'active'; ?>">ALL</a>
         <?php if (taxonomy_exists('voice_category')): 
-        $parent_terms = get_terms(array(
-        'taxonomy'   => 'voice_category',
-        'hide_empty' => false,
-        'parent'     => 0,
-        ));
-        if (!empty($parent_terms) && !is_wp_error($parent_terms)): 
-        foreach ($parent_terms as $parent_term): 
-            $child_terms = get_terms(array(
-                'taxonomy'   => 'voice_category',
-                'hide_empty' => false,
-                'parent'     => $parent_term->term_id,
-            ));
-            if (!empty($child_terms) && !is_wp_error($child_terms)): 
-              foreach ($child_terms as $term): ?>
+  $parent_terms = get_terms(array(
+    'taxonomy'   => 'voice_category',
+    'hide_empty' => false,
+    'parent'     => 0,
+  ));
+
+  if (!empty($parent_terms) && !is_wp_error($parent_terms)): 
+    foreach ($parent_terms as $term): ?>
         <a href="<?php echo esc_url(get_term_link($term)); ?>"
           class="tab-menu <?php echo (get_queried_object_id() === $term->term_id) ? 'active' : ''; ?>">
           <?php echo esc_html($term->name); ?>
         </a>
         <?php endforeach; 
-          endif;
-        endforeach; 
-        endif;
-        else: ?>
+  endif;
+else: ?>
         <p>タクソノミー "voice_category" が登録されていません。</p>
         <?php endif; ?>
+
       </div>
       <div class="voice-page-contents__cards voice-cards">
         <?php if (have_posts()):
