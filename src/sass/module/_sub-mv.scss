@@ -5,8 +5,12 @@
 }
 
 
-.sub-mv__img {
+.sub-mv__img img{
   object-fit: cover;
+  @include mq(md) {
+    width: 100vw;
+    max-height: rem(548);
+  }
 }
 
 

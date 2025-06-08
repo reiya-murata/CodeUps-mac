@@ -286,7 +286,7 @@
 input[type="checkbox"] {
   width: rem(14);
   height: rem(14);
-  display: inline;
+  display: inline-block;
 }
 
 input[type="checkbox"]:checked {

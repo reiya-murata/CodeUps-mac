@@ -4,7 +4,6 @@
 $contact = esc_url(home_url('/contact/'));
 ?>
 
-
 <main>
   <section class="sub-mv">
     <div class="sub-mv__hero">
@@ -29,33 +28,33 @@ $contact = esc_url(home_url('/contact/'));
         <!-- ALLタブ -->
         <a href="<?php echo esc_url(home_url('/campaign/')); ?>"
           class="tab-menu <?php if (!is_tax('campaign_category')) echo 'active'; ?>">ALL</a>
-        <?php if (taxonomy_exists('campaign_category')): 
-  $terms = get_terms(array(
-    'taxonomy'   => 'campaign_category',
-    'hide_empty' => false,
-  ));
 
-  if (!empty($terms) && !is_wp_error($terms)): 
-    foreach ($terms as $term):
-      $term_link = get_term_link($term);
-      ?>
+        <?php if (taxonomy_exists('campaign_category')):
+          $terms = get_terms(array(
+            'taxonomy'   => 'campaign_category',
+            'hide_empty' => false,
+          ));
+
+          if (!empty($terms) && !is_wp_error($terms)):
+            foreach ($terms as $term):
+              $term_link = get_term_link($term);
+              ?>
         <a href="<?php echo esc_url($term_link); ?>"
-          class="tab-menu <?php if (is_tax('campaign_category', $term->term_id)) echo 'active'; ?>">
+          class="tab-menu <?php if (is_tax('campaign_category', $term->slug)) echo 'active'; ?>">
           <?php echo esc_html($term->name); ?>
         </a>
-        <?php 
-          endforeach; 
+        <?php endforeach;
           endif;
-          else: ?>
+        else: ?>
         <p>タクソノミー "campaign_category" が登録されていません。</p>
         <?php endif; ?>
-
       </div>
+
       <!-- Slides -->
       <div class="campaign-slides campaign-slide-campaign-page">
         <?php if (have_posts()):
-            while(have_posts()):
-                the_post();
+          while(have_posts()):
+            the_post();
         ?>
         <div class="campaign-slide-card">
           <div class="campaign-slide-card__header">
@@ -65,47 +64,64 @@ $contact = esc_url(home_url('/contact/'));
             <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="noimage">
             <?php endif; ?>
           </div>
+
           <div class="campaign-slide-card__body">
             <?php 
-            $terms = get_field('campaign-1'); // ACFのタクソノミーフィールド
-            if ($terms && is_array($terms)): ?>
+              $terms = get_the_terms(get_the_ID(), 'campaign_category'); // ★ 修正ポイント
+
+              if ($terms && !is_wp_error($terms)): ?>
             <div class="campaign-slide-card__icon card-icon">
               <h2 class="campaign-slide-card__icon-title">
                 <?php foreach ($terms as $term) {
-                      echo esc_html($term->name) . '<br>';
+                    echo esc_html($term->name) . '<br>';
                   } ?>
               </h2>
             </div>
             <?php endif; ?>
+
             <div class="campaign-slide-card__title-campaign">
               <h2><?php the_title(); ?></h2>
             </div>
+
             <p class="campaign-slide-card__text-campaign">全部コミコミ(お一人様)</p>
+
             <div class="campaign-slide-card__prices">
               <?php if ($price = get_field('campaign-2')): ?>
               <div class="campaign-slide-card__prices-aria">
                 <h3 class="campaign-slide-card__price"><?php echo esc_html($price); ?></h3>
-                <?php endif; ?>
               </div>
+              <?php endif; ?>
+
               <?php if ($discount = get_field('campaign-3')): ?>
               <div class="campaign-slide-card__discounts">
                 <h3 class="campaign-slide-card__discount"><?php echo esc_html($discount); ?></h3>
-                <?php endif; ?>
               </div>
+              <?php endif; ?>
             </div>
+
             <?php if ($description = get_field('campaign-4')): ?>
             <div class="campaign-slide-card__text-about">
               <p><?php echo esc_html($description); ?></p>
-              <?php endif; ?>
-            </div>
-            <?php if ($date = get_field('campaign-5')): ?>
-            <div class="campaign-slide-card__date">
-              <p><?php echo esc_html($date); ?></p>
             </div>
             <?php endif; ?>
+
+            <?php if (get_field('campaign-5') || get_field('campaign-6')): ?>
+            <div class="campaign-slide-card__date">
+              <p>
+                <?php if (get_field('campaign-5')): ?>
+                <?php the_field('campaign-5'); ?>
+                <?php endif; ?>-
+                <?php if (get_field('campaign-6')): ?>
+                <?php the_field('campaign-6'); ?>
+                <?php endif; ?>
+              </p>
+            </div>
+            <?php endif; ?>
+
             <div class="campaign-slide-card__contact">
               <p>ご予約・お問い合わせはコチラ</p>
             </div>
+
             <div class="campaign-slide-card__button">
               <a href="<?php echo $contact; ?>" class="button">
                 View more<span class="button__stickarrow"></span>
@@ -115,13 +131,12 @@ $contact = esc_url(home_url('/contact/'));
         </div>
         <?php endwhile; endif; ?>
       </div>
+
       <div class="campaign-page-contents__button">
         <?php wp_pagenavi(); ?>
       </div>
     </div>
   </section>
-
 </main>
-
 
 <?php get_footer(); ?>

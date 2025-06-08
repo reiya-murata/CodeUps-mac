@@ -714,6 +714,7 @@ a {
 	position: relative;
 	text-align: center;
 	width: 12.625rem;
+	z-index: 1;
 }
 
 .button--white {
@@ -1004,6 +1005,10 @@ a {
 	font-weight: 700;
 	height: auto;
 	text-align: center;
+}
+
+.campaign-slide-card__date p {
+	display: inline;
 }
 
 .campaign-slide-card__contact {
@@ -1541,7 +1546,7 @@ a {
 }
 
 input[type=checkbox] {
-	display: inline;
+	display: inline-block;
 	height: 0.875rem;
 	width: 0.875rem;
 }
@@ -3160,7 +3165,7 @@ table {
 	position: relative;
 }
 
-.sub-mv__img {
+.sub-mv__img img {
 	-o-object-fit: cover;
 	object-fit: cover;
 }
@@ -5061,6 +5066,11 @@ html {
 
 .sp-hidden {
 	display: block;
+}
+
+.sub-mv__img img {
+	max-height: 34.25rem;
+	width: 100vw;
 }
 
 .sub-mv {
